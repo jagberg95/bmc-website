@@ -7,7 +7,7 @@ module.exports = {
     // Or if using `src` directory:
     // "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class', // Enables dark mode, if you plan to use it via a class toggle
+  
   theme: {
     extend: {
       colors: {
