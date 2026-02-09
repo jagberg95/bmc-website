@@ -1,19 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
-/* Base styles for the body, applying your custom color palette */
-body {
-  @apply bg-dark-blue text-light-neutral font-sans antialiased;
-}
+/*
+  Tailwind v4 note:
+  - This project uses the Tailwind v4 PostCSS plugin.
+  - When using a JS config file, we must reference it with @config for custom theme values
+    (like our brand color names) to be available.
+*/
 
-/* Additional base styles can be added here */
-/* For example, you might want to define default link colors, heading styles, etc. */
+@layer base {
+  body {
+    @apply bg-dark-blue text-light-neutral font-sans antialiased;
+  }
 
-a {
-  @apply text-gold-primary hover:text-gold-secondary transition-colors duration-200;
-}
+  a {
+    @apply text-gold-primary hover:text-gold-secondary transition-colors duration-200;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply text-gold-primary;
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gold-primary;
+  }
 }
