@@ -4,6 +4,7 @@
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import './globals.css'; // Ensure globals.css is imported
 
 // Assuming your logo is available in public/images/logo/
 const LOGO_PATH = '/images/logo/bmc-logo.png';
@@ -20,30 +21,51 @@ function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const headerRef = useRef<HTMLDivElement>(null);
-  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false; // Basic check for mobile
+  const [isMobile, setIsMobile] = useState(false); // State for mobile view
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+      handleResize(); // Set initial state
+      window.addEventListener('resize', handleResize);
 
-      if (currentScrollY > lastScrollY && currentScrollY > 50) { // Hide if scrolling down and past initial threshold
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
 
-      setLastScrollY(currentScrollY);
-    };
+        if (currentScrollY > lastScrollY && currentScrollY > 50) { // Hide if scrolling down and past initial threshold
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
+        setLastScrollY(currentScrollY);
+      };
 
-    // Add scroll listener
-    window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll);
 
-    // Cleanup scroll listener on component unmount
-    return () => window.removeEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, [lastScrollY]);
 
-  // Add logic for cursor at top to reappear header (more complex, often involves mousemove listener)
-  // For simplicity, we'll rely on scroll up for now.
+  // Basic Cursor-at-top logic for header reappearance
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      // Check if mouse is near the top of the viewport
+      if (e.clientY < 50) { // Threshold in pixels from the top
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
 
   return (
     <header
@@ -59,9 +81,10 @@ function Header() {
             <Image
               src={LOGO_PATH}
               alt="Bar Moon Contracting Logo"
-              width={120} // Adjust size as needed
-              height={50} // Adjust size as needed
+              width={120}
+              height={50}
               priority
+              className="object-contain" // Ensure logo scales nicely
             />
           </a>
         </Link>
@@ -77,11 +100,10 @@ function Header() {
           ))}
         </nav>
 
-        {/* Mobile Navigation (Hamburger or basic links if no hamburger lib) */}
+        {/* Mobile Navigation (Hamburger Button) */}
         {isMobile && (
-          <button className="text-light-neutral text-3xl" /* Hamburger icon */>
-            {/* Placeholder for hamburger icon. Actual implementation requires more complex state management or a library. */}
-            ☰
+          <button className="md:hidden text-light-neutral text-3xl cursor-pointer" aria-label="Open mobile menu">
+            &#9776; {/* Hamburger icon */}
           </button>
         )}
       </div>
@@ -89,7 +111,29 @@ function Header() {
   );
 }
 
-// Appears in RootLayout to apply global styles and provide layout context
+// RootLayout applies global styles and structure
+// Assuming Geist fonts are not strictly mandatory for this structure,
+// but they are part of default create-next-app setup.
+// We'll ensure body classes are applied correctly.
+import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";
+
+// Font definitions (keeping these as they are from default setup)
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Bar Moon Contracting", // Updated title
+  description: "Central Texas General Contracting and Custom Home Building", // Updated description
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -97,11 +141,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* Apply Tailwind via globals.css */}
-      <body className={`bg-dark-blue text-light-neutral antialiased`}>
-        <Header /> {/* Include the Header component here */}
-        {children}
-        {/* Footer would typically go here or within children components */}
+      {/* Applying global styles and custom fonts */}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Header /> {/* Including the Header component */}
+        <main> {/* Wrapping children in a main tag potentially */}
+          {children}
+        </main>
+        {/* Footer would typically be placed here if it's a global element */}
       </body>
     </html>
   );
