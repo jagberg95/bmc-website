@@ -15,14 +15,14 @@ export default function HomePage() {
           <h1 className="text-4xl md:text-6xl font-bold text-gold-primary">Welcome to Bar Moon Contracting</h1>
           <h2 className="text-2xl md:text-4xl mb-6 text-gold-secondary font-medium">Texas Craftsmanship Meets Lasting Integrity</h2>
           <p className="text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
-            We believe a custom home should reflect the people who live in it—strong, honest, beautifully built, and made to endure. We don’t just build or repair homes; we build trust, offering a seamless, high-end experience grounded in local Central Texas expertise.
+            We believe a custom home should reflect the people who live in it—strong, honest, beautifully built, and made to endure. We don&apos;t just build or repair homes; we build trust, offering a seamless, high-end experience grounded in local Central Texas expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#contact" legacyBehavior>
-              <a className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out text-lg">Discuss Your Custom Home Vision</a>
+            <Link href="#contact" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out text-lg">
+              Discuss Your Custom Home Vision
             </Link>
-            <Link href="#services" legacyBehavior>
-              <a className="bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out text-lg border-2 border-gold-primary hover:border-gold-secondary">Explore Services</a>
+            <Link href="#services" className="bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out text-lg border-2 border-gold-primary hover:border-gold-secondary">
+              Explore Services
             </Link>
           </div>
           <div className="mt-6 text-center">
@@ -36,8 +36,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gold-primary mb-4">Our Heart Our Passion</h2>
           <p className="text-lg leading-relaxed mb-6">Building with purpose, responsibility, and care. Learn more about the values that drive Bar Moon Contracting.</p>
-          <Link href="/our-heart-our-passion" legacyBehavior>
-            <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">Learn More</a>
+          <Link href="/our-heart-our-passion" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">
+            Learn More
           </Link>
         </div>
       </section>
@@ -47,8 +47,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gold-primary mb-4">About Bar Moon Contracting</h2>
           <p className="text-lg leading-relaxed mb-4">Rooted in Central Texas for generations, we deliver integrity, craftsmanship, and trusted partnership in every project.</p>
-          <Link href="/about" legacyBehavior>
-            <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">Learn More</a>
+          <Link href="/about" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">
+            Learn More
           </Link>
         </div>
       </section>
@@ -58,8 +58,8 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gold-primary mb-6">Services Overview</h2>
           <p className="text-lg leading-relaxed mb-8">Overview of our service categories will appear here with links to dedicated pages.</p>
-          <Link href="/services" legacyBehavior>
-            <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">View All Services</a>
+          <Link href="/services" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">
+            View All Services
           </Link>
         </div>
       </section>
@@ -67,10 +67,10 @@ export default function HomePage() {
       {/* Contact teaser */}
       <section id="contact" className="relative py-16 px-8 bg-deep-blue">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-gold-primary mb-4">Let's Build Your Vision</h2>
-          <p className="text-lg mb-6">Ready to discuss your project? Reach out and we'll start planning together.</p>
-          <Link href="/contact" legacyBehavior>
-            <a className="bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">Contact Us</a>
+          <h2 className="text-3xl font-bold text-gold-primary mb-4">Let&apos;s Build Your Vision</h2>
+          <p className="text-lg mb-6">Ready to discuss your project? Reach out and we&apos;ll start planning together.</p>
+          <Link href="/contact" className="bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">
+            Contact Us
           </Link>
         </div>
       </section>

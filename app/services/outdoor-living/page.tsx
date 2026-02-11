@@ -14,11 +14,10 @@ export default function OutdoorLivingPage() {
           <Image
             src="/images/services/outdoor-living-hero.jpg" // Placeholder for a relevant image
             alt="Bar Moon Contracting Outdoor Living Spaces"
-            layout="fill"
-            objectFit="cover"
+            fill
             quality={90}
             priority
-            className="opacity-50"
+            className="opacity-50 object-cover"
           />
         </div>
         <div className="relative z-10 max-w-4xl">
@@ -56,10 +55,8 @@ export default function OutdoorLivingPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 No matter what your deck needs are, we stand with you to create your deck, and keep it looking beautiful and extend the life of your deck.
               </p>
-              <Link href="/services/outdoor-living/decks-patios" legacyBehavior> {/* Placeholder for a dedicated page */}
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              <Link href="/services/outdoor-living/decks-patios" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary"> {/* Placeholder for a dedicated page */}
                   Design Your Dream Deck
-                </a>
               </Link>
             </div>
 
@@ -75,10 +72,8 @@ export default function OutdoorLivingPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Many of our projects start where others left off — correcting rushed installs, fixing water problems, and restoring landscapes that never performed the way they should have. We don't guess, and we don't apply quick cosmetic fixes. We identify the problem, build the solution correctly, and deliver results that last. If you want a landscape that drains properly, holds up over time, and looks better year after year, we're here to help.
               </p>
-              <Link href="/services/outdoor-living/landscaping" legacyBehavior> {/* Placeholder for a dedicated page */}
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              <Link href="/services/outdoor-living/landscaping" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary"> {/* Placeholder for a dedicated page */}
                   Explore Landscape Solutions
-                </a>
               </Link>
             </div>
 
@@ -97,10 +92,8 @@ export default function OutdoorLivingPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 If you want a landscape that makes sense, fits your property, and won't need to be redone later, design is where it starts — and we make sure it's done right.
               </p>
-              <Link href="/services/outdoor-living/landscaping" legacyBehavior> {/* Placeholder for a dedicated page */}
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              <Link href="/services/outdoor-living/landscaping" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary"> {/* Placeholder for a dedicated page */}
                   Explore Landscape Design
-                </a>
               </Link>
             </div>
 
@@ -108,10 +101,8 @@ export default function OutdoorLivingPage() {
         </div>
         {/* CTA Button */}
         <div className="mt-16 text-center">
-          <Link href="/contact" legacyBehavior>
-            <a className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
+          <Link href="/contact" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
               Ask Us About Your Outdoor Project
-            </a>
           </Link>
         </div>
       </section>
