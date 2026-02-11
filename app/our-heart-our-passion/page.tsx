@@ -69,10 +69,8 @@ export default function OurHeartPage() {
 
           {/* Back to Home Link */}
           <div className="mt-16 text-center">
-            <Link href="/" legacyBehavior>
-              <a className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
-                Back to Home
-              </a>
+            <Link href="/" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
+              Back to Home
             </Link>
           </div>
         </div>

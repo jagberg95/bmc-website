@@ -49,11 +49,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Kitchens and bathrooms are the most used — and most complex — spaces in a home. Poor layouts, outdated finishes, and rushed remodels often lead to daily frustration and costly fixes down the road. We specialize in kitchen and bathroom remodels that improve function, flow, and durability. From layout adjustments and fixture placement to cabinetry, countertops, tile, and finishes, we manage the details that matter. Our approach focuses on clear planning, coordinated trades, and workmanship that holds up to everyday use. The result is a space that works better, looks intentional, and adds real long-term value to your home.
               </p>
-              <Link href="/services/kitchen-bath-remodels" legacyBehavior>
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                  Learn More About Kitchens
-                </a>
-              </Link>
+              <Link href="/services/kitchen-bath-remodels" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              Learn More About Kitchens
+            </Link>
             </div>
 
             {/* Specialty 2: Bathroom Remodels */}
@@ -62,11 +60,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Your bathroom should be a sanctuary that balances functionality with relaxation. Outdated fixtures, inefficient layouts, or poor design can turn this essential space into a daily challenge. We specialize in complete bathroom remodels designed to optimize space, enhance durability, and create a peaceful retreat. From thoughtful fixture placement and updated cabinetry to modern tiling and finishes, we handle every detail with precision. Our focus is on meticulous planning, coordinated trades, and the highest standard of workmanship, ensuring your new bathroom is not only beautiful but also highly functional and built to last. The result is a refreshed, efficient space that adds comfort and long-term value to your home.
               </p>
-              <Link href="/services/kitchen-bath-remodels" legacyBehavior> {/* Assuming a common page for Kitchens & Baths */}
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                  Learn More About Bathrooms
-                </a>
-              </Link>
+              <Link href="/services/kitchen-bath-remodels" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              Learn More About Bathrooms
+            </Link>
             </div>
 
             {/* Specialty 3: Flooring */}
@@ -75,11 +71,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Flooring sets the tone for your entire home — and improper installation can cause problems you’ll notice every day. Uneven surfaces, poor transitions, and premature wear are often the result of rushed prep work. We install and replace flooring with careful attention to subfloor conditions, transitions, and long-term performance. Whether you’re updating a single room or the entire home, we ensure clean lines, proper leveling, and materials installed the right way. Our goal is flooring that feels solid underfoot, looks seamless between spaces, and stands up to daily life.
               </p>
-              <Link href="/services/flooring" legacyBehavior> {/* Assuming a dedicated page for flooring */}
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                  Learn More About Flooring
-                </a>
-              </Link>
+              <Link href="/services/flooring" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              Learn More About Flooring
+            </Link>
             </div>
 
             {/* Specialty 4: Floor Plan Adjustments */}
@@ -88,11 +82,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Sometimes a home doesn’t need more space — it needs better use of the space you already have. Awkward layouts, unused rooms, and outdated configurations can limit how your home functions. We handle room adjustments and interior modifications with a construction-informed approach. Whether it’s opening up a space, redefining a room’s purpose, or making targeted layout changes, we focus on improvements that feel natural, balanced, and well-planned. Every adjustment is made with structure, flow, and long-term value in mind — so the change feels intentional, not improvised.
               </p>
-              <Link href="/services/floor-plan-adjustments" legacyBehavior>
-                <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                  Learn More About Layouts
-                </a>
-              </Link>
+              <Link href="/services/floor-plan-adjustments" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
+              Learn More About Layouts
+            </Link>
             </div>
 
           </div>

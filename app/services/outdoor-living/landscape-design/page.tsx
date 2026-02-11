@@ -23,9 +23,9 @@ export default function LandscapeDesignPage() {
         </div>
       </section>
       <section className="py-8 px-8 text-center">
-        <Link href="/services/outdoor-living" legacyBehavior>
-          <a className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">Back to Outdoor Living</a>
-        </Link>
+        <Link href="/services/outdoor-living" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md">
+              Back to Outdoor Living
+            </Link>
       </section>
     </main>
   );

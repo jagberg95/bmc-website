@@ -17,9 +17,9 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
       <section className="py-8 px-8 text-center">
-        <Link href="/" legacyBehavior>
-          <a className="inline-block bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg">Back to Home</a>
-        </Link>
+        <Link href="/" className="inline-block bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg">
+              Back to Home
+            </Link>
       </section>
     </main>
   );

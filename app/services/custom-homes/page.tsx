@@ -22,9 +22,9 @@ export default function CustomHomesPage() {
         </div>
       </section>
       <section className="py-8 px-8 text-center">
-        <Link href="/contact" legacyBehavior>
-          <a className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg">Start Your Project</a>
-        </Link>
+        <Link href="/contact" className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg">
+              Start Your Project
+            </Link>
       </section>
     </div>
   );

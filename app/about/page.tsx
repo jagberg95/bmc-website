@@ -68,10 +68,8 @@ export default function AboutPage() {
 
           {/* Button to Contact Page */}
           <div className="mt-16 text-center">
-            <Link href="/contact" legacyBehavior>
-              <a className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
-                Let's Build With You
-              </a>
+            <Link href="/contact" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
+              Let's Build With You
             </Link>
           </div>
         </div>

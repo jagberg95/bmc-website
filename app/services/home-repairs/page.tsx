@@ -88,11 +88,9 @@ export default function HomeRepairsPage() {
         </div>
         {/* CTA Button for Home Repairs */}
         <div className="mt-16 text-center">
-          <Link href="/contact" legacyBehavior>
-            <a className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
+          <Link href="/contact" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
               Request a Repair Service
-            </a>
-          </Link>
+            </Link>
         </div>
       </section>
 
