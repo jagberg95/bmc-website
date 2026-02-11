@@ -14,11 +14,10 @@ export default function ContactPage() {
            <Image
             src="/images/contact-hero.jpg" 
             alt="Contact Bar Moon Contracting"
-            layout="fill"
-            objectFit="cover"
+            fill
             quality={90}
             priority
-            className="opacity-50"
+            className="opacity-50 object-cover"
           />
         </div>
         <div className="relative z-10 max-w-4xl">
@@ -74,7 +73,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="bg-deep-blue p-8 rounded-lg shadow-xl border border-gold-secondary">
             <h3 className="text-2xl font-bold mb-6 text-gold-primary">Send Us a Message</h3>
-            <form className="flex flex-col gap-6">
+            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label htmlFor="name" className="block text-sm font-bold mb-2 text-gold-secondary">Name</label>
                 <input type="text" id="name" placeholder="Your Name" className="w-full p-4 rounded-lg bg-dark-blue border border-gold-secondary focus:outline-none focus:ring-2 focus:ring-gold-primary text-light-neutral" />
