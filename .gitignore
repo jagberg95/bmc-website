@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+TOOLS.md
+AGENTS.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+USER.md
