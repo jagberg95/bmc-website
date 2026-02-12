@@ -45,3 +45,11 @@ HEARTBEAT.md
 IDENTITY.md
 SOUL.md
 USER.md
+
+# OpenClaw agent files - never commit (contain PAT/secrets)
+TOOLS.md
+USER.md
+AGENTS.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
