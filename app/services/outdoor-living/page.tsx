@@ -98,9 +98,9 @@ export default function OutdoorLivingPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Many of our projects start by correcting what others overlooked&mdash;fixing pooling water, uneven settling, dying beds, or failing hardscapes. We approach every yard with construction-level planning: clear assessments, honest recommendations, and builds that drain properly, stay stable, and look better with age.
               </p>
-              <Link href="/services/outdoor-living/landscaping" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                Explore Landscape Solutions
-              </Link>
+              <span className="inline-block bg-gray-600/40 text-gray-400 font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                Explore Landscape Solutions &mdash; <span className="text-gold-secondary text-sm italic">Coming Soon</span>
+              </span>
             </div>
 
             {/* Deck Services */}
@@ -141,9 +141,9 @@ export default function OutdoorLivingPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 No matter if it&apos;s a brand-new build, a repair, or ongoing care, we stand with you to create (and maintain) a deck that stands up to Texas weather and gives you years of great memories.
               </p>
-              <Link href="/services/outdoor-living/decks-patios" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                Design Your Dream Deck
-              </Link>
+              <span className="inline-block bg-gray-600/40 text-gray-400 font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                Design Your Dream Deck &mdash; <span className="text-gold-secondary text-sm italic">Coming Soon</span>
+              </span>
             </div>
 
           </div>

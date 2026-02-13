@@ -58,9 +58,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 The result? Spaces that work better, look intentional, and add real long-term value to your home.
               </p>
-              <Link href="/services/kitchen-bath-remodels" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                Learn More About Kitchens &amp; Bathrooms
-              </Link>
+              <span className="inline-block bg-gray-600/40 text-gray-400 font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                Learn More About Kitchens &amp; Bathrooms &mdash; <span className="text-gold-secondary text-sm italic">Coming Soon</span>
+              </span>
             </div>
 
             {/* Specialty 2: Flooring Installations */}
@@ -75,9 +75,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 Our goal: Flooring that looks beautiful, stays quiet and stable, and holds up to Texas life.
               </p>
-              <Link href="/services/flooring" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                Learn More About Flooring
-              </Link>
+              <span className="inline-block bg-gray-600/40 text-gray-400 font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                Learn More About Flooring &mdash; <span className="text-gold-secondary text-sm italic">Coming Soon</span>
+              </span>
             </div>
 
             {/* Specialty 3: Room Adjustments and Interior Modifications */}
@@ -89,9 +89,9 @@ export default function HomeRenovationsPage() {
               <p className="text-lg mb-8 leading-relaxed">
                 We handle interior modifications with a builder&apos;s eye: opening up areas, redefining room purposes, or making targeted layout changes that feel natural and balanced. Every adjustment considers structure, flow, and long-term value&mdash;so the change feels intentional, not improvised.
               </p>
-              <Link href="/services/floor-plan-adjustments" className="bg-gold-secondary text-dark-blue font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out hover:bg-gold-primary">
-                Learn More About Layouts
-              </Link>
+              <span className="inline-block bg-gray-600/40 text-gray-400 font-bold py-3 px-6 rounded-lg shadow-md cursor-default">
+                Learn More About Layouts &mdash; <span className="text-gold-secondary text-sm italic">Coming Soon</span>
+              </span>
             </div>
 
           </div>

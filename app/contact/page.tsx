@@ -1,51 +1,298 @@
+// app/contact/page.tsx
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 
+/* ── Contact Form (reads ?step= or ?service= from URL) ─── */
 function ContactForm() {
   const searchParams = useSearchParams();
-  const [subject, setSubject] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   useEffect(() => {
     const step = searchParams.get('step');
     const service = searchParams.get('service');
     if (step) {
-      setSubject(`Question about Process Step ${step}`);
+      setFormData((d) => ({ ...d, subject: `Question about Process Step ${step}` }));
     } else if (service) {
-      setSubject(`Inquiry about ${service.replace('-', ' ')}`);
+      setFormData((d) => ({
+        ...d,
+        subject: `Inquiry about ${service.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}`,
+      }));
     }
   }, [searchParams]);
 
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      setFormData((d) => ({ ...d, [e.target.name]: e.target.value }));
+    },
+    [],
+  );
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  const inputClass =
+    'w-full bg-dark-blue/60 border border-gray-600 focus:border-gold-primary focus:ring-1 focus:ring-gold-primary/40 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition';
+
   return (
-    <form className="flex flex-col gap-6" onSubmit={(e) => { e.preventDefault(); alert('Message sent (mock)!'); }}>
-      {/* ... (inputs: name, email, phone, subject, message) ... */}
-      <button type="submit" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl w-full">
-        Send Message
+    <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+      {/* Name + Email row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <input
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          type="text"
+          placeholder="Your Name *"
+          required
+          className={inputClass}
+        />
+        <input
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          type="email"
+          placeholder="Email Address *"
+          required
+          className={inputClass}
+        />
+      </div>
+
+      {/* Phone + Subject row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <input
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          type="tel"
+          placeholder="Phone (optional)"
+          className={inputClass}
+        />
+        <select
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          className={inputClass}
+        >
+          <option value="">Select a topic&hellip;</option>
+          <option value="Custom Homes">Custom Homes</option>
+          <option value="Upgrades & Renovations">Upgrades &amp; Renovations</option>
+          <option value="Outdoor Living">Outdoor Living</option>
+          <option value="Home Repairs">Home Repairs</option>
+          <option value="General Question">General Question</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      {/* Message */}
+      <textarea
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        rows={5}
+        placeholder="Tell us about your project or ask us anything&hellip; *"
+        required
+        className={inputClass + ' resize-none'}
+      />
+
+      {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === 'sending'}
+        className="bg-gold-primary hover:bg-gold-secondary disabled:opacity-60 text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 text-lg w-full hover:scale-[1.02]"
+      >
+        {status === 'sending' ? 'Sending\u2026' : 'Send Message'}
       </button>
+
+      {/* Feedback */}
+      {status === 'sent' && (
+        <p className="text-green-400 text-center font-medium">
+          Message received! We&apos;ll be in touch soon.
+        </p>
+      )}
+      {status === 'error' && (
+        <p className="text-red-400 text-center font-medium">
+          Something went wrong. Please try again or give us a call.
+        </p>
+      )}
     </form>
   );
 }
 
+/* ── Page ─────────────────────────────────────────────────── */
 export default function ContactPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-        {/* ... (hero section code) ... */}
-      <section className="py-20 px-8 bg-dark-blue">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
-            {/* ... (contact info block) ... */}
+
+      {/* ── Hero ──────────────────────────────────────────── */}
+      <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fog.jpg"
+            alt="Central Texas morning fog"
+            fill
+            className="object-cover brightness-[0.2]"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl px-6">
+          <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
+            We&apos;d Love to Hear From You
+          </p>
+          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            Let&apos;s Build Your Dream
+          </h1>
+          <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
+          <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
+            Big project or small question&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Direct contact strip ─────────────────────────── */}
+      <section className="bg-deep-blue border-y border-gold-primary/20">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gold-primary/20">
+          {/* Phone */}
+          <a
+            href="tel:+12545813808"
+            className="group flex items-center gap-5 px-8 py-8 hover:bg-gold-primary/5 transition"
+          >
+            <div className="w-14 h-14 rounded-full bg-gold-primary/10 flex items-center justify-center shrink-0 group-hover:bg-gold-primary/20 transition">
+              <svg className="w-6 h-6 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Call or Text</p>
+              <p className="text-xl font-bold text-white group-hover:text-gold-primary transition">(254) 581-3808</p>
+            </div>
+          </a>
+          {/* Email */}
+          <a
+            href="mailto:barmooncontracting@protonmail.com"
+            className="group flex items-center gap-5 px-8 py-8 hover:bg-gold-primary/5 transition"
+          >
+            <div className="w-14 h-14 rounded-full bg-gold-primary/10 flex items-center justify-center shrink-0 group-hover:bg-gold-primary/20 transition">
+              <svg className="w-6 h-6 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+            </div>
+            <div>
+              <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">Email Us</p>
+              <p className="text-lg font-bold text-white group-hover:text-gold-primary transition break-all">barmooncontracting@protonmail.com</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {/* ── Main content: form + encouragement ───────────── */}
+      <section className="py-20 px-6 md:px-12 bg-dark-blue">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-14">
+
+          {/* Left column: encouragement & info */}
+          <div className="lg:col-span-2 flex flex-col justify-center">
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">No Question Too Small</p>
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Ask Us Anything
+            </h2>
+            <p className="text-gray-200 leading-relaxed mb-6">
+              Dreaming about a new kitchen? Wondering what it takes to build a custom home? Need a quick repair? We love talking through ideas&mdash;no commitment, no pressure. Just honest guidance from folks who&apos;ve been building in Central Texas for five generations.
+            </p>
+            <p className="text-gray-300 leading-relaxed mb-8">
+              Fill out the form, give us a call, or shoot us an email. However you reach out, we&apos;ll get back to you promptly&mdash;because your project matters to us.
+            </p>
+
+            {/* Small trust signals */}
+            <div className="space-y-4">
+              {[
+                { icon: '✓', text: 'Free consultations — always' },
+                { icon: '✓', text: 'Responses within 24 hours' },
+                { icon: '✓', text: 'Licensed & insured in Texas' },
+              ].map((item) => (
+                <div key={item.text} className="flex items-center gap-3">
+                  <span className="w-6 h-6 rounded-full bg-gold-primary/15 text-gold-primary text-xs flex items-center justify-center font-bold">
+                    {item.icon}
+                  </span>
+                  <span className="text-gray-300 text-sm">{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Image accent */}
+            <div className="relative mt-10 h-52 rounded-xl overflow-hidden hidden lg:block">
+              <Image
+                src="/images/family.jpg"
+                alt="Bar Moon Contracting family"
+                fill
+                className="object-cover brightness-[0.6]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark-blue/80 to-transparent" />
+              <p className="absolute bottom-4 left-4 text-sm text-gray-200 italic">
+                Family-owned. Community-proud.
+              </p>
+            </div>
           </div>
-          {/* Contact Form */}
-          <div className="bg-deep-blue p-8 rounded-lg shadow-xl border border-gold-secondary">
-            <h3 className="text-2xl font-bold mb-6 text-gold-primary">Send Us a Message</h3>
-            <Suspense fallback={<div className="text-white">Loading form...</div>}>
-              <ContactForm />
-            </Suspense>
+
+          {/* Right column: the form */}
+          <div className="lg:col-span-3">
+            <div className="bg-deep-blue p-8 md:p-10 rounded-2xl shadow-2xl border border-gold-primary/10">
+              <h3 className="text-2xl font-bold text-white mb-2">Send Us a Message</h3>
+              <p className="text-gray-400 text-sm mb-8">
+                Tell us what&apos;s on your mind&mdash;big dream, quick fix, or just a question. We&apos;re all ears.
+              </p>
+              <Suspense fallback={<div className="text-gray-400 py-8 text-center">Loading form&hellip;</div>}>
+                <ContactForm />
+              </Suspense>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Sign-off with logo ──────────────────────────── */}
+      <section className="py-20 px-6 md:px-12 bg-deep-blue">
+        <div className="max-w-md mx-auto text-center">
+          <div className="relative w-36 h-36 mx-auto mb-8">
+            <Image
+              src="/images/Layered Circle/BMC_Layered_Circle_Dist_01.png"
+              alt="Bar Moon Contracting"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-2xl md:text-3xl font-light text-white leading-snug italic mb-3">
+            &ldquo;Every great project starts with a simple conversation.&rdquo;
+          </p>
+          <div className="w-12 h-[2px] bg-accent mx-auto mt-6 mb-6" />
+          <p className="text-sm text-gray-400 uppercase tracking-[0.2em]">
+            Bar Moon Contracting &bull; Central Texas
+          </p>
         </div>
       </section>
     </main>

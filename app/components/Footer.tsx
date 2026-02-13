@@ -24,7 +24,7 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-2xl font-bold tracking-wider text-gold">BAR MOON</span>
+              <span className="text-2xl font-bold tracking-wider text-gold">BAR MOON CONTRACTING LLC</span>
             </div>
             <p className="text-gray-300 italic mb-6 max-w-xs">
               "Crafting Texas Legacies with Heart & Grit"
