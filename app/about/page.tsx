@@ -23,7 +23,7 @@ export default function AboutPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Est. Central Texas
           </p>
-          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-white tracking-tight leading-[1.1]">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 text-white tracking-tight leading-[1.1]">
             Howdy from<br />
             <span className="text-gold-primary">Bar Moon Contracting</span>
           </h1>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               { number: '100%', label: 'Commitment' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-gold-primary mb-1">{stat.number}</p>
+                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-gold-primary mb-1">{stat.number}</p>
                 <p className="text-sm text-gray-400 uppercase tracking-wider">{stat.label}</p>
               </div>
             ))}
@@ -193,11 +193,11 @@ export default function AboutPage() {
               image: '/images/thinh-nguyen-patio2-unsplash.jpg',
             },
           ].map((card) => (
-            <div key={card.title} className="group relative rounded-xl overflow-hidden h-80">
-              <Image src={card.image} alt={card.title} fill className="object-cover brightness-[0.35] group-hover:brightness-[0.2] group-hover:scale-105 transition-all duration-500" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div key={card.title} className="group relative rounded-xl overflow-hidden h-72 md:h-80">
+              <Image src={card.image} alt={card.title} fill className="object-cover brightness-[0.25] lg:brightness-[0.35] lg:group-hover:brightness-[0.2] lg:group-hover:scale-105 transition-all duration-500" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   {card.text}
                 </p>
               </div>
@@ -213,7 +213,7 @@ export default function AboutPage() {
           <p className="text-xl leading-relaxed text-gray-200 mb-4">
             Bar Moon Contracting
           </p>
-          <p className="text-3xl md:text-4xl font-light text-gold-secondary italic leading-snug mb-8">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold-secondary italic leading-snug mb-8">
             Built on heritage. Strengthened by experience. Dedicated to excellence.
           </p>
           <p className="text-lg text-gray-300 mb-10">

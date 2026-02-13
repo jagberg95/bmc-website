@@ -86,7 +86,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. About Us Teaser */}
-      <section id="about" className="relative py-20 px-8 bg-dark-blue">
+      <section id="about" className="relative py-20 px-4 md:px-8 bg-dark-blue">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">About Bar Moon Contracting</h2>
           <p className="text-lg leading-relaxed mb-4 text-gray-200">
@@ -102,7 +102,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Contact CTA */}
-      <section id="contact" className="py-20 px-8 bg-deep-blue text-center">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-deep-blue text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Ready to Get Started?</h2>
           <p className="text-lg text-gray-200 mb-8">

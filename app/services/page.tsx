@@ -61,24 +61,27 @@ export default function ServicesPage() {
       </div>
 
       {/* Header */}
-      <section className="pt-28 pb-12 px-6 md:px-12 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gold-primary mb-4 tracking-tight">
+      <section className="pt-28 pb-12 px-4 md:px-12 text-center">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gold-primary mb-4 tracking-tight">
           Our Services
         </h1>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
           From custom builds to quick repairs, we bring Texas craftsmanship to every project.
-          Click a service to learn more.
+          Tap a service to learn more.
         </p>
       </section>
 
       {/* Mosaic Grid */}
       <section className="px-4 md:px-8 pb-20">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] gap-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[240px] sm:auto-rows-[260px] gap-4">
           {SERVICES.map((service) => (
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className={`group relative rounded-xl overflow-hidden ${service.span}`}
+              className={`group relative rounded-xl overflow-hidden ${
+                /* Only apply multi-span on lg+ where we have 4 columns */
+                service.span.replace(/col-span-2/g, 'sm:col-span-2 lg:col-span-2').replace(/row-span-2/g, 'sm:row-span-2 lg:row-span-2')
+              }`}
             >
               {/* Background image */}
               <Image
@@ -89,31 +92,23 @@ export default function ServicesPage() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
 
-              {/* Default overlay — title always visible */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+              {/* Overlay — always visible with gradient + text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-              {/* Hover overlay — darker with full text */}
-              <div className="absolute inset-0 bg-primary/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-6 md:p-8">
-                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-2">
+              {/* Content — always visible on mobile, hover-reveal description on desktop */}
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-1">
                   {service.tagline}
                 </p>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
                   {service.title}
                 </h2>
-                <p className="text-gray-300 text-sm leading-relaxed max-w-md mb-4">
+                <p className="text-gray-300 text-sm leading-relaxed max-w-md lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   {service.description}
                 </p>
-                <span className="inline-block bg-accent hover:bg-gold text-primary font-bold text-sm uppercase tracking-wider py-2 px-5 rounded-lg transition-colors duration-200">
+                <span className="mt-3 inline-block self-start bg-accent/90 text-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg">
                   Learn More &rarr;
                 </span>
-              </div>
-
-              {/* Default title (bottom-left) */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 transition-opacity duration-300 group-hover:opacity-0">
-                <h2 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">
-                  {service.title}
-                </h2>
-                <p className="text-accent text-sm font-medium mt-1">{service.tagline}</p>
               </div>
             </Link>
           ))}

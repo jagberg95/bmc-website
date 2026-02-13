@@ -22,7 +22,7 @@ export default function OurHeartPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Bar Moon Contracting
           </p>
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-white tracking-tight leading-[1.1]">
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 text-white tracking-tight leading-[1.1]">
             Our Heart &ndash;<br />Our Passion
           </h1>
           <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
@@ -104,11 +104,11 @@ export default function OurHeartPage() {
             { title: 'Full Transparency', text: 'Honest about costs, scope, and expectations — no surprises, no hidden fees.', image: '/images/odiseo-castrejon-kitchen-floating-shelves-unsplash.jpg' },
             { title: 'Total Accountability', text: 'We take full responsibility for the work we put our name on. Period.', image: '/images/fraem-gmbh-sod-unsplash.jpg' },
           ].map((card) => (
-            <div key={card.title} className="group relative rounded-xl overflow-hidden h-64">
-              <Image src={card.image} alt={card.title} fill className="object-cover brightness-[0.4] group-hover:brightness-[0.25] transition-all duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{card.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div key={card.title} className="group relative rounded-xl overflow-hidden h-56 md:h-64">
+              <Image src={card.image} alt={card.title} fill className="object-cover brightness-[0.3] lg:brightness-[0.4] lg:group-hover:brightness-[0.25] transition-all duration-500 lg:group-hover:scale-105" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">{card.title}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
                   {card.text}
                 </p>
               </div>
@@ -156,7 +156,7 @@ export default function OurHeartPage() {
             At the end of the day, our work is a reflection of our values, our discipline, and our respect for the people we serve.
           </p>
           <div className="w-16 h-[2px] bg-accent mx-auto mb-8" />
-          <p className="text-3xl md:text-4xl font-light text-gold-secondary italic leading-snug">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold-secondary italic leading-snug">
             That&rsquo;s why we do what we do.
           </p>
         </div>

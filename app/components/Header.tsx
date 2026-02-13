@@ -29,6 +29,16 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const servicesTimerRef = useState<ReturnType<typeof setTimeout> | null>(null);
 
+  /* Lock body scroll when mobile menu is open */
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;

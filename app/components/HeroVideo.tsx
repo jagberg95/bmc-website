@@ -20,9 +20,9 @@ export default function HeroVideo() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Right-aligned overlay text */}
-      <div className="absolute inset-0 flex items-center justify-end z-10 px-6 md:px-16">
-        <div className="bg-primary/70 backdrop-blur-sm p-8 md:p-12 rounded-lg max-w-lg text-right shadow-2xl border border-white/10">
-          <h1 className="text-3xl md:text-5xl font-bold text-accent mb-4 leading-tight">
+      <div className="absolute inset-0 flex items-center justify-center md:justify-end z-10 px-4 md:px-16">
+        <div className="bg-primary/70 backdrop-blur-sm p-5 md:p-8 lg:p-12 rounded-lg max-w-lg text-center md:text-right shadow-2xl border border-white/10">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 leading-tight">
             Welcome to Bar Moon Contracting
           </h1>
           <p className="text-sm md:text-base font-semibold text-accent/90 mb-3 tracking-wide uppercase">

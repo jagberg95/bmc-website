@@ -76,12 +76,26 @@ const SERVICES = [
   },
 ];
 
+/* ────────────────────────────── Hook: detect touch device ─────── */
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1023px)');
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+  return isMobile;
+}
+
 /* ────────────────────────────── Component ────────────────────────── */
 
 export default function HomePageServices() {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isMobile = useIsMobile();
 
   /* Clear any pending close when entering a tile or the panel */
   const cancelClose = useCallback(() => {
@@ -96,87 +110,110 @@ export default function HomePageServices() {
     leaveTimerRef.current = setTimeout(() => setActiveSlug(null), 120);
   }, []);
 
+  const handleTileClick = useCallback((slug: string) => {
+    if (isMobile) {
+      setActiveSlug((prev) => (prev === slug ? null : slug));
+    }
+  }, [isMobile]);
+
   const activeIdx = SERVICES.findIndex((s) => s.slug === activeSlug);
   const activeService = activeIdx >= 0 ? SERVICES[activeIdx] : null;
 
   return (
-    <section className="pt-20 pb-72 px-4 md:px-8 bg-primary">
+    <section className="pt-20 pb-16 lg:pb-72 px-4 md:px-8 bg-primary">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-accent mb-4 uppercase tracking-widest">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-accent mb-4 uppercase tracking-widest">
           Our Services
         </h2>
-        <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+        <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto text-sm md:text-base">
           From custom builds to quick repairs, we bring Texas craftsmanship to
-          every project. Hover over a service to learn more.
+          every project.{' '}
+          <span className="hidden lg:inline">Hover over a service to learn more.</span>
+          <span className="lg:hidden">Tap a service to learn more.</span>
         </p>
 
-        {/* ── Tile row (always 4 equal columns on lg) ──────────────
-             Using CSS Grid with fixed columns so tiles NEVER shift
-             when one is hovered. The detail panel is absolutely
-             positioned below the row container.                      */}
+        {/* ── Tile grid ─────────────────────────────────────────── */}
         <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {SERVICES.map((service, i) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+            {SERVICES.map((service) => {
               const isActive = activeSlug === service.slug;
               return (
-                <div
-                  key={service.slug}
-                  className="relative"
-                  onMouseEnter={() => { cancelClose(); setActiveSlug(service.slug); }}
-                  onMouseLeave={scheduleClose}
-                >
-                  {/* ── Tile card ──────────────────────────────────
-                       transform: scale() is used for the highlight
-                       effect → it does NOT affect layout, so other
-                       tiles stay perfectly in place.                 */}
+                <div key={service.slug} className="relative">
                   <div
-                    className={`
-                      relative z-10 h-full flex flex-col items-center text-center
-                      p-6 rounded-xl cursor-pointer
-                      border transition-all duration-300 ease-out
-                      ${isActive
-                        ? 'bg-deep-blue border-accent shadow-2xl shadow-accent/25 scale-[1.03] z-20'
-                        : 'bg-deep-blue/60 border-white/10 hover:border-accent/40 hover:shadow-lg'}
-                    `}
+                    className="relative"
+                    onMouseEnter={!isMobile ? () => { cancelClose(); setActiveSlug(service.slug); } : undefined}
+                    onMouseLeave={!isMobile ? scheduleClose : undefined}
+                    onClick={() => handleTileClick(service.slug)}
                   >
-                    <h3
-                      className={`font-bold text-lg mb-2 transition-colors duration-200 ${
-                        isActive ? 'text-accent' : 'text-white'
-                      }`}
+                    <div
+                      className={`
+                        relative z-10 h-full flex flex-col items-center text-center
+                        p-5 md:p-6 rounded-xl cursor-pointer
+                        border transition-all duration-300 ease-out
+                        ${isActive
+                          ? 'bg-deep-blue border-accent shadow-2xl shadow-accent/25 lg:scale-[1.03] z-20'
+                          : 'bg-deep-blue/60 border-white/10 hover:border-accent/40 hover:shadow-lg'}
+                      `}
                     >
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      {service.description}
-                    </p>
+                      <h3
+                        className={`font-bold text-base md:text-lg mb-2 transition-colors duration-200 ${
+                          isActive ? 'text-accent' : 'text-white'
+                        }`}
+                      >
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                      {/* Mobile chevron indicator */}
+                      <span className={`lg:hidden mt-3 text-accent text-xs transition-transform duration-200 ${isActive ? 'rotate-180' : ''}`}>▾</span>
+                    </div>
                   </div>
+
+                  {/* Mobile inline detail panel (inside the tile flow) */}
+                  {isMobile && isActive && activeService && (
+                    <div className="mt-3 bg-deep-blue border border-accent rounded-xl p-5 shadow-xl shadow-accent/10 animate-in">
+                      <p className="text-accent font-bold text-base mb-1">{activeService.title}</p>
+                      <p className="text-accent/70 font-semibold text-xs mb-3 uppercase tracking-wider">{activeService.tagline}</p>
+                      <p className="text-gray-200 leading-relaxed text-sm mb-4">{activeService.expandedContent}</p>
+                      <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mb-5">
+                        {activeService.highlights.map((h) => (
+                          <li key={h} className="flex items-center gap-2 text-sm text-gray-300">
+                            <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href={activeService.link}
+                        className="inline-block bg-accent hover:bg-gold text-primary font-bold text-sm uppercase tracking-wider py-2.5 px-5 rounded-lg transition-colors duration-200"
+                      >
+                        View Full Details &rarr;
+                      </Link>
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
 
-          {/* ── Detail panel (absolutely positioned below the grid) ──
-               • Uses position: absolute so it does NOT push page content.
-               • Left offset & width are calculated from the hovered tile's
-                 position so the panel aligns directly under it.
-               • Top border-radius is removed so it merges seamlessly with
-                 the tile above (which also has bottom radius removed).
-               • Pointer-events are managed so the user can hover into
-                 the panel without it closing.                              */}
-          <DetailPanel
-            ref={panelRef}
-            service={activeService}
-            activeIdx={activeIdx}
-            onEnter={cancelClose}
-            onLeave={scheduleClose}
-          />
+          {/* Desktop detail panel (absolutely positioned below grid) */}
+          {!isMobile && (
+            <DetailPanel
+              ref={panelRef}
+              service={activeService}
+              activeIdx={activeIdx}
+              onEnter={cancelClose}
+              onLeave={scheduleClose}
+            />
+          )}
         </div>
       </div>
     </section>
   );
 }
 
-/* ────────────────────── Detail Panel Sub-component ───────────────── */
+/* ────────────────────── Detail Panel Sub-component (Desktop) ───── */
 
 type DetailPanelProps = {
   service: (typeof SERVICES)[number] | null;
@@ -190,7 +227,6 @@ const DetailPanel = React.forwardRef<HTMLDivElement, DetailPanelProps>(
     const innerRef = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState(0);
 
-    /* Measure panel inner height for smooth open/close animation */
     useEffect(() => {
       if (innerRef.current && service) {
         setHeight(innerRef.current.scrollHeight);
@@ -202,12 +238,6 @@ const DetailPanel = React.forwardRef<HTMLDivElement, DetailPanelProps>(
     const isOpen = !!service;
 
     return (
-      /* ── Full-width panel directly under the tile row ──────────
-           • Spans the entire grid width (left:0, right:0).
-           • position:absolute so page content doesn't shift.
-           • The inner content uses a 4-column grid so the detail
-             text sits in the column that matches the hovered tile,
-             giving a visual connection between tile and panel.         */
       <div
         ref={ref}
         className="absolute left-0 right-0 z-30"
@@ -227,11 +257,10 @@ const DetailPanel = React.forwardRef<HTMLDivElement, DetailPanelProps>(
         >
           <div
             ref={innerRef}
-            className="bg-deep-blue border border-t-0 border-accent rounded-b-xl p-8 shadow-2xl shadow-accent/20"
+            className="bg-deep-blue border border-t-0 border-accent rounded-b-xl p-6 md:p-8 shadow-2xl shadow-accent/20"
           >
             {service && (
               <div className="flex flex-col md:flex-row gap-6 md:gap-10">
-                {/* Left — tagline & description */}
                 <div className="flex-1">
                   <p className="text-accent font-bold text-lg mb-1">
                     {service.title}
@@ -243,7 +272,6 @@ const DetailPanel = React.forwardRef<HTMLDivElement, DetailPanelProps>(
                     {service.expandedContent}
                   </p>
                 </div>
-                {/* Right — highlights & CTA */}
                 <div className="flex-1 flex flex-col justify-between">
                   <ul className="grid grid-cols-2 gap-x-6 gap-y-2 mb-5">
                     {service.highlights.map((h) => (
