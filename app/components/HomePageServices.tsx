@@ -140,19 +140,19 @@ export default function HomePageServices() {
               return (
                 <div key={service.slug} className="relative">
                   <div
-                    className="relative"
+                    className="relative h-full"
                     onMouseEnter={!isMobile ? () => { cancelClose(); setActiveSlug(service.slug); } : undefined}
                     onMouseLeave={!isMobile ? scheduleClose : undefined}
                     onClick={() => handleTileClick(service.slug)}
                   >
                     <div
                       className={`
-                        relative z-10 h-full flex flex-col items-center text-center
-                        p-5 md:p-6 rounded-xl cursor-pointer
+                        relative z-10 flex flex-col items-center text-center
+                        p-5 md:p-6 rounded-xl cursor-pointer min-h-[180px] h-full justify-center
                         border transition-all duration-300 ease-out
                         ${isActive
-                          ? 'bg-deep-blue border-accent shadow-2xl shadow-accent/25 lg:scale-[1.03] z-20'
-                          : 'bg-deep-blue/60 border-white/10 hover:border-accent/40 hover:shadow-lg'}
+                          ? 'bg-deep-blue border-accent shadow-[0_0_20px_rgba(214,173,48,0.35)] lg:scale-[1.03] z-20'
+                          : 'bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] hover:border-accent/50 hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]'}
                       `}
                     >
                       <h3

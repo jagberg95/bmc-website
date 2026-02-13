@@ -7,7 +7,7 @@
       'We start by sitting down (over coffee if you\u2019re local!) to understand your dreams, needs, budget, and lifestyle.',
     detail:
       'This is where Texas roots meet your ideas\u2014we blend our five-generation know-how with your goals to create a realistic plan that fits Central Texas land and life.',
-    image: '/images/grok-planning.jpg',
+    image: '/images/initial-meeting.jpg',
     buttons: [
       { label: 'Learn More', href: '/our-process#consultation' },
       { label: 'Let\u2019s Talk About Your Vision', href: '/contact', primary: true },
