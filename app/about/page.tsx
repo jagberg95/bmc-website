@@ -1,4 +1,4 @@
-// app/about/page.tsx
+﻿// app/about/page.tsx
 'use client';
 
 import Image from 'next/image';
@@ -12,7 +12,7 @@ export default function AboutPage() {
       <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16 px-8">
         <div className="absolute inset-0">
           <Image
-            src="/images/about-hero.jpg" // Placeholder for a relevant image (e.g., family, long-standing building)
+            src="/images/about-hero.jpg"
             alt="Bar Moon Contracting About Us"
             layout="fill"
             objectFit="cover"
@@ -23,10 +23,10 @@ export default function AboutPage() {
         </div>
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-            About Bar Moon Contracting
+            Howdy from Bar Moon Contracting
           </h1>
           <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-            A Central Texas Legacy Built to Last
+            A Central Texas Legacy, Five Generations Strong
           </h2>
         </div>
       </section>
@@ -35,47 +35,54 @@ export default function AboutPage() {
       <section className="py-20 px-8 bg-deep-blue">
         <div className="max-w-4xl mx-auto prose prose-lg prose-invert">
           <p className="text-lg leading-relaxed mb-8">
-            Howdy, Bar Moon Contracting is the continuation of a Central Texas legacy five generations in the making. Rooted here for over a century, our family has built, worked, and served this community with integrity and pride.
+            We&apos;re Bar Moon Contracting&mdash;the next chapter in a Central Texas story that&apos;s been unfolding for over a century. Our family has lived, worked, built, and served right here in these hills and heartlands, passing down the values of hard work, honesty, and doing things the right way. That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.
           </p>
 
-          <h2 className="text-3xl font-bold mt-12 mb-6 text-gold-primary">A Texas Legacy Built to Last</h2>
           <p className="text-lg leading-relaxed mb-8">
-            Bar Moon Contracting isn’t just a business—it’s the continuation of a Central Texas heritage five generations in the making. Our family has lived, worked, and built within this community for over a century, shaping the land, supporting our neighbors, and passing down the values that define who we are today. Our roots anchor us, but our vision pushes us forward. We believe Central Texas deserves construction and repair services that reflect the region’s character: strong, honest, and undeniably crafted with pride.
+            With 12 years of hands-on residential experience and 5 years tackling commercial builds across multiple states, we bring deep know-how to every job&mdash;whether it&apos;s a thoughtful home repair, a full custom renovation, or something bigger. We blend old-school Texas grit with modern precision: clear plans, premium materials, coordinated teams, and workmanship that holds up to whatever the weather (or life) throws at it.
           </p>
 
-          <h2 className="text-3xl font-bold mt-12 mb-6 text-gold-primary">Experience That Elevates Every Project</h2>
-          <p className="text-lg leading-relaxed mb-8">
-            With 12 years of residential construction experience, we understand the unique needs of homeowners—function, beauty, durability, and peace of mind. We’ve completed everything from essential repairs to luxury renovations, always with meticulous attention to detail.
+          <h2 className="text-3xl font-bold mt-12 mb-6 text-gold-primary">Rooted Here, Built to Last</h2>
+          <p className="text-lg leading-relaxed mb-4">
+            Central Texas isn&apos;t just where we&apos;re from&mdash;it&apos;s who we are. We understand the clay soil, the hot summers, the sudden storms, and the pride folks take in their homes. Being local means we build with the region in mind: durable details that stand the test of time, materials suited to our climate, and a commitment to leaving every property better than we found it.
           </p>
-          
           <p className="text-lg leading-relaxed mb-8">
-            Our 5 years of commercial construction work, performed across multiple states, brings an additional layer of expertise. From managing large-scale operations to coordinating teams and complex timelines, we’ve learned how to deliver precision, efficiency, and reliability at every level. This blend of residential warmth and commercial discipline sets us apart. It allows us to provide homeowners with a refined, professional, and consistently high-quality experience.
+            Our work reflects that heritage&mdash;strong, straightforward, and crafted with care. We don&apos;t chase fads; we focus on homes that feel timeless, function beautifully, and tell a story worth keeping.
+          </p>
+
+          <h2 className="text-3xl font-bold mt-12 mb-6 text-gold-primary">Experience Meets Heart</h2>
+          <p className="text-lg leading-relaxed mb-4">
+            Residential projects are personal&mdash;that&apos;s why we treat every home like our own. From small fixes that restore peace of mind to luxury renovations that elevate daily living, we deliver refined results with attention to the details that matter most.
+          </p>
+          <p className="text-lg leading-relaxed mb-8">
+            Our commercial background adds real-world discipline: managing timelines, budgets, and crews with efficiency and reliability. It means homeowners get the best of both worlds&mdash;warm, neighborly service backed by professional-grade execution.
           </p>
 
           <h2 className="text-3xl font-bold mt-12 mb-6 text-gold-primary">Guided by Integrity, Driven by Craftsmanship</h2>
           <p className="text-lg leading-relaxed mb-8">
-            Integrity is not just a value—it’s the standard behind every decision we make. Clients trust us because we communicate clearly, operate transparently, and stand behind our work without compromise. Each project is treated like a legacy piece. From premium materials to fine craftsmanship, we focus on doing it right the first time, the Texas way. The result? Homes that last, craftsmanship you can feel, and a construction experience rooted in honesty.
+            We believe trust is earned one honest conversation, one clean job site, and one solid warranty at a time. We communicate openly, quote fairly, stand behind our work, and never cut corners. Because when your name&apos;s on it&mdash;and your family&apos;s been here for generations&mdash;only the best will do.
           </p>
 
           <h2 className="text-3xl font-bold mt-12 mb-6 text-gold-primary">Committed to Central Texas</h2>
           <p className="text-lg leading-relaxed mb-8">
-            We know this land, these homes, and the people who take pride in them. Being local isn’t just a point of pride—it's the foundation of our commitment. When you work with Bar Moon Construction, you’re not hiring an outside contractor; you’re partnering with a neighbor who understands the challenges, climate, materials, and culture of Central Texas. Our goal is to continue raising the standard of living here by delivering exceptional work while supporting the community we love.
+            We&apos;re not just contractors; we&apos;re neighbors who care about this place and the people in it. Partnering with Bar Moon Contracting means working with folks who know the land, respect the community, and are dedicated to raising the bar for what quality construction looks like here.
           </p>
 
           <p className="text-xl font-semibold mt-12 text-gold-primary border-l-4 border-gold-secondary pl-6 italic">
-            Bar Moon Construction — Built on heritage. Strengthened by experience. Dedicated to excellence. This is who we are—and we’re here to build something exceptional with you.
+            Bar Moon Contracting &mdash; Built on heritage. Strengthened by experience. Dedicated to excellence.
+          </p>
+          <p className="text-lg leading-relaxed mt-6">
+            We&apos;re ready to build something exceptional with you. Let&apos;s talk.
           </p>
 
           {/* Button to Contact Page */}
           <div className="mt-16 text-center">
             <Link href="/contact" className="bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 ease-in-out text-xl transform hover:scale-105">
-              Let's Build With You
+              Let&apos;s Talk
             </Link>
           </div>
         </div>
       </section>
-
-      {/* Placeholder for footer etc. */}
     </main>
   );
 }

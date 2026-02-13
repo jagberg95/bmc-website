@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,10 +14,20 @@ const navLinks = [
   { name: 'Contact Us', href: '/contact' },
 ];
 
+const serviceLinks = [
+  { name: 'Custom Homes', href: '/services/custom-homes' },
+  { name: 'Upgrades & Renovations', href: '/services/home-renovations' },
+  { name: 'Outdoor Living', href: '/services/outdoor-living' },
+  { name: 'Home Repairs', href: '/services/home-repairs' },
+];
+
 export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesTimerRef = useState<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,36 +57,95 @@ export default function Header() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  /* Services dropdown hover helpers */
+  const openServices = useCallback(() => {
+    if (servicesTimerRef[0]) clearTimeout(servicesTimerRef[0]);
+    setServicesOpen(true);
+  }, []);
+
+  const closeServices = useCallback(() => {
+    const timer = setTimeout(() => setServicesOpen(false), 150);
+    servicesTimerRef[0] = timer;
+  }, []);
+
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 bg-[#101d43] bg-opacity-95 backdrop-blur-sm transition-transform duration-300 ease-in-out border-b border-white/10 ${
+      className={`fixed top-0 left-0 w-full z-50 bg-[#101d43] bg-opacity-95 backdrop-blur-sm border-b border-white/10 transition-all duration-300 ease-in-out ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => { setIsHovered(false); setServicesOpen(false); }}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
+      <div
+        className={`container mx-auto flex items-center justify-between px-6 transition-all duration-300 ${
+          isHovered ? 'py-5' : 'py-3'
+        }`}
+      >
+        {/* Logo — grows on hover */}
         <Link href="/" className="flex items-center">
           <Image
             src={LOGO_PATH}
             alt="Bar Moon Contracting Logo"
-            width={60}
-            height={60}
+            width={isHovered ? 80 : 50}
+            height={isHovered ? 80 : 50}
             priority
-            className="object-contain"
+            className="object-contain transition-all duration-300"
+            style={{ width: isHovered ? 80 : 50, height: isHovered ? 80 : 50 }}
           />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-white text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.name === 'Services' ? (
+              /* Services with dropdown */
+              <div
+                key={link.name}
+                className="relative"
+                onMouseEnter={openServices}
+                onMouseLeave={closeServices}
+              >
+                <Link
+                  href={link.href}
+                  className="text-white text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
+                >
+                  Services
+                  <span className={`ml-1 inline-block text-xs transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
+                    ▾
+                  </span>
+                </Link>
+
+                {/* Dropdown panel */}
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${
+                    servicesOpen
+                      ? 'opacity-100 translate-y-0 pointer-events-auto'
+                      : 'opacity-0 -translate-y-2 pointer-events-none'
+                  }`}
+                >
+                  <div className="bg-[#101d43] border border-white/10 rounded-lg shadow-2xl shadow-black/40 py-2 min-w-[220px]">
+                    {serviceLinks.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        className="block px-5 py-2.5 text-sm text-white hover:bg-deep-blue hover:text-[#d6ad30] transition-colors duration-150"
+                      >
+                        {s.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-white text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
+              >
+                {link.name}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Mobile Hamburger Button */}
@@ -93,16 +162,40 @@ export default function Header() {
       {mobileMenuOpen && (
         <nav className="md:hidden bg-[#101d43] border-t border-[#d6ad30] px-6 py-6">
           <div className="flex flex-col space-y-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-white text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.name === 'Services' ? (
+                <div key={link.name} className="flex flex-col space-y-3">
+                  <Link
+                    href={link.href}
+                    className="text-white text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Services
+                  </Link>
+                  <div className="pl-4 flex flex-col space-y-3">
+                    {serviceLinks.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        className="text-gray-300 text-lg hover:text-[#d6ad30] transition-colors duration-200"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {s.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-white text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )
+            )}
           </div>
         </nav>
       )}

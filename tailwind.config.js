@@ -12,6 +12,11 @@ module.exports = {
         primary: '#101d43',
         accent: '#d6ad30',
         gold: '#a18d32',
+        'dark-blue': '#061535',
+        'deep-blue': '#092866',
+        'gold-primary': '#D6AD30',
+        'gold-secondary': '#A18D32',
+        'light-neutral': '#E2E1DD',
       },
       // Extend other theme properties if needed, e.g., fonts, spacing
       // Example for fonts:
