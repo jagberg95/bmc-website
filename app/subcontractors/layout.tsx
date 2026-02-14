@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Subcontractor Partnerships",
+  title: "Subcontractor Partnerships | Join Bar Moon Contracting in Central Texas",
   description:
-    "Bar Moon Contracting is seeking skilled subcontractors in Central Texas. Join our team — electricians, plumbers, framers, HVAC, concrete, drywall, roofers, and more. Reliable work, fair pay, mutual respect.",
+    "Bar Moon Contracting is seeking skilled subcontractors in Central Texas. Join our team — electricians, plumbers, framers, HVAC, concrete, drywall, roofers, painters, and more. Reliable work, fair pay, mutual respect.",
   keywords: [
     "subcontractor jobs Central Texas",
     "subcontractor partnership Texas",
@@ -15,11 +15,18 @@ export const metadata: Metadata = {
     "construction subcontractor opportunities",
     "general contractor seeking subs",
     "Bar Moon Contracting subcontractor",
+    "Central Texas construction jobs",
+    "subcontractor work Waco Texas",
+    "subcontractor work Temple Texas",
+    "subcontractor work Killeen Texas",
+    "home renovation subcontractor Texas",
+    "home repair subcontractor jobs",
   ],
   openGraph: {
     title: "Partner With Us — Subcontractor Opportunities | Bar Moon Contracting",
     description:
       "We're building a network of skilled, reliable subcontractors in Central Texas. Fair pay, steady work, and mutual respect. Apply today.",
+    type: "website",
   },
   alternates: {
     canonical: "/subcontractors",

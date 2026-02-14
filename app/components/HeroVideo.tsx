@@ -29,7 +29,7 @@ export default function HeroVideo() {
             Texas Craftsmanship. Built to Last. Rooted in Integrity.
           </p>
           <p className="text-base md:text-lg text-gray-200 mb-6 leading-relaxed">
-            We don&apos;t cut corners or chase trends. We deliver premium, detail-driven work using top-quality materials, thoughtful design, and straightforward communication&mdash;so your project stays on time, on budget, and better than you imagined.
+            From quick repairs and home upgrades to full renovations and custom builds&mdash;we deliver honest, quality work using top-notch materials, thoughtful planning, and straightforward communication. Your project stays on time, on budget, and better than you imagined.
           </p>
           <div className="text-sm md:text-base text-gray-100 mb-6 leading-relaxed space-y-1">
             <p className="font-semibold">Texas strong.</p>

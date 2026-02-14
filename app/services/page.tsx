@@ -5,21 +5,21 @@ import Image from 'next/image';
 
 const SERVICES = [
   {
-    slug: 'custom-homes',
-    title: 'Custom Homes',
-    tagline: 'Your Dream, Built from the Ground Up',
-    description:
-      'Design and build your dream home in Central Texas with five generations of craftsmanship, premium materials, and transparent budgeting from concept to key handoff.',
-    image: '/images/herve-customhome-unsplash.jpg',
-    span: 'col-span-2 row-span-2',  // large tile
-  },
-  {
     slug: 'home-renovations',
     title: 'Upgrades & Renovations',
     tagline: 'Transform Your Space, Elevate Your Life',
     description:
       'From kitchen remodels to whole-house transformations — clear planning, quality materials, and workmanship built to last.',
     image: '/images/christian-mackie-kitchen2-unsplash.jpg',
+    span: 'col-span-2 row-span-2',  // large tile — primary service
+  },
+  {
+    slug: 'home-repairs',
+    title: 'Home Repairs',
+    tagline: 'Done Right, the First Time',
+    description:
+      'Honest, high-quality repairs for electrical, plumbing, drywall, storm damage and more — fixed at the source, not patched over.',
+    image: '/images/sasun-bughdaryan-handyman-unsplash.jpg',
     span: 'col-span-1 row-span-1',
   },
   {
@@ -32,12 +32,12 @@ const SERVICES = [
     span: 'col-span-1 row-span-1',
   },
   {
-    slug: 'home-repairs',
-    title: 'Home Repairs',
-    tagline: 'Done Right, the First Time',
+    slug: 'custom-homes',
+    title: 'Custom Homes',
+    tagline: 'Your Dream, Built from the Ground Up',
     description:
-      'Honest, high-quality repairs for electrical, plumbing, drywall, storm damage and more — fixed at the source, not patched over.',
-    image: '/images/sasun-bughdaryan-handyman-unsplash.jpg',
+      'Design and build your dream home in Central Texas with five generations of craftsmanship, premium materials, and transparent budgeting from concept to key handoff.',
+    image: '/images/herve-customhome-unsplash.jpg',
     span: 'col-span-2 row-span-1',  // wide tile
   },
 ];
@@ -66,7 +66,7 @@ export default function ServicesPage() {
           Our Services
         </h1>
         <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
-          From custom builds to quick repairs, we bring Texas craftsmanship to every project.
+          From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.
           Tap a service to learn more.
         </p>
       </section>

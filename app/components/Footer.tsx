@@ -71,6 +71,11 @@ export default function Footer() {
             <h3 className="text-gold font-bold text-lg mb-6 uppercase tracking-widest">Info</h3>
             <ul className="space-y-3">
               <li>
+                <Link href="/subcontractors" className="text-gray-300 hover:text-accent transition-colors duration-200">
+                  Subcontractor Partnerships
+                </Link>
+              </li>
+              <li>
                 <Link href="/terms" className="text-gray-300 hover:text-accent transition-colors duration-200">
                   Terms of Service
                 </Link>

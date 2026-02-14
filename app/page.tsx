@@ -62,7 +62,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Our Process</h2>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto">From first handshake to final walkthrough&mdash;here&apos;s how we build your dream, step by step.</p>
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here&apos;s how we handle every project, big or small.</p>
           </div>
 
           <div className="space-y-10">
@@ -90,10 +90,10 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">About Bar Moon Contracting</h2>
           <p className="text-lg leading-relaxed mb-4 text-gray-200">
-            A Central Texas legacy, five generations strong. We blend old-school Texas grit with modern precision&mdash;clear plans, premium materials, coordinated teams, and workmanship that holds up to whatever life throws at it.
+            A Central Texas legacy, five generations strong. We blend old-school Texas grit with modern precision&mdash;clear plans, quality materials, coordinated teams, and workmanship that holds up to whatever life throws at it.
           </p>
           <p className="text-lg leading-relaxed mb-8 text-gray-300">
-            Rooted here. Built to last. Ready to build something exceptional with you.
+            Whether you&apos;re fixing, upgrading, or building from scratch&mdash;we&apos;re rooted here and ready to help.
           </p>
           <Link href="/about" className="inline-block bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300">
             Learn More About Us
@@ -106,7 +106,7 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Ready to Get Started?</h2>
           <p className="text-lg text-gray-200 mb-8">
-            Whether you have a project in mind or just want to talk through your options, we&apos;re here. No pressure, just honest conversation.
+            Whether you need a quick repair, a kitchen remodel, or something bigger&mdash;we&apos;re here. No pressure, just honest conversation.
           </p>
           <Link href="/contact" className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-xl">
             Let&apos;s Talk

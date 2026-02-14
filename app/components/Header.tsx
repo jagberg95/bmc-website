@@ -11,15 +11,14 @@ const navLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Our Heart', href: '/our-heart-our-passion' },
   { name: 'About Us', href: '/about' },
-  { name: 'Subcontractors', href: '/subcontractors' },
   { name: 'Contact Us', href: '/contact' },
 ];
 
 const serviceLinks = [
-  { name: 'Custom Homes', href: '/services/custom-homes' },
   { name: 'Upgrades & Renovations', href: '/services/home-renovations' },
-  { name: 'Outdoor Living', href: '/services/outdoor-living' },
   { name: 'Home Repairs', href: '/services/home-repairs' },
+  { name: 'Outdoor Living', href: '/services/outdoor-living' },
+  { name: 'Custom Homes', href: '/services/custom-homes' },
 ];
 
 export default function Header() {

@@ -219,12 +219,20 @@ export default function AboutPage() {
           <p className="text-lg text-gray-300 mb-10">
             We&apos;re ready to build something exceptional with you. Let&apos;s talk.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition duration-300 text-xl hover:scale-105"
-          >
-            Let&apos;s Talk
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition duration-300 text-xl hover:scale-105"
+            >
+              Let&apos;s Talk
+            </Link>
+            <Link
+              href="/subcontractors"
+              className="inline-block border-2 border-gold-primary/40 hover:border-gold-primary text-gold-primary font-bold py-4 px-10 rounded-lg transition duration-300 text-lg hover:scale-105"
+            >
+              Partner With Us
+            </Link>
+          </div>
         </div>
       </section>
     </main>

@@ -37,8 +37,30 @@ const BENEFITS = [
 ];
 
 export default function SubcontractorsPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Subcontractor Partnerships — Bar Moon Contracting',
+    description: 'Bar Moon Contracting is seeking skilled subcontractors in Central Texas. Electricians, plumbers, framers, HVAC, concrete, drywall, roofers, painters, and more.',
+    url: 'https://barmooncontracting.com/subcontractors',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'Bar Moon Contracting LLC',
+      url: 'https://barmooncontracting.com',
+      areaServed: {
+        '@type': 'Place',
+        name: 'Central Texas',
+      },
+    },
+  };
+
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
+      {/* JSON-LD structured data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden">

@@ -102,11 +102,12 @@ function ContactForm() {
           className={inputClass}
         >
           <option value="">Select a topic&hellip;</option>
-          <option value="Custom Homes">Custom Homes</option>
+          <option value="Home Repairs">Home Repairs</option>
           <option value="Upgrades & Renovations">Upgrades &amp; Renovations</option>
           <option value="Outdoor Living">Outdoor Living</option>
-          <option value="Home Repairs">Home Repairs</option>
+          <option value="Custom Homes">Custom Homes</option>
           <option value="General Question">General Question</option>
+          <option value="Subcontractor Inquiry">Subcontractor Partnership</option>
           <option value="Other">Other</option>
         </select>
       </div>
@@ -167,11 +168,11 @@ export default function ContactPage() {
             We&apos;d Love to Hear From You
           </p>
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-            Let&apos;s Build Your Dream
+            Let&apos;s Talk About Your Project
           </h1>
           <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
           <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
-            Big project or small question&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
+            Quick repair, renovation, or custom build&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
           </p>
         </div>
       </section>
@@ -223,7 +224,7 @@ export default function ContactPage() {
               Ask Us Anything
             </h2>
             <p className="text-gray-200 leading-relaxed mb-6">
-              Dreaming about a new kitchen? Wondering what it takes to build a custom home? Need a quick repair? We love talking through ideas&mdash;no commitment, no pressure. Just honest guidance from folks who&apos;ve been building in Central Texas for five generations.
+              Need a repair done right? Thinking about a kitchen remodel? Planning a bigger renovation or custom build? We love talking through ideas&mdash;no commitment, no pressure. Just honest guidance from folks who&apos;ve been building in Central Texas for five generations.
             </p>
             <p className="text-gray-300 leading-relaxed mb-8">
               Fill out the form, give us a call, or shoot us an email. However you reach out, we&apos;ll get back to you promptly&mdash;because your project matters to us.
@@ -272,6 +273,27 @@ export default function ContactPage() {
               </Suspense>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Subcontractor Partnership CTA ────────────── */}
+      <section className="py-16 px-6 md:px-12 bg-dark-blue border-t border-gold-primary/10">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="flex-1 text-center md:text-left">
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-2">For Trade Professionals</p>
+            <h3 className="text-2xl font-bold text-white mb-3">
+              Skilled Subcontractor? Let&apos;s Partner Up.
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              We&apos;re building a network of reliable, quality-driven tradespeople across Central Texas. Fair pay, steady work, and a GC who respects your craft.
+            </p>
+          </div>
+          <Link
+            href="/subcontractors"
+            className="shrink-0 inline-block bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300"
+          >
+            Learn About Partnerships
+          </Link>
         </div>
       </section>
 

@@ -7,23 +7,6 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 
 const SERVICES = [
   {
-    slug: 'custom-homes',
-    title: 'Custom Homes',
-    tagline: 'Your Dream, Built from the Ground Up',
-    description:
-      'Design and build your dream home from the ground up with Central Texas integrity.',
-    expandedContent:
-      'From initial concept through final walkthrough, we handle every phase of custom home construction. Our five-generation legacy means deep understanding of Central Texas soil, climate, and building codes—resulting in homes that are as durable as they are beautiful.',
-    highlights: [
-      'Full design-build service',
-      'Central Texas climate expertise',
-      'Premium materials & finishes',
-      'Transparent budgeting',
-    ],
-    link: '/services/custom-homes',
-    icon: '🏗️',
-  },
-  {
     slug: 'home-renovations',
     title: 'Upgrades & Renovations',
     tagline: 'Transform Your Space, Elevate Your Life',
@@ -39,6 +22,23 @@ const SERVICES = [
     ],
     link: '/services/home-renovations',
     icon: '🔨',
+  },
+  {
+    slug: 'home-repairs',
+    title: 'Home Repairs',
+    tagline: 'Done Right, the First Time',
+    description:
+      'Honest, high-quality repairs for electrical, plumbing, drywall, and more.',
+    expandedContent:
+      'Not every issue needs a renovation\u2014but every repair deserves to be done correctly. We fix problems at the source, not just patch them over. From storm damage and rot to trim, fixtures, and flooring\u2014we handle it with the same standards we bring to every project.',
+    highlights: [
+      'Electrical & plumbing',
+      'Drywall & trim',
+      'Storm & water damage',
+      'Doors, windows & more',
+    ],
+    link: '/services/home-repairs',
+    icon: '🔧',
   },
   {
     slug: 'outdoor-living',
@@ -58,21 +58,21 @@ const SERVICES = [
     icon: '🌿',
   },
   {
-    slug: 'home-repairs',
-    title: 'Home Repairs',
-    tagline: 'Done Right, the First Time',
+    slug: 'custom-homes',
+    title: 'Custom Homes',
+    tagline: 'Your Dream, Built from the Ground Up',
     description:
-      'Honest, high-quality repairs for electrical, plumbing, drywall, and more.',
+      'Design and build your dream home from the ground up with Central Texas integrity.',
     expandedContent:
-      'Not every issue needs a renovation—but every repair deserves to be done correctly. We fix problems at the source, not just patch them over. From storm damage and rot to trim, fixtures, and flooring—we handle it with the same standards we bring to custom builds.',
+      'From initial concept through final walkthrough, we handle every phase of custom home construction. Our five-generation legacy means deep understanding of Central Texas soil, climate, and building codes\u2014resulting in homes that are as durable as they are beautiful.',
     highlights: [
-      'Electrical & plumbing',
-      'Drywall & trim',
-      'Storm & water damage',
-      'Doors, windows & more',
+      'Full design-build service',
+      'Central Texas climate expertise',
+      'Premium materials & finishes',
+      'Transparent budgeting',
     ],
-    link: '/services/home-repairs',
-    icon: '🔧',
+    link: '/services/custom-homes',
+    icon: '🏗️',
   },
 ];
 
@@ -126,7 +126,7 @@ export default function HomePageServices() {
           Our Services
         </h2>
         <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto text-sm md:text-base">
-          From custom builds to quick repairs, we bring Texas craftsmanship to
+          From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to
           every project.{' '}
           <span className="hidden lg:inline">Hover over a service to learn more.</span>
           <span className="lg:hidden">Tap a service to learn more.</span>
