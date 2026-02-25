@@ -21,8 +21,20 @@
     @apply text-gold-primary;
   }
 
-  /* Readability: ensure small body text is never too small */
-  p, li, span, td {
+  /* Readability: ensure body text is never too small */
+  p, li, td {
     @apply text-sm sm:text-base leading-relaxed;
+  }
+
+  /* Accessibility: visible focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 3px solid #d6ad30;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Override default link color on light-neutral backgrounds for contrast */
+  .bg-light-neutral a {
+    @apply text-primary hover:text-deep-blue;
   }
 }
