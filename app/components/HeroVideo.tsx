@@ -6,22 +6,22 @@ import Image from 'next/image';
 export default function HeroVideo() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Poster image as full hero background */}
+      {/* Poster image as full hero background, flipped horizontally */}
       <Image
         src="/images/aubrey-odom-farmhouse-unsplash.jpg"
         alt="Central Texas home by Bar Moon Contracting"
         fill
         priority
         quality={90}
-        className="object-cover"
+        className="object-cover scale-x-[-1]"
       />
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* Right-aligned overlay text */}
-      <div className="absolute inset-0 flex items-center justify-center md:justify-end z-10 px-4 md:px-16">
-        <div className="bg-primary/70 backdrop-blur-sm p-5 md:p-8 lg:p-12 rounded-lg max-w-lg text-center md:text-right shadow-2xl border border-white/10">
+      {/* Left-aligned overlay text */}
+      <div className="absolute inset-0 flex items-center justify-center md:justify-start z-10 px-4 md:px-16">
+        <div className="bg-primary/70 backdrop-blur-sm p-5 md:p-8 lg:p-12 rounded-lg max-w-lg text-left shadow-2xl border border-white/10">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-accent mb-4 leading-tight">
             Welcome to Bar Moon Contracting
           </h1>

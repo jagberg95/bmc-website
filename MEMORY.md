@@ -1,4 +1,4 @@
-# MEMORY.md - Long-Term Memory
+ # MEMORY.md - Long-Term Memory
 
 ## Joshua - Key Context
 
