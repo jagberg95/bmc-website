@@ -44,7 +44,7 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-light-grey text-light-neutral min-h-screen relative overflow-hidden">
+    <main className="bg-light-neutral text-light-neutral min-h-screen relative overflow-hidden">
       {/* Header */}
       <section className="pt-28 pb-12 px-4 md:px-12 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 tracking-tight">

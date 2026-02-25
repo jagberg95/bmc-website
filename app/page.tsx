@@ -32,7 +32,7 @@ export default function HomePage() {
       <HeroVideo />
 
       {/* 2. Our Services — Mosaic grid (matches /services layout) */}
-      <section className="pt-20 pb-16 px-4 md:px-8 bg-light-grey" id="services">
+      <section className="pt-20 pb-16 px-4 md:px-8 bg-light-neutral" id="services">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4 uppercase tracking-widest">
             Our Services
@@ -188,7 +188,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. Our Process - 7-Step Zigzag Timeline */}
-      <section id="our-process" className="py-20 px-4 md:px-8 bg-light-grey">
+      <section id="our-process" className="py-20 px-4 md:px-8 bg-light-neutral">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Process</h2>
@@ -232,7 +232,7 @@ export default function HomePage() {
       </section>
 
       {/* 6. Contact CTA */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-light-grey text-center">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-light-neutral text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ready to Get Started?</h2>
           <p className="text-lg text-gray-600 mb-8">

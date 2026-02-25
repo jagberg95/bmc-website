@@ -17,8 +17,6 @@ module.exports = {
         'gold-primary': '#D6AD30',
         'gold-secondary': '#A18D32',
         'light-neutral': '#E2E1DD',
-        'light-grey': '#f2f4f7',
-        'light-grey': '#f2f4f7',
       },
       // Extend other theme properties if needed, e.g., fonts, spacing
       // Example for fonts:
