@@ -43,3 +43,41 @@
     @apply text-primary hover:text-deep-blue;
   }
 }
+
+/* ── Halo hover glow for interactive cards ────────────────────── */
+.halo-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+}
+
+.halo-hover:hover,
+.halo-hover:focus-visible {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 0 15px rgba(9, 40, 102, 0.35),
+    0 0 30px rgba(9, 40, 102, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Halo variant for light backgrounds — uses gold tint */
+.halo-hover-gold:hover,
+.halo-hover-gold:focus-visible {
+  box-shadow:
+    0 0 15px rgba(214, 173, 48, 0.3),
+    0 0 30px rgba(214, 173, 48, 0.12),
+    0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .halo-hover,
+  .halo-hover-gold {
+    transition: none;
+  }
+  .halo-hover:hover,
+  .halo-hover:focus-visible,
+  .halo-hover-gold:hover,
+  .halo-hover-gold:focus-visible {
+    transform: none;
+  }
+}
