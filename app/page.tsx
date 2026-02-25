@@ -32,9 +32,40 @@ export default function HomePage() {
       {/* 1. Hero Video */}
       <HeroVideo />
 
-      {/* 2. Our Services */}
-      <section id="services">
-        <HomePageServices />
+      {/* 2. Our Services (new layout) */}
+      <section id="services" className="py-20 px-4 md:px-8 bg-primary">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-6 text-center uppercase tracking-widest">Our Services</h2>
+          <p className="text-center text-gray-300 mb-10 max-w-2xl mx-auto text-base md:text-lg">
+            From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project. Tap a service to learn more.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-deep-blue/80 rounded-xl p-6 shadow-lg flex flex-col gap-2">
+              <h3 className="text-xl font-bold text-accent mb-1">Upgrades & Renovations</h3>
+              <p className="text-gold-primary font-semibold text-xs mb-1 uppercase tracking-wider">Transform Your Space, Elevate Your Life</p>
+              <p className="text-gray-200 mb-2 text-sm">From kitchen remodels to whole-house transformations — clear planning, quality materials, and workmanship built to last.</p>
+              <Link href="/services/home-renovations" className="inline-block bg-accent hover:bg-gold text-primary font-bold py-2 px-6 rounded-lg transition-colors duration-200 text-sm mt-2">Learn More</Link>
+            </div>
+            <div className="bg-deep-blue/80 rounded-xl p-6 shadow-lg flex flex-col gap-2">
+              <h3 className="text-xl font-bold text-accent mb-1">Home Repairs</h3>
+              <p className="text-gold-primary font-semibold text-xs mb-1 uppercase tracking-wider">Done Right, The First Time</p>
+              <p className="text-gray-200 mb-2 text-sm">Honest, high-quality repairs for electrical, plumbing, drywall, storm damage and more — fixed at the source, not patched over.</p>
+              <Link href="/services/home-repairs" className="inline-block bg-accent hover:bg-gold text-primary font-bold py-2 px-6 rounded-lg transition-colors duration-200 text-sm mt-2">Learn More</Link>
+            </div>
+            <div className="bg-deep-blue/80 rounded-xl p-6 shadow-lg flex flex-col gap-2">
+              <h3 className="text-xl font-bold text-accent mb-1">Outdoor Living</h3>
+              <p className="text-gold-primary font-semibold text-xs mb-1 uppercase tracking-wider">Your Backyard, Built Right</p>
+              <p className="text-gray-200 mb-2 text-sm">Decks, patios, landscape design and hardscapes made for Texas living — accounting for clay soils, heat, and drainage.</p>
+              <Link href="/services/outdoor-living" className="inline-block bg-accent hover:bg-gold text-primary font-bold py-2 px-6 rounded-lg transition-colors duration-200 text-sm mt-2">Learn More</Link>
+            </div>
+            <div className="bg-deep-blue/80 rounded-xl p-6 shadow-lg flex flex-col gap-2">
+              <h3 className="text-xl font-bold text-accent mb-1">Custom Homes</h3>
+              <p className="text-gold-primary font-semibold text-xs mb-1 uppercase tracking-wider">Your Dream, Built from the Ground Up</p>
+              <p className="text-gray-200 mb-2 text-sm">Design and build your dream home in Central Texas with five generations of craftsmanship, premium materials, and transparent budgeting from concept to key handoff.</p>
+              <Link href="/services/custom-homes" className="inline-block bg-accent hover:bg-gold text-primary font-bold py-2 px-6 rounded-lg transition-colors duration-200 text-sm mt-2">Learn More</Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 3. Our Heart - Our Passion (with scroll-scrub video) */}
