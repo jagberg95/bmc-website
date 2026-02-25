@@ -15,16 +15,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Column */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-12 h-12">
+            <div className="flex items-center mb-4">
+              <div className="relative w-14 h-14">
                 <Image
-                  src="/images/Icon/BMC_Icon_DkGold.png"
+                  src="/images/Circle/BMC_Logo_Circle_Clean_01.png"
                   alt="BMC Monogram"
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-2xl font-bold tracking-wider text-gold">BAR MOON CONTRACTING LLC</span>
             </div>
             <p className="text-gray-300 italic mb-6 max-w-xs">
               "Crafting Texas Legacies with Heart & Grit"

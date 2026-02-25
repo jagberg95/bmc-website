@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const LOGO_PATH = '/images/Circle/BMC_Logo_Circle_Clean_01.png';
+const LOGO_PATH = '/images/Icon/BMC_Icon_DkGold.png';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -96,12 +96,13 @@ export default function Header() {
           <Image
             src={LOGO_PATH}
             alt="Bar Moon Contracting Logo"
-            width={isHovered ? 80 : 50}
-            height={isHovered ? 80 : 50}
+            width={isHovered ? 55 : 40}
+            height={isHovered ? 55 : 40}
             priority
             className="object-contain transition-all duration-300"
-            style={{ width: isHovered ? 80 : 50, height: isHovered ? 80 : 50 }}
+            style={{ width: isHovered ? 55 : 40, height: isHovered ? 55 : 40 }}
           />
+          <span className="ml-3 text-xl font-bold tracking-wider text-gold-primary hidden sm:inline">BAR MOON CONTRACTING</span>
         </Link>
 
         {/* Desktop Navigation */}

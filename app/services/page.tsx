@@ -44,28 +44,13 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <main className="bg-dark-blue text-light-neutral min-h-screen relative overflow-hidden">
-      {/* Watermark logo */}
-      <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.03]"
-        aria-hidden="true"
-      >
-        <Image
-          src="/images/Icon/BMC_Icon_Navy.png"
-          alt=""
-          width={800}
-          height={800}
-          className="object-contain select-none"
-          priority={false}
-        />
-      </div>
-
+    <main className="bg-light-neutral text-light-neutral min-h-screen relative overflow-hidden">
       {/* Header */}
       <section className="pt-28 pb-12 px-4 md:px-12 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gold-primary mb-4 tracking-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 tracking-tight">
           Our Services
         </h1>
-        <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
           From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.
           Tap a service to learn more.
         </p>

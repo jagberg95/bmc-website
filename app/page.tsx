@@ -4,7 +4,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import HeroVideo from './components/HeroVideo';
-import HomePageServices from './components/HomePageServices';
 import ScrollVideo from './components/ScrollVideo';
 import React from 'react';
 import { timelineSteps } from './components/timelineSteps';
@@ -32,57 +31,138 @@ export default function HomePage() {
       {/* 1. Hero Video */}
       <HeroVideo />
 
-      {/* 2. Our Services (copied from services page) */}
-      <section className="pt-20 pb-16 lg:pb-72 px-4 md:px-8 bg-primary" id="services">
+      {/* 2. Our Services — Mosaic grid (matches /services layout) */}
+      <section className="pt-20 pb-16 px-4 md:px-8 bg-light-neutral" id="services">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-accent mb-4 uppercase tracking-widest">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4 uppercase tracking-widest">
             Our Services
           </h2>
-          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-sm md:text-base">
             From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
             <span className="hidden lg:inline">Hover over a service to learn more.</span>
             <span className="lg:hidden">Tap a service to learn more.</span>
           </p>
-          {/* ── Tile grid ─────────────────────────────────────────── */}
-          <div className="relative">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-              {/* Upgrades & Renovations */}
-              <div className="relative">
-                <div className="relative h-full group cursor-pointer">
-                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
-                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Upgrades & Renovations</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">Modernize your living space with expert renovations, from kitchens to full floor plans.</p>
-                  </div>
-                </div>
+
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[240px] sm:auto-rows-[260px] gap-4">
+            {/* Upgrades & Renovations — large tile */}
+            <Link
+              href="/services/home-renovations"
+              className="group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2 sm:row-span-2 lg:row-span-2"
+            >
+              <Image
+                src="/images/christian-mackie-kitchen2-unsplash.jpg"
+                alt="Upgrades & Renovations"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-1">
+                  Transform Your Space, Elevate Your Life
+                </p>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  Upgrades &amp; Renovations
+                </h3>
+                <ul className="text-gray-300 text-sm space-y-1 mb-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" />Kitchens</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" />Bathrooms</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" />Flooring</li>
+                </ul>
+                <span className="mt-2 inline-block self-start bg-accent/90 text-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg">
+                  Learn More &rarr;
+                </span>
               </div>
-              {/* Home Repairs */}
-              <div className="relative">
-                <div className="relative h-full group cursor-pointer">
-                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
-                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Home Repairs</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">Honest, high-quality repairs for electrical, plumbing, drywall, and more.</p>
-                  </div>
-                </div>
+            </Link>
+
+            {/* Home Repairs — standard tile */}
+            <Link
+              href="/services/home-repairs"
+              className="group relative rounded-xl overflow-hidden col-span-1 row-span-1"
+            >
+              <Image
+                src="/images/sasun-bughdaryan-handyman-unsplash.jpg"
+                alt="Home Repairs"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-1">
+                  Done Right, the First Time
+                </p>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  Home Repairs
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  Honest, high-quality repairs for electrical, plumbing, drywall, storm damage and more.
+                </p>
+                <span className="mt-3 inline-block self-start bg-accent/90 text-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg">
+                  Learn More &rarr;
+                </span>
               </div>
-              {/* Outdoor Living */}
-              <div className="relative">
-                <div className="relative h-full group cursor-pointer">
-                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
-                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Outdoor Living</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">Decks, patios, and landscapes designed to create your perfect outdoor oasis.</p>
-                  </div>
-                </div>
+            </Link>
+
+            {/* Outdoor Living — standard tile */}
+            <Link
+              href="/services/outdoor-living"
+              className="group relative rounded-xl overflow-hidden col-span-1 row-span-1"
+            >
+              <Image
+                src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg"
+                alt="Outdoor Living"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-1">
+                  Your Backyard, Built Right
+                </p>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  Outdoor Living
+                </h3>
+                <ul className="text-gray-300 text-sm space-y-1 mb-2 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" />Decks</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" />Patios</li>
+                  <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-accent" />Landscaping</li>
+                </ul>
+                <span className="mt-2 inline-block self-start bg-accent/90 text-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg">
+                  Learn More &rarr;
+                </span>
               </div>
-              {/* Custom Homes */}
-              <div className="relative">
-                <div className="relative h-full group cursor-pointer">
-                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
-                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Custom Homes</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">Design and build your dream home from the ground up with Central Texas integrity.</p>
-                  </div>
-                </div>
+            </Link>
+
+            {/* Custom Homes — wide tile */}
+            <Link
+              href="/services/custom-homes"
+              className="group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2"
+            >
+              <Image
+                src="/images/herve-customhome-unsplash.jpg"
+                alt="Custom Homes"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 md:p-6">
+                <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-1">
+                  Your Dream, Built from the Ground Up
+                </p>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  Custom Homes
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed max-w-md lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300">
+                  Design and build your dream home in Central Texas with five generations of craftsmanship, premium materials, and transparent budgeting.
+                </p>
+                <span className="mt-3 inline-block self-start bg-accent/90 text-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg">
+                  Learn More &rarr;
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -108,11 +188,11 @@ export default function HomePage() {
       </section>
 
       {/* 4. Our Process - 7-Step Zigzag Timeline */}
-      <section id="our-process" className="py-20 px-4 md:px-8 bg-deep-blue">
+      <section id="our-process" className="py-20 px-4 md:px-8 bg-light-neutral">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Our Process</h2>
-            <p className="text-lg text-gray-200 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here&apos;s how we handle every project, big or small.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Process</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here's how we handle every project, big or small.</p>
           </div>
 
           <div className="space-y-10">
@@ -152,10 +232,10 @@ export default function HomePage() {
       </section>
 
       {/* 6. Contact CTA */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-deep-blue text-center">
+      <section id="contact" className="py-20 px-4 md:px-8 bg-light-neutral text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Ready to Get Started?</h2>
-          <p className="text-lg text-gray-200 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ready to Get Started?</h2>
+          <p className="text-lg text-gray-600 mb-8">
             Whether you need a quick repair, a kitchen remodel, or something bigger&mdash;we&apos;re here. No pressure, just honest conversation.
           </p>
           <Link href="/contact" className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-xl">
