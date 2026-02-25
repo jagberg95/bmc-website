@@ -9,6 +9,11 @@
 */
 
 @layer base {
+  /* Increase base font size for better readability (default 16px -> ~18px) */
+  html {
+    font-size: 112.5%;
+  }
+
   body {
     @apply bg-dark-blue text-light-neutral font-sans antialiased text-base leading-relaxed;
   }
@@ -21,8 +26,20 @@
     @apply text-gold-primary;
   }
 
-  /* Readability: ensure small body text is never too small */
-  p, li, span, td {
-    @apply text-sm sm:text-base leading-relaxed;
+  /* Readability: ensure body text is easy to read */
+  p, li, td {
+    @apply text-base leading-relaxed;
+  }
+
+  /* Accessibility: visible focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 3px solid #d6ad30;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Override default link color on light-neutral backgrounds for contrast */
+  .bg-light-neutral a {
+    @apply text-primary hover:text-deep-blue;
   }
 }
