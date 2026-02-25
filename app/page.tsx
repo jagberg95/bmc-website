@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import Link from 'next/link';
@@ -187,12 +187,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Our Process - Alternating: Light Grey Background */}
+      {/* 4. Our Process - 7-Step Zigzag Timeline */}
       <section id="our-process" className="py-20 px-4 md:px-8 bg-light-grey">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Process</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here&apos;s how we handle every project, big or small.</p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here's how we handle every project, big or small.</p>
           </div>
 
           <div className="space-y-10">
@@ -215,7 +215,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. About Us Teaser — Dark */}
+      {/* 5. About Us Teaser */}
       <section id="about" className="relative py-20 px-4 md:px-8 bg-dark-blue">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">About Bar Moon Contracting</h2>
@@ -231,7 +231,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Contact CTA — Alternating: Light Grey Background */}
+      {/* 6. Contact CTA */}
       <section id="contact" className="py-20 px-4 md:px-8 bg-light-grey text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ready to Get Started?</h2>
