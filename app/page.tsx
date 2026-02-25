@@ -1,4 +1,4 @@
-﻿
+
 'use client';
 
 import Link from 'next/link';
@@ -28,26 +28,26 @@ export default function HomePage() {
 
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased overflow-hidden">
-      {/* 1. Hero Video */}
+      {/* ═══ 1. Hero Video ═══════════════════════════════════════ */}
       <HeroVideo />
 
-      {/* 2. Our Services — Mosaic grid (matches /services layout) */}
-      <section className="pt-20 pb-16 px-4 md:px-8 bg-light-neutral" id="services">
+      {/* ═══ 2. Our Services — Mosaic (Light Neutral canvas) ════ */}
+      <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-light-neutral to-[#d9d8d4]" id="services">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4 uppercase tracking-widest">
             Our Services
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-base">
             From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
             <span className="hidden lg:inline">Hover over a service to learn more.</span>
             <span className="lg:hidden">Tap a service to learn more.</span>
           </p>
 
-          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[240px] sm:auto-rows-[260px] gap-4">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] sm:auto-rows-[280px] gap-5">
             {/* Upgrades & Renovations — large tile */}
             <Link
               href="/services/home-renovations"
-              className="group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2 sm:row-span-2 lg:row-span-2"
+              className="halo-hover group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2 sm:row-span-2 lg:row-span-2"
             >
               <Image
                 src="/images/christian-mackie-kitchen2-unsplash.jpg"
@@ -78,7 +78,7 @@ export default function HomePage() {
             {/* Home Repairs — standard tile */}
             <Link
               href="/services/home-repairs"
-              className="group relative rounded-xl overflow-hidden col-span-1 row-span-1"
+              className="halo-hover group relative rounded-xl overflow-hidden col-span-1 row-span-1"
             >
               <Image
                 src="/images/sasun-bughdaryan-handyman-unsplash.jpg"
@@ -107,7 +107,7 @@ export default function HomePage() {
             {/* Outdoor Living — standard tile */}
             <Link
               href="/services/outdoor-living"
-              className="group relative rounded-xl overflow-hidden col-span-1 row-span-1"
+              className="halo-hover group relative rounded-xl overflow-hidden col-span-1 row-span-1"
             >
               <Image
                 src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg"
@@ -138,7 +138,7 @@ export default function HomePage() {
             {/* Custom Homes — wide tile */}
             <Link
               href="/services/custom-homes"
-              className="group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2"
+              className="halo-hover group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2"
             >
               <Image
                 src="/images/herve-customhome-unsplash.jpg"
@@ -167,11 +167,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. Our Heart - Our Passion (with scroll-scrub video) */}
-      <section id="our-heart-our-passion" className="relative py-20 px-6 md:px-12 bg-dark-blue">
+      {/* ═══ 3. Our Heart — Deep Blue bridge ════════════════════ */}
+      <section id="our-heart-our-passion" className="relative py-24 px-6 md:px-12 bg-deep-blue">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Text side */}
           <div className="flex-1 text-center md:text-left">
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Our Values</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Our Heart &ndash; Our Passion</h2>
             <p className="text-lg leading-relaxed mb-8 text-gray-200">
               We believe that doing honest work with care and intention still matters&mdash;and always will. Learn more about the values that drive Bar Moon Contracting.
@@ -187,12 +188,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Our Process - 7-Step Zigzag Timeline */}
-      <section id="our-process" className="py-20 px-4 md:px-8 bg-light-neutral">
+      {/* ═══ 4. Our Process — Dark Blue (primary) ═══════════════ */}
+      <section id="our-process" className="py-24 px-4 md:px-8 bg-dark-blue">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Our Process</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here's how we handle every project, big or small.</p>
+            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">How We Work</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Our Process</h2>
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">From first conversation to final walkthrough&mdash;here&apos;s how we handle every project, big or small.</p>
           </div>
 
           <div className="space-y-10">
@@ -215,14 +217,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. About Us Teaser */}
-      <section id="about" className="relative py-20 px-4 md:px-8 bg-dark-blue">
+      {/* ═══ 5. About Us — Light Neutral with gradient ══════════ */}
+      <section id="about" className="relative py-24 px-4 md:px-8 bg-gradient-to-b from-light-neutral to-[#d9d8d4]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">About Bar Moon Contracting</h2>
-          <p className="text-lg leading-relaxed mb-4 text-gray-200">
+          <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">Who We Are</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">About Bar Moon Contracting</h2>
+          <p className="text-lg leading-relaxed mb-4 text-gray-700">
             A Central Texas legacy, five generations strong. We blend old-school Texas grit with modern precision&mdash;clear plans, quality materials, coordinated teams, and workmanship that holds up to whatever life throws at it.
           </p>
-          <p className="text-lg leading-relaxed mb-8 text-gray-300">
+          <p className="text-lg leading-relaxed mb-8 text-gray-600">
             Whether you&apos;re fixing, upgrading, or building from scratch&mdash;we&apos;re rooted here and ready to help.
           </p>
           <Link href="/about" className="inline-block bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300">
@@ -231,11 +234,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Contact CTA */}
-      <section id="contact" className="py-20 px-4 md:px-8 bg-light-neutral text-center">
+      {/* ═══ 6. Contact CTA — Deep Blue bridge ══════════════════ */}
+      <section id="contact" className="py-24 px-4 md:px-8 bg-deep-blue text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ready to Get Started?</h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get In Touch</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Ready to Get Started?</h2>
+          <p className="text-lg text-gray-200 mb-8">
             Whether you need a quick repair, a kitchen remodel, or something bigger&mdash;we&apos;re here. No pressure, just honest conversation.
           </p>
           <Link href="/contact" className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-xl">
