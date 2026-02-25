@@ -40,16 +40,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── Our Story: editorial centered prose ──────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto">
-          <p className="text-accent text-sm font-semibold uppercase tracking-[0.2em] mb-3">Our Story</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+          <p className="text-deep-blue text-sm font-semibold uppercase tracking-[0.2em] mb-3">Our Story</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
             A Century of Building in Central Texas
           </h2>
-          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
             We&apos;re Bar Moon Contracting&mdash;the next chapter in a Central Texas story that&apos;s been unfolding for over a century. Our family has lived, worked, built, and served right here in these hills and heartlands, passing down the values of hard work, honesty, and doing things the right way.
           </p>
-          <p className="text-lg leading-relaxed text-gray-300">
+          <p className="text-lg leading-relaxed text-gray-600">
             That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Rooted Here: 2-column image + text ───────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-2xl">
           {/* Image half */}
           <div className="relative min-h-[350px] md:min-h-[450px]">
@@ -108,15 +108,15 @@ export default function AboutPage() {
             />
           </div>
           {/* Text half */}
-          <div className="bg-deep-blue p-10 md:p-14 flex flex-col justify-center">
-            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Our Roots</p>
-            <h2 className="text-3xl font-bold text-white mb-6">
+          <div className="bg-light-neutral p-10 md:p-14 flex flex-col justify-center">
+            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">Our Roots</p>
+            <h2 className="text-3xl font-bold text-primary mb-6">
               Rooted Here, Built to Last
             </h2>
-            <p className="text-gray-200 leading-relaxed mb-4">
+            <p className="text-gray-700 leading-relaxed mb-4">
               Central Texas isn&apos;t just where we&apos;re from&mdash;it&apos;s who we are. We understand the clay soil, the hot summers, the sudden storms, and the pride folks take in their homes.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed">
               Our work reflects that heritage&mdash;strong, straightforward, and crafted with care. We don&apos;t chase fads; we focus on homes that feel timeless, function beautifully, and tell a story worth keeping.
             </p>
           </div>
@@ -207,16 +207,16 @@ export default function AboutPage() {
       </section>
 
       {/* ── Closing statement ────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="w-16 h-[2px] bg-accent mx-auto mb-8" />
-          <p className="text-xl leading-relaxed text-gray-200 mb-4">
+          <div className="w-16 h-[2px] bg-primary mx-auto mb-8" />
+          <p className="text-xl leading-relaxed text-primary mb-4">
             Bar Moon Contracting
           </p>
-          <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold-secondary italic leading-snug mb-8">
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light text-deep-blue italic leading-snug mb-8">
             Built on heritage. Strengthened by experience. Dedicated to excellence.
           </p>
-          <p className="text-lg text-gray-300 mb-10">
+          <p className="text-lg text-gray-700 mb-10">
             We&apos;re ready to build something exceptional with you. Let&apos;s talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -214,19 +214,19 @@ export default function ContactPage() {
       </section>
 
       {/* ── Main content: form + encouragement ───────────── */}
-      <section className="py-20 px-6 md:px-12 bg-dark-blue">
+      <section className="py-20 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-14">
 
           {/* Left column: encouragement & info */}
           <div className="lg:col-span-2 flex flex-col justify-center">
-            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">No Question Too Small</p>
-            <h2 className="text-3xl font-bold text-white mb-6">
+            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">No Question Too Small</p>
+            <h2 className="text-3xl font-bold text-primary mb-6">
               Ask Us Anything
             </h2>
-            <p className="text-gray-200 leading-relaxed mb-6">
+            <p className="text-gray-700 leading-relaxed mb-6">
               Need a repair done right? Thinking about a kitchen remodel? Planning a bigger renovation or custom build? We love talking through ideas&mdash;no commitment, no pressure. Just honest guidance from folks who&apos;ve been building in Central Texas for five generations.
             </p>
-            <p className="text-gray-300 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed mb-8">
               Fill out the form, give us a call, or shoot us an email. However you reach out, we&apos;ll get back to you promptly&mdash;because your project matters to us.
             </p>
 
@@ -238,10 +238,10 @@ export default function ContactPage() {
                 { icon: '✓', text: 'Licensed & insured in Texas' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-gold-primary/15 text-gold-primary text-xs flex items-center justify-center font-bold">
+                  <span className="w-6 h-6 rounded-full bg-deep-blue/15 text-deep-blue text-xs flex items-center justify-center font-bold">
                     {item.icon}
                   </span>
-                  <span className="text-gray-300 text-sm">{item.text}</span>
+                  <span className="text-gray-600 text-sm">{item.text}</span>
                 </div>
               ))}
             </div>

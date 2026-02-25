@@ -38,12 +38,12 @@ export default function OutdoorLivingPage() {
       </section>
 
       {/* -- Intro prose ------------------------------------- */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-6">
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
             Whether it&apos;s grilling with family, relaxing under the stars, or just stepping out for some fresh air&mdash;we build outdoor spaces that make every moment better.
           </p>
-          <p className="text-lg text-gold-secondary font-medium italic">
+          <p className="text-lg text-deep-blue font-medium italic">
             From concept sketches to final cleanup, no guesswork, no quick fixes.
           </p>
         </div>
@@ -191,13 +191,13 @@ export default function OutdoorLivingPage() {
       </section>
 
       {/* -- CTA --------------------------------------------- */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
             Ready to Enjoy<br />
-            <span className="text-gold-primary">Your Backyard?</span>
+            <span className="text-primary">Your Backyard?</span>
           </h2>
-          <p className="text-lg text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto">
             Whether it&apos;s a new deck, a landscape overhaul, or a full outdoor living area&mdash;let&apos;s talk about what you&apos;re dreaming of.
           </p>
           <Link

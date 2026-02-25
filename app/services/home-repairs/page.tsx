@@ -38,12 +38,12 @@ export default function HomeRepairsPage() {
       </section>
 
       {/* ── Intro prose ───────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-6">
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
             We fix problems at the source&mdash;not just patch them over&mdash;using the same standards we bring to custom builds: clear communication, proper methods, and work built to last.
           </p>
-          <p className="text-lg text-gold-secondary font-medium italic">
+          <p className="text-lg text-deep-blue font-medium italic">
             From normal wear and tear to storm damage and aging materials, homeowners trust us for efficient, responsible repairs without shortcuts.
           </p>
         </div>
@@ -136,13 +136,13 @@ export default function HomeRepairsPage() {
       </section>
 
       {/* ── CTA ───────────────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
             Ready to Get That<br />
-            <span className="text-gold-primary">Repair Handled?</span>
+            <span className="text-primary">Repair Handled?</span>
           </h2>
-          <p className="text-lg text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto">
             Give us a call&mdash;we&apos;ll assess, provide a clear plan and fair quote, and take care of it so you can enjoy your home again.
           </p>
           <Link

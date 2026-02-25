@@ -39,12 +39,12 @@ export default function CustomHomesPage() {
       </section>
 
       {/* ── Opening prose ─────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-6">
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
             Imagine waking up every day in a home that feels like it was always meant to be yours&mdash;every room shaped around the way you live, the way you gather, the way you want to grow old in Central Texas.
           </p>
-          <p className="text-lg text-gold-secondary font-medium italic">
+          <p className="text-lg text-deep-blue font-medium italic">
             That&apos;s the promise of true custom home building.
           </p>
         </div>
@@ -168,18 +168,18 @@ export default function CustomHomesPage() {
       </section>
 
       {/* ── Your Journey ──────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">The Process</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">The Process</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary">
               Your Custom Home Journey
             </h2>
           </div>
 
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-gold-primary/20" />
+            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-[2px] bg-deep-blue/20" />
 
             {[
               {
@@ -210,13 +210,13 @@ export default function CustomHomesPage() {
             ].map((item, i) => (
               <div key={item.step} className="relative flex gap-6 md:gap-8 mb-12 last:mb-0">
                 {/* Step number circle */}
-                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-full bg-deep-blue border-2 border-gold-primary flex items-center justify-center shrink-0">
-                  <span className="text-gold-primary font-bold text-sm md:text-base">{item.step}</span>
+                <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-full bg-light-neutral border-2 border-deep-blue flex items-center justify-center shrink-0">
+                  <span className="text-deep-blue font-bold text-sm md:text-base">{item.step}</span>
                 </div>
                 {/* Content */}
                 <div className="pt-2 md:pt-3">
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{item.text}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-primary mb-2">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.text}</p>
                 </div>
               </div>
             ))}

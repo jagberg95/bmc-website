@@ -92,15 +92,15 @@ export default function SubcontractorsPage() {
       </section>
 
       {/* ── Why Partner With Bar Moon ─────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
             Why Partner With Bar Moon?
           </h2>
-          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-6">
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
             We know that the best work comes from people who are treated right. That means fair pay, organized projects, and a GC who respects your time and expertise.
           </p>
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed">
             We&apos;re not looking for the cheapest bid&mdash;we&apos;re looking for the right partners. Skilled professionals who care about craftsmanship, show up prepared, and take ownership of their work.
           </p>
         </div>
@@ -127,20 +127,20 @@ export default function SubcontractorsPage() {
       </section>
 
       {/* ── What We Expect ───────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Our Standards</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">Our Standards</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               What We Look For
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               We hold ourselves to a high standard, and we look for partners who do the same.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {EXPECTATIONS.map((item) => (
-              <div key={item.title} className="bg-deep-blue/60 border border-gold-primary/15 rounded-xl p-6 hover:border-gold-primary/40 transition-all duration-300">
+              <div key={item.title} className="bg-deep-blue border border-gold-primary/15 rounded-xl p-6 hover:border-gold-primary/40 transition-all duration-300">
                 <h3 className="text-lg font-bold text-gold-primary mb-2">{item.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{item.desc}</p>
               </div>
@@ -164,20 +164,20 @@ export default function SubcontractorsPage() {
       </section>
 
       {/* ── Trades We Work With ───────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Current Needs</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">Current Needs</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Trades We Work With
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               We&apos;re always open to connecting with quality tradespeople. Here are the trades we partner with most.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {TRADES.map((trade) => (
-              <div key={trade.title} className="bg-deep-blue/60 border border-gold-primary/15 rounded-xl p-6 hover:border-gold-primary/40 hover:shadow-[0_0_15px_rgba(214,173,48,0.15)] transition-all duration-300">
+              <div key={trade.title} className="bg-deep-blue border border-gold-primary/15 rounded-xl p-6 hover:border-gold-primary/40 hover:shadow-[0_0_15px_rgba(214,173,48,0.15)] transition-all duration-300">
                 <h3 className="text-lg font-bold text-gold-primary mb-2">{trade.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{trade.desc}</p>
               </div>
@@ -218,16 +218,16 @@ export default function SubcontractorsPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="w-16 h-[2px] bg-accent mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">
+          <div className="w-16 h-[2px] bg-primary mx-auto mb-8" />
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Ready to Partner Up?
           </h2>
-          <p className="text-lg text-gray-300 mb-4 leading-relaxed">
+          <p className="text-lg text-gray-600 mb-4 leading-relaxed">
             We&apos;re always looking for quality tradespeople who share our values. If you take pride in your work and want to be part of a team that does the same, let&apos;s connect.
           </p>
-          <p className="text-base text-gray-400 mb-10 italic">
+          <p className="text-base text-gray-500 mb-10 italic">
             Call us or send a message&mdash;we&apos;ll get back to you within one business day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -35,12 +35,12 @@ export default function HomeRenovationsPage() {
       </section>
 
       {/* -- Intro prose ------------------------------------- */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xl md:text-2xl text-gray-200 leading-relaxed mb-6">
+          <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
             With a skilled team and generations of Central Texas know-how, we bring top-notch craftsmanship and genuine attention to detail to every renovation project.
           </p>
-          <p className="text-lg text-gold-secondary font-medium italic">
+          <p className="text-lg text-deep-blue font-medium italic">
             Clear planning, quality materials, and workmanship built to last.
           </p>
         </div>
@@ -180,13 +180,13 @@ export default function HomeRenovationsPage() {
       </section>
 
       {/* -- CTA --------------------------------------------- */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
             Ready to Transform<br />
-            <span className="text-gold-primary">Your Space?</span>
+            <span className="text-primary">Your Space?</span>
           </h2>
-          <p className="text-lg text-gray-300 leading-relaxed mb-10 max-w-xl mx-auto">
+          <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto">
             Whether it&apos;s a single room refresh or a whole-house renovation, we&apos;re ready to plan, build, and deliver a result you&apos;ll love.
           </p>
           <Link

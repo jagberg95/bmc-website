@@ -39,15 +39,15 @@ export default function OurHeartPage() {
       </section>
 
       {/* ── Editorial intro: centered prose ──────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
             Building With Purpose, Responsibility&nbsp;&amp;&nbsp;Care
           </h2>
-          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
             Construction is more than materials and measurements. It&rsquo;s responsibility. It&rsquo;s stewardship. It&rsquo;s the understanding that what we build impacts families, livelihoods, and futures.
           </p>
-          <p className="text-lg leading-relaxed text-gray-300">
+          <p className="text-lg leading-relaxed text-gray-600">
             We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
           </p>
         </div>
@@ -129,15 +129,15 @@ export default function OurHeartPage() {
       </section>
 
       {/* ── Serving Through Skill: centered prose ────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-dark-blue">
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
             Serving Through Skill
           </h2>
-          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
             Strong craftsmanship and ethical practices go hand in hand. A healthy business lets us serve consistently, stand behind our work, and keep improving.
           </p>
-          <p className="text-lg leading-relaxed text-gray-300">
+          <p className="text-lg leading-relaxed text-gray-600">
             Our goal isn&rsquo;t just finishing projects&mdash;it&rsquo;s creating real value: solutions that last, spaces that work beautifully, and results you can rely on.
           </p>
         </div>
@@ -163,12 +163,12 @@ export default function OurHeartPage() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-dark-blue text-center">
+      <section className="py-20 px-6 bg-light-neutral text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Ready to Build Something That Lasts?
           </h2>
-          <p className="text-lg text-gray-300 mb-8">
+          <p className="text-lg text-gray-600 mb-8">
             Let&rsquo;s talk about your project and how we can bring it to life the right way.
           </p>
           <Link
