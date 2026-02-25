@@ -32,9 +32,59 @@ export default function HomePage() {
       {/* 1. Hero Video */}
       <HeroVideo />
 
-      {/* 2. Our Services (exact staggered layout, glow, and formatting) */}
-      <section id="services">
-        <HomePageServices />
+      {/* 2. Our Services (copied from services page) */}
+      <section className="pt-20 pb-16 lg:pb-72 px-4 md:px-8 bg-primary" id="services">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-accent mb-4 uppercase tracking-widest">
+            Our Services
+          </h2>
+          <p className="text-center text-gray-300 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+            From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
+            <span className="hidden lg:inline">Hover over a service to learn more.</span>
+            <span className="lg:hidden">Tap a service to learn more.</span>
+          </p>
+          {/* ── Tile grid ─────────────────────────────────────────── */}
+          <div className="relative">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+              {/* Upgrades & Renovations */}
+              <div className="relative">
+                <div className="relative h-full group cursor-pointer">
+                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
+                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Upgrades & Renovations</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">Modernize your living space with expert renovations, from kitchens to full floor plans.</p>
+                  </div>
+                </div>
+              </div>
+              {/* Home Repairs */}
+              <div className="relative">
+                <div className="relative h-full group cursor-pointer">
+                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
+                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Home Repairs</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">Honest, high-quality repairs for electrical, plumbing, drywall, and more.</p>
+                  </div>
+                </div>
+              </div>
+              {/* Outdoor Living */}
+              <div className="relative">
+                <div className="relative h-full group cursor-pointer">
+                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
+                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Outdoor Living</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">Decks, patios, and landscapes designed to create your perfect outdoor oasis.</p>
+                  </div>
+                </div>
+              </div>
+              {/* Custom Homes */}
+              <div className="relative">
+                <div className="relative h-full group cursor-pointer">
+                  <div className="relative z-10 flex flex-col items-center text-center p-5 md:p-6 rounded-xl min-h-[180px] h-full justify-center border transition-all duration-300 ease-out bg-deep-blue/60 border-gold-primary/20 shadow-[0_0_12px_rgba(214,173,48,0.1)] group-hover:border-accent/50 group-hover:shadow-[0_0_18px_rgba(214,173,48,0.25)]">
+                    <h3 className="font-bold text-base md:text-lg mb-2 transition-colors duration-200 text-white group-hover:text-accent">Custom Homes</h3>
+                    <p className="text-gray-300 text-sm leading-relaxed">Design and build your dream home from the ground up with Central Texas integrity.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 3. Our Heart - Our Passion (with scroll-scrub video) */}
