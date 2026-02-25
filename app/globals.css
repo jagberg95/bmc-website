@@ -9,6 +9,11 @@
 */
 
 @layer base {
+  /* Increase base font size for better readability (default 16px -> ~18px) */
+  html {
+    font-size: 112.5%;
+  }
+
   body {
     @apply bg-dark-blue text-light-neutral font-sans antialiased text-base leading-relaxed;
   }
@@ -21,9 +26,9 @@
     @apply text-gold-primary;
   }
 
-  /* Readability: ensure body text is never too small */
+  /* Readability: ensure body text is easy to read */
   p, li, td {
-    @apply text-sm sm:text-base leading-relaxed;
+    @apply text-base leading-relaxed;
   }
 
   /* Accessibility: visible focus ring for keyboard navigation */
