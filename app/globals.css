@@ -10,7 +10,7 @@
 
 @layer base {
   body {
-    @apply bg-dark-blue text-light-neutral font-sans antialiased;
+    @apply bg-dark-blue text-light-neutral font-sans antialiased text-base leading-relaxed;
   }
 
   a {
@@ -19,5 +19,10 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply text-gold-primary;
+  }
+
+  /* Readability: ensure small body text is never too small */
+  p, li, span, td {
+    @apply text-sm sm:text-base leading-relaxed;
   }
 }
