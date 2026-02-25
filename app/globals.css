@@ -9,9 +9,10 @@
 */
 
 @layer base {
-  /* Increase base font size for better readability (default 16px -> ~18px) */
+  /* ── Fluid base font: scales from 16px (mobile) to 18px (desktop) ── */
   html {
-    font-size: 112.5%;
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
@@ -44,14 +45,20 @@
   }
 }
 
-/* ── Halo hover glow for interactive cards ────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════
+   Halo hover glow — interactive cards
+   Works on desktop (hover) and mobile (tap → focus-within / active)
+   ═══════════════════════════════════════════════════════════════════ */
 .halo-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 0.75rem;
+  /* Ensure overflow visible so glow isn't clipped */
+  overflow: visible;
 }
 
 .halo-hover:hover,
-.halo-hover:focus-visible {
+.halo-hover:focus-visible,
+.halo-hover:focus-within {
   transform: translateY(-2px) scale(1.01);
   box-shadow:
     0 0 15px rgba(9, 40, 102, 0.35),
@@ -59,13 +66,41 @@
     0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Halo variant for light backgrounds — uses gold tint */
+/* Mobile: activate halo on tap (active state) */
+@media (hover: none) and (pointer: coarse) {
+  .halo-hover:active {
+    transform: translateY(-1px) scale(1.005);
+    box-shadow:
+      0 0 12px rgba(9, 40, 102, 0.3),
+      0 0 24px rgba(9, 40, 102, 0.12),
+      0 3px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Halo variant for light backgrounds — gold tint */
+.halo-hover-gold {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+}
+
 .halo-hover-gold:hover,
-.halo-hover-gold:focus-visible {
+.halo-hover-gold:focus-visible,
+.halo-hover-gold:focus-within {
+  transform: translateY(-2px) scale(1.01);
   box-shadow:
     0 0 15px rgba(214, 173, 48, 0.3),
     0 0 30px rgba(214, 173, 48, 0.12),
     0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .halo-hover-gold:active {
+    transform: translateY(-1px) scale(1.005);
+    box-shadow:
+      0 0 10px rgba(214, 173, 48, 0.25),
+      0 0 20px rgba(214, 173, 48, 0.1),
+      0 3px 14px rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* Respect reduced motion preferences */
@@ -76,8 +111,38 @@
   }
   .halo-hover:hover,
   .halo-hover:focus-visible,
+  .halo-hover:focus-within,
+  .halo-hover:active,
   .halo-hover-gold:hover,
-  .halo-hover-gold:focus-visible {
+  .halo-hover-gold:focus-visible,
+  .halo-hover-gold:focus-within,
+  .halo-hover-gold:active {
     transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Responsive spacing utilities
+   Ensure consistent padding and safe areas across devices
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Safe area insets for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-area-x {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Touch-friendly tap targets — min 44px
+   ═══════════════════════════════════════════════════════════════════ */
+@media (hover: none) and (pointer: coarse) {
+  a, button, [role="button"], input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
