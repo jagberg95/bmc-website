@@ -1,10 +1,15 @@
 // app/contact/page.tsx
 'use client';
 
+
 import Image from 'next/image';
+<<<<<<< HEAD
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
+=======
+import Container from '../components/Container';
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
 
 /* ── Contact Form (reads ?step= or ?service= from URL) ─── */
 function ContactForm() {
@@ -152,8 +157,13 @@ export default function ContactPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
+<<<<<<< HEAD
       {/* ── Hero ──────────────────────────────────────────── */}
       <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
+=======
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden py-16 bg-deep-blue">
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         <div className="absolute inset-0">
           <Image
             src="/images/fog.jpg"
@@ -163,6 +173,7 @@ export default function ContactPage() {
             priority
           />
         </div>
+<<<<<<< HEAD
         <div className="relative z-10 max-w-3xl px-6">
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             We&apos;d Love to Hear From You
@@ -212,6 +223,43 @@ export default function ContactPage() {
           </a>
         </div>
       </section>
+=======
+        <Container className="relative z-10">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+            Let's Connect
+          </h1>
+          <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+            Start Your Project with Bar Moon Contracting
+          </h2>
+        </Container>
+      </section>
+
+      {/* Contact Form & Info */}
+      <section className="py-20 bg-dark-blue">
+        <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
+          
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
+            <p className="text-lg mb-8 leading-relaxed">
+              We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
+            </p>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
+                <p className="text-lg">Central Texas and surrounding communities.</p>
+              </div>
+              
+              <div>
+                <h4 className="text-xl font-bold text-gold-secondary mb-2">Email</h4>
+                <p className="text-lg">
+                  <a href="mailto:barmooncontracting@protonmail.com" className="hover:text-gold-primary transition-colors">
+                    barmooncontracting@protonmail.com
+                  </a>
+                    <section className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden py-16 bg-deep-blue">
+              </div>
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
 
       {/* ── Main content: form + encouragement ───────────── */}
       <section className="py-20 px-6 md:px-12 bg-light-neutral">
@@ -219,18 +267,18 @@ export default function ContactPage() {
 
           {/* Left column: encouragement & info */}
           <div className="lg:col-span-2 flex flex-col justify-center">
-            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">No Question Too Small</p>
-            <h2 className="text-3xl font-bold text-primary mb-6">
-              Ask Us Anything
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Need a repair done right? Thinking about a kitchen remodel? Planning a bigger renovation or custom build? We love talking through ideas&mdash;no commitment, no pressure. Just honest guidance from folks who&apos;ve been building in Central Texas for five generations.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              Fill out the form, give us a call, or shoot us an email. However you reach out, we&apos;ll get back to you promptly&mdash;because your project matters to us.
-            </p>
-
-            {/* Small trust signals */}
+                      <Container className="relative z-10">
+                        <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
+                          We&apos;d Love to Hear From You
+                        </p>
+                        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+                          Let&apos;s Talk About Your Project
+                        </h1>
+                        <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
+                        <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
+                          Quick repair, renovation, or custom build&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
+                        </p>
+                      </Container>
             <div className="space-y-4">
               {[
                 { icon: '✓', text: 'Free consultations — always' },
@@ -273,7 +321,12 @@ export default function ContactPage() {
               </Suspense>
             </div>
           </div>
+<<<<<<< HEAD
         </div>
+=======
+
+        </Container>
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
       </section>
 
       {/* ── Subcontractor Partnership CTA ────────────── */}

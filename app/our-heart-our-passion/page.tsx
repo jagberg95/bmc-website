@@ -1,14 +1,26 @@
 'use client';
 
+<<<<<<< HEAD
 import Link from 'next/link';
 import Image from 'next/image';
+=======
+
+import Image from 'next/image';
+import Link from 'next/link';
+import Container from '../components/Container';
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
 
 export default function OurHeartPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
+<<<<<<< HEAD
       {/* ── Hero: full-screen image with centered overlay ────── */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+=======
+      {/* Hero Section for Our Heart - Our Passion */}
+      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         <div className="absolute inset-0">
           <Image
             src="/images/samantha-amidon-bluebonnet-unsplash.jpg"
@@ -18,6 +30,7 @@ export default function OurHeartPage() {
             priority
           />
         </div>
+<<<<<<< HEAD
         <div className="relative z-10 max-w-3xl px-6">
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Bar Moon Contracting
@@ -46,6 +59,23 @@ export default function OurHeartPage() {
           </h2>
           <p className="text-lg leading-relaxed text-gray-700 mb-6">
             Construction is more than materials and measurements. It&rsquo;s responsibility. It&rsquo;s stewardship. It&rsquo;s the understanding that what we build impacts families, livelihoods, and futures.
+=======
+        <Container className="relative z-10">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+            Our Heart Our Passion
+          </h1>
+          <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+            Building With Purpose, Responsibility, and Care
+          </h2>
+        </Container>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-20 bg-deep-blue">
+        <Container className="prose prose-lg prose-invert">
+          <p className="text-lg leading-relaxed mb-8">
+            Construction is more than materials and measurements. It’s responsibility. It’s stewardship. It’s the understanding that what we build impacts families, livelihoods, and futures. We believe our work is a trust — one that should be handled with care, honesty, and excellence. Every project represents more than a structure; it represents someone’s investment, safety, and peace of mind. That belief shapes how we approach every job, large or small.
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
           </p>
           <p className="text-lg leading-relaxed text-gray-600">
             We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
@@ -84,7 +114,7 @@ export default function OurHeartPage() {
               We hold ourselves to a higher standard&mdash;not just industry rules, but what&rsquo;s right, even when it&rsquo;s harder.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── Stewardship: 4 value cards ───────────────────────── */}
@@ -115,8 +145,8 @@ export default function OurHeartPage() {
             </div>
           ))}
         </div>
-      </section>
-
+                      {/* Hero Section for Our Heart - Our Passion */}
+                      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
       {/* ── Full-bleed image break 2 ─────────────────────────── */}
       <section className="relative h-[50vh] overflow-hidden">
         <Image
@@ -126,24 +156,14 @@ export default function OurHeartPage() {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-deep-blue/40 via-transparent to-dark-blue/40" />
-      </section>
-
-      {/* ── Serving Through Skill: centered prose ────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-light-neutral">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
-            Serving Through Skill
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-700 mb-6">
-            Strong craftsmanship and ethical practices go hand in hand. A healthy business lets us serve consistently, stand behind our work, and keep improving.
-          </p>
-          <p className="text-lg leading-relaxed text-gray-600">
-            Our goal isn&rsquo;t just finishing projects&mdash;it&rsquo;s creating real value: solutions that last, spaces that work beautifully, and results you can rely on.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Closing statement: large typography ───────────────── */}
+                        <Container className="relative z-10">
+                          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+                            Our Heart Our Passion
+                          </h1>
+                          <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+                            Building With Purpose, Responsibility, and Care
+                          </h2>
+                        </Container>
       <section className="py-24 px-6 md:px-12 bg-deep-blue">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-8">

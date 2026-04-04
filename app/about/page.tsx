@@ -1,15 +1,22 @@
 ﻿// app/about/page.tsx
 'use client';
 
+
 import Image from 'next/image';
 import Link from 'next/link';
+import Container from '../components/Container';
 
 export default function AboutPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
+<<<<<<< HEAD
       {/* ── Hero: full-screen with layered text ──────────────── */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+=======
+      {/* Hero Section for About Us */}
+      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         <div className="absolute inset-0">
           <Image
             src="/images/tim-arterbury-sunset1--unsplash.jpg"
@@ -19,7 +26,8 @@ export default function AboutPage() {
             priority
           />
         </div>
-        <div className="relative z-10 max-w-4xl px-6">
+<<<<<<< HEAD
+              <main className="bg-dark-blue text-light-neutral font-sans antialiased">  
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Est. Central Texas
           </p>
@@ -48,6 +56,23 @@ export default function AboutPage() {
           </h2>
           <p className="text-lg leading-relaxed text-gray-700 mb-6">
             We&apos;re Bar Moon Contracting&mdash;the next chapter in a Central Texas story that&apos;s been unfolding for over a century. Our family has lived, worked, built, and served right here in these hills and heartlands, passing down the values of hard work, honesty, and doing things the right way.
+=======
+        <Container className="relative z-10">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+            About Bar Moon Contracting
+          </h1>
+          <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+            A Central Texas Legacy Built to Last
+          </h2>
+        </Container>
+      </section>
+
+          <Container className="relative z-10">
+      <section className="py-20 bg-deep-blue">
+        <Container className="prose prose-lg prose-invert">
+          <p className="text-lg leading-relaxed mb-8">
+            Howdy, Bar Moon Contracting is the continuation of a Central Texas legacy five generations in the making. Rooted here for over a century, our family has built, worked, and served this community with integrity and pride.
+>>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
           </p>
           <p className="text-lg leading-relaxed text-gray-600">
             That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.
@@ -92,7 +117,7 @@ export default function AboutPage() {
               We blend old-school Texas grit with modern precision: clear plans, premium materials, coordinated teams, and workmanship that holds up to whatever the weather (or life) throws at it.
             </p>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* ── Rooted Here: 2-column image + text ───────────────── */}
