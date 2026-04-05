@@ -1,9 +1,10 @@
 // app/contact/page.tsx
-
 'use client';
 
-import Container from '../components/Container';
-// ...existing code...
+import Image from 'next/image';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 
 /* ── Contact Form (reads ?step= or ?service= from URL) ─── */
 function ContactForm() {
@@ -61,49 +62,119 @@ function ContactForm() {
     'w-full bg-dark-blue/60 border border-gray-600 focus:border-gold-primary focus:ring-1 focus:ring-gold-primary/40 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition';
 
   return (
-    <>
-      <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-        {/* Name + Email row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <input
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            type="text"
-            placeholder="Your Name *"
-            required
-            className={inputClass}
-          />
-          <input
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            type="email"
-            placeholder="Email Address *"
-            required
-            className={inputClass}
+    <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+      {/* Name + Email row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <input
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          type="text"
+          placeholder="Your Name *"
+          required
+          className={inputClass}
+        />
+        <input
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          type="email"
+          placeholder="Email Address *"
+          required
+          className={inputClass}
+        />
+      </div>
+
+      {/* Phone + Subject row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <input
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          type="tel"
+          placeholder="Phone (optional)"
+          className={inputClass}
+        />
+        <select
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          className={inputClass}
+        >
+          <option value="">Select a topic&hellip;</option>
+          <option value="Home Repairs">Home Repairs</option>
+          <option value="Upgrades & Renovations">Upgrades &amp; Renovations</option>
+          <option value="Outdoor Living">Outdoor Living</option>
+          <option value="Custom Homes">Custom Homes</option>
+          <option value="General Question">General Question</option>
+          <option value="Subcontractor Inquiry">Subcontractor Partnership</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      {/* Message */}
+      <textarea
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        rows={5}
+        placeholder="Tell us about your project or ask us anything&hellip; *"
+        required
+        className={inputClass + ' resize-none'}
+      />
+
+      {/* Submit */}
+      <button
+        type="submit"
+        disabled={status === 'sending'}
+        className="bg-gold-primary hover:bg-gold-secondary disabled:opacity-60 text-dark-blue font-bold py-4 px-8 rounded-lg shadow-lg transition duration-300 text-lg w-full hover:scale-[1.02]"
+      >
+        {status === 'sending' ? 'Sending\u2026' : 'Send Message'}
+      </button>
+
+      {/* Feedback */}
+      {status === 'sent' && (
+        <p className="text-green-400 text-center font-medium">
+          Message received! We&apos;ll be in touch soon.
+        </p>
+      )}
+      {status === 'error' && (
+        <p className="text-red-400 text-center font-medium">
+          Something went wrong. Please try again or give us a call.
+        </p>
+      )}
+    </form>
+  );
+}
+
+/* ── Page ─────────────────────────────────────────────────── */
+export default function ContactPage() {
+  return (
+    <main className="bg-dark-blue text-light-neutral font-sans antialiased">
+
+      {/* ── Hero ──────────────────────────────────────────── */}
+      <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/fog.jpg"
+            alt="Central Texas morning fog"
+            fill
+            className="object-cover brightness-[0.2]"
+            priority
           />
         </div>
-        {/* Add other form fields here if needed */}
-      </form>
-
-      {/* Contact Form & Info */}
-      <section className="py-20 bg-dark-blue">
-        <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
-            <p className="text-lg mb-8 leading-relaxed">
-              We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
-            </p>
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
-                <p className="text-lg">Central Texas and surrounding communities.</p>
-              </div>
-            </div>
-          </div>
-        </Container>
+        <div className="relative z-10 max-w-3xl px-6">
+          <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
+            We&apos;d Love to Hear From You
+          </p>
+          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            Let&apos;s Talk About Your Project
+          </h1>
+          <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
+          <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
+            Quick repair, renovation, or custom build&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
+          </p>
+        </div>
       </section>
 
       {/* ── Direct contact strip ─────────────────────────── */}
@@ -148,18 +219,18 @@ function ContactForm() {
 
           {/* Left column: encouragement & info */}
           <div className="lg:col-span-2 flex flex-col justify-center">
-                      <Container className="relative z-10">
-                        <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
-                          We&apos;d Love to Hear From You
-                        </p>
-                        <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-                          Let&apos;s Talk About Your Project
-                        </h1>
-                        <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
-                        <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
-                          Quick repair, renovation, or custom build&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
-                        </p>
-                      </Container>
+            <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">No Question Too Small</p>
+            <h2 className="text-3xl font-bold text-primary mb-6">
+              Ask Us Anything
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Need a repair done right? Thinking about a kitchen remodel? Planning a bigger renovation or custom build? We love talking through ideas&mdash;no commitment, no pressure. Just honest guidance from folks who&apos;ve been building in Central Texas for five generations.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-8">
+              Fill out the form, give us a call, or shoot us an email. However you reach out, we&apos;ll get back to you promptly&mdash;because your project matters to us.
+            </p>
+
+            {/* Small trust signals */}
             <div className="space-y-4">
               {[
                 { icon: '✓', text: 'Free consultations — always' },
@@ -202,7 +273,7 @@ function ContactForm() {
               </Suspense>
             </div>
           </div>
-  </div>
+        </div>
       </section>
 
       {/* ── Subcontractor Partnership CTA ────────────── */}
@@ -232,27 +303,20 @@ function ContactForm() {
           <div className="relative w-36 h-36 mx-auto mb-8">
             <Image
               src="/images/Layered Circle/BMC_Layered_Circle_Dist_01.png"
-                      <Container className="relative z-10">
-                        <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-                          Let's Connect
-                        </h1>
-                        <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-                          Start Your Project with Bar Moon Contracting
-                        </h2>
-                      </Container>
-                    </section>
-
-                    {/* Contact Form & Info */}
-                    <section className="py-20 bg-dark-blue">
-                      <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
-                        {/* Contact Info */}
-                        <div>
-                          <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
-                          <p className="text-lg mb-8 leading-relaxed">
-                            We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
-                          </p>
-                          <div className="space-y-6">
-                            <div>
-                              <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
-                              <p className="text-lg">Central Texas and surrounding communities.</p>
-                            </div>
+              alt="Bar Moon Contracting"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <p className="text-2xl md:text-3xl font-light text-white leading-snug italic mb-3">
+            &ldquo;Every great project starts with a simple conversation.&rdquo;
+          </p>
+          <div className="w-12 h-[2px] bg-accent mx-auto mt-6 mb-6" />
+          <p className="text-sm text-gray-400 uppercase tracking-[0.2em]">
+            Bar Moon Contracting &bull; Central Texas
+          </p>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,47 +1,57 @@
-
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import Container from '../components/Container';
-// ...existing code...
+import Image from 'next/image';
 
 export default function OurHeartPage() {
   return (
-    <>
-      <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-        {/* Hero Section for Our Heart - Our Passion */}
-        <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/samantha-amidon-bluebonnet-unsplash.jpg"
-              alt="Texas bluebonnets"
-              fill
-              className="object-cover brightness-[0.3] scale-105"
-              priority
-            />
-          </div>
-          <Container className="relative z-10">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-              Our Heart Our Passion
-            </h1>
-            <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-              Building With Purpose, Responsibility, and Care
-            </h2>
-          </Container>
-        </section>
+    <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
-        {/* Content Section */}
-        <section className="py-20 bg-deep-blue">
-          <Container className="prose prose-lg prose-invert">
-            <p className="text-lg leading-relaxed mb-8">
-              Construction is more than materials and measurements. It’s responsibility. It’s stewardship. It’s the understanding that what we build impacts families, livelihoods, and futures. We believe our work is a trust — one that should be handled with care, honesty, and excellence. Every project represents more than a structure; it represents someone’s investment, safety, and peace of mind. That belief shapes how we approach every job, large or small.
-            </p>
-            <p className="text-lg leading-relaxed text-gray-600">
-              We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
-            </p>
-          </Container>
-        </section>
+      {/* ── Hero: full-screen image with centered overlay ────── */}
+      <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/samantha-amidon-bluebonnet-unsplash.jpg"
+            alt="Texas bluebonnets"
+            fill
+            className="object-cover brightness-[0.3] scale-105"
+            priority
+          />
+        </div>
+        <div className="relative z-10 max-w-3xl px-6">
+          <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
+            Bar Moon Contracting
+          </p>
+          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 text-white tracking-tight leading-[1.1]">
+            Our Heart &ndash;<br />Our Passion
+          </h1>
+          <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
+          <p className="text-xl text-gray-200 leading-relaxed">
+            We believe that doing honest work with care and intention still matters&mdash;and always will.
+          </p>
+        </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <svg className="w-6 h-6 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </section>
+
+      {/* ── Editorial intro: centered prose ──────────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
+            Building With Purpose, Responsibility&nbsp;&amp;&nbsp;Care
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            Construction is more than materials and measurements. It&rsquo;s responsibility. It&rsquo;s stewardship. It&rsquo;s the understanding that what we build impacts families, livelihoods, and futures.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-600">
+            We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
+          </p>
+        </div>
+      </section>
 
       {/* ── Full-bleed image break ───────────────────────────── */}
       <section className="relative h-[50vh] overflow-hidden">
@@ -74,7 +84,8 @@ export default function OurHeartPage() {
               We hold ourselves to a higher standard&mdash;not just industry rules, but what&rsquo;s right, even when it&rsquo;s harder.
             </p>
           </div>
-        </Container>
+        </div>
+      </section>
 
       {/* ── Stewardship: 4 value cards ───────────────────────── */}
       <section className="py-24 px-6 md:px-12 bg-deep-blue">
@@ -104,44 +115,70 @@ export default function OurHeartPage() {
             </div>
           ))}
         </div>
-                      {/* Hero Section for Our Heart - Our Passion */}
-                      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
+      </section>
+
       {/* ── Full-bleed image break 2 ─────────────────────────── */}
       <section className="relative h-[50vh] overflow-hidden">
         <Image
           src="/images/clay-banks-rusticinterior-unsplash.jpg"
-                  <Container className="relative z-10">
-                    <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-                      Our Heart, Our Passion
-                    </h1>
-                    <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-                      Building Dreams, Creating Legacies
-                    </h2>
-                  </Container>
-                </section>
+          alt="Warm rustic interior"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep-blue/40 via-transparent to-dark-blue/40" />
+      </section>
 
-                {/* Story Section */}
-                <section className="py-20 bg-dark-blue">
-                  <Container className="max-w-4xl">
-                    <h2 className="text-3xl font-bold text-gold-primary mb-6">Our Story</h2>
-                    <p className="text-lg text-gray-200 leading-relaxed mb-8">
-                      Founded by a team of passionate builders, Bar Moon Contracting was born from a desire to bring honesty, quality, and artistry back to the construction industry. We&apos;re not just contractors&mdash;we&apos;re craftsmen, dreamers, and neighbors who care deeply about the communities we serve.
-                    </p>
-                    <h3 className="text-2xl font-semibold text-gold-secondary mb-4">Our Mission</h3>
-                    <p className="text-lg text-gray-200 leading-relaxed mb-8">
-                      To create beautiful, lasting spaces that reflect the unique vision and needs of every client. We approach each project with heart, treating your home as if it were our own.
-                    </p>
-                    <h3 className="text-2xl font-semibold text-gold-secondary mb-4">Our Values</h3>
-                    <ul className="list-disc list-inside text-lg text-gray-200 space-y-2 mb-8">
-                      <li><span className="font-bold text-gold-primary">Integrity:</span> We do what we say, every time.</li>
-                      <li><span className="font-bold text-gold-primary">Craftsmanship:</span> Details matter. We never cut corners.</li>
-                      <li><span className="font-bold text-gold-primary">Community:</span> We build relationships, not just structures.</li>
-                      <li><span className="font-bold text-gold-primary">Passion:</span> We love what we do, and it shows in our work.</li>
-                    </ul>
-                    <h3 className="text-2xl font-semibold text-gold-secondary mb-4">Why Choose Us?</h3>
-                    <p className="text-lg text-gray-200 leading-relaxed">
-                      When you choose Bar Moon Contracting, you&apos;re choosing a partner who listens, cares, and delivers. Let&apos;s build something extraordinary together.
-                    </p>
-                  </Container>
-                </section>
+      {/* ── Serving Through Skill: centered prose ────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-light-neutral">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
+            Serving Through Skill
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            Strong craftsmanship and ethical practices go hand in hand. A healthy business lets us serve consistently, stand behind our work, and keep improving.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-600">
+            Our goal isn&rsquo;t just finishing projects&mdash;it&rsquo;s creating real value: solutions that last, spaces that work beautifully, and results you can rely on.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Closing statement: large typography ───────────────── */}
+      <section className="py-24 px-6 md:px-12 bg-deep-blue">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-8">
+            Work That Reflects What We Stand For
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+            No cutting corners. No overselling. No leaving problems for someone else. Just honest work, clear communication, and accountability for the outcome.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-300 mb-10">
+            At the end of the day, our work is a reflection of our values, our discipline, and our respect for the people we serve.
+          </p>
+          <div className="w-16 h-[2px] bg-accent mx-auto mb-8" />
+          <p className="text-2xl md:text-3xl lg:text-4xl font-light text-gold-secondary italic leading-snug">
+            That&rsquo;s why we do what we do.
+          </p>
+        </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────────── */}
+      <section className="py-20 px-6 bg-light-neutral text-center">
+        <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Ready to Build Something That Lasts?
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Let&rsquo;s talk about your project and how we can bring it to life the right way.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition duration-300 text-xl hover:scale-105"
+          >
+            Let&rsquo;s Build Together
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}

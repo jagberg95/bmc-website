@@ -1,16 +1,13 @@
 
-
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import Container from './components/Container';
+import Image from 'next/image';
 import HeroVideo from './components/HeroVideo';
 import ScrollVideo from './components/ScrollVideo';
 import React from 'react';
 import { timelineSteps } from './components/timelineSteps';
 import TimelineStep from './components/TimelineStep';
-// ...existing code...
 
 export default function HomePage() {
   const [active, setActive] = React.useState(0);
@@ -34,20 +31,17 @@ export default function HomePage() {
       {/* ═══ 1. Hero Video ═══════════════════════════════════════ */}
       <HeroVideo />
 
-      {/* Content Overlay */}
-      <Container className="relative z-10 py-16 flex flex-col items-center justify-center">
-        <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-          Welcome to Bar Moon Contracting
-        </h1>
-        <h2 className="text-3xl lg:text-5xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-          Texas Craftsmanship Meets Lasting Integrity
-        </h2>
-        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-base">
-          From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
-          <span className="hidden lg:inline">Hover over a service to learn more.</span>
-          <span className="lg:hidden">Tap a service to learn more.</span>
-        </p>
-      </Container>
+      {/* ═══ 2. Our Services — Mosaic (Light Neutral canvas) ════ */}
+      <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-light-neutral to-[#d9d8d4]" id="services">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4 uppercase tracking-widest">
+            Our Services
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-base">
+            From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
+            <span className="hidden lg:inline">Hover over a service to learn more.</span>
+            <span className="lg:hidden">Tap a service to learn more.</span>
+          </p>
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] sm:auto-rows-[280px] gap-5">
             {/* Upgrades & Renovations — large tile */}
@@ -169,8 +163,9 @@ export default function HomePage() {
                 </span>
               </div>
             </Link>
-           </div>
-         </Container>
+          </div>
+        </div>
+      </section>
 
       {/* ═══ 3. Our Heart — Deep Blue bridge ════════════════════ */}
       <section id="our-heart-our-passion" className="relative py-24 px-6 md:px-12 bg-deep-blue">
@@ -204,8 +199,52 @@ export default function HomePage() {
 
           <div className="space-y-10">
             {timelineSteps.map((step, i) => (
-              <TimelineStep key={i} {...step} active={active === i} index={i} />
+              <TimelineStep
+                key={step.step}
+                step={step.step}
+                title={step.title}
+                subtitle={step.subtitle}
+                shortDesc={step.shortDesc}
+                detail={step.detail}
+                image={step.image}
+                buttons={step.buttons}
+                active={i === active}
+                even={i % 2 === 1}
+                data-index={i}
+              />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ 5. About Us — Light Neutral with gradient ══════════ */}
+      <section id="about" className="relative py-24 px-4 md:px-8 bg-gradient-to-b from-light-neutral to-[#d9d8d4]">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">Who We Are</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">About Bar Moon Contracting</h2>
+          <p className="text-lg leading-relaxed mb-4 text-gray-700">
+            A Central Texas legacy, five generations strong. We blend old-school Texas grit with modern precision&mdash;clear plans, quality materials, coordinated teams, and workmanship that holds up to whatever life throws at it.
+          </p>
+          <p className="text-lg leading-relaxed mb-8 text-gray-600">
+            Whether you&apos;re fixing, upgrading, or building from scratch&mdash;we&apos;re rooted here and ready to help.
+          </p>
+          <Link href="/about" className="inline-block bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300">
+            Learn More About Us
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══ 6. Contact CTA — Deep Blue bridge ══════════════════ */}
+      <section id="contact" className="py-24 px-4 md:px-8 bg-deep-blue text-center">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get In Touch</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Ready to Get Started?</h2>
+          <p className="text-lg text-gray-200 mb-8">
+            Whether you need a quick repair, a kitchen remodel, or something bigger&mdash;we&apos;re here. No pressure, just honest conversation.
+          </p>
+          <Link href="/contact" className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-xl">
+            Let&apos;s Talk
+          </Link>
         </div>
       </section>
     </main>
