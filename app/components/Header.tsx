@@ -87,12 +87,12 @@ export default function Header() {
       onMouseLeave={() => { setIsHovered(false); setServicesOpen(false); }}
     >
       <div
-        className={`container mx-auto flex items-center justify-between px-6 transition-all duration-300 ${
+        className={`container mx-auto flex flex-wrap min-w-0 items-center justify-between px-4 sm:px-6 transition-all duration-300 ${
           isHovered ? 'py-5' : 'py-3'
         }`}
       >
         {/* Logo — grows on hover */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center min-w-0">
           <Image
             src={LOGO_PATH}
             alt="Bar Moon Contracting Logo"
@@ -102,11 +102,11 @@ export default function Header() {
             className="object-contain transition-all duration-300"
             style={{ width: isHovered ? 55 : 40, height: isHovered ? 55 : 40 }}
           />
-          <span className="ml-3 text-xl font-bold tracking-wider text-gold-primary hidden sm:inline">BAR MOON CONTRACTING</span>
+          <span className="ml-3 text-base sm:text-xl font-bold tracking-wider text-gold-primary hidden sm:inline truncate">BAR MOON CONTRACTING</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 sm:space-x-8 min-w-0 flex-shrink">
           {navLinks.map((link) =>
             link.name === 'Services' ? (
               /* Services with dropdown */
@@ -118,7 +118,7 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className="text-white text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
+                  className="text-white text-base sm:text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
                 >
                   Services
                   <span className={`ml-1 inline-block text-xs transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
@@ -151,7 +151,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-white text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
+                className="text-white text-base sm:text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
               >
                 {link.name}
               </Link>
