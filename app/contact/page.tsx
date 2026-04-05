@@ -101,13 +101,6 @@ function ContactForm() {
                 <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
                 <p className="text-lg">Central Texas and surrounding communities.</p>
               </div>
-<<<<<<< HEAD
-        <div className="relative z-10 max-w-3xl px-6">
-          <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
-            We&apos;d Love to Hear From You
-          </p>
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-            Let&apos;s Talk About Your Project
           </h1>
           <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
           <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
@@ -151,43 +144,7 @@ function ContactForm() {
           </a>
         </div>
       </section>
-=======
-        <Container className="relative z-10">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-            Let's Connect
-          </h1>
-          <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-            Start Your Project with Bar Moon Contracting
-          </h2>
-        </Container>
-      </section>
-
-      {/* Contact Form & Info */}
-      <section className="py-20 bg-dark-blue">
-        <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
-          
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
-            <p className="text-lg mb-8 leading-relaxed">
-              We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
-            </p>
-            
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
-                <p className="text-lg">Central Texas and surrounding communities.</p>
               </div>
-              
-              <div>
-                <h4 className="text-xl font-bold text-gold-secondary mb-2">Email</h4>
-                <p className="text-lg">
-                  <a href="mailto:barmooncontracting@protonmail.com" className="hover:text-gold-primary transition-colors">
-                    barmooncontracting@protonmail.com
-                  </a>
-                    <section className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden py-16 bg-deep-blue">
-              </div>
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
 
       {/* ── Main content: form + encouragement ───────────── */}
       <section className="py-20 px-6 md:px-12 bg-light-neutral">
@@ -249,12 +206,7 @@ function ContactForm() {
               </Suspense>
             </div>
           </div>
-<<<<<<< HEAD
-        </div>
-=======
-
-        </Container>
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+  </div>
       </section>
 
       {/* ── Subcontractor Partnership CTA ────────────── */}
