@@ -9,14 +9,8 @@ import Container from '../components/Container';
 export default function OurHeartPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-
-<<<<<<< HEAD
-      {/* ── Hero: full-screen image with centered overlay ────── */}
-      <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-=======
       {/* Hero Section for Our Heart - Our Passion */}
       <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         <div className="absolute inset-0">
           <Image
             src="/images/samantha-amidon-bluebonnet-unsplash.jpg"

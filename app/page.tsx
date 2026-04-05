@@ -34,21 +34,20 @@ export default function HomePage() {
       {/* ═══ 1. Hero Video ═══════════════════════════════════════ */}
       <HeroVideo />
 
-<<<<<<< HEAD
-      {/* ═══ 2. Our Services — Mosaic (Light Neutral canvas) ════ */}
-      <section className="py-24 px-4 md:px-8 bg-gradient-to-b from-light-neutral to-[#d9d8d4]" id="services">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-primary mb-4 uppercase tracking-widest">
-            Our Services
-=======
-        {/* Content Overlay */}
-        <Container className="relative z-10 py-16 flex flex-col items-center justify-center">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-            Welcome to Bar Moon Contracting
-          </h1>
-          <h2 className="text-3xl lg:text-5xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-            Texas Craftsmanship Meets Lasting Integrity
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+      {/* Content Overlay */}
+      <Container className="relative z-10 py-16 flex flex-col items-center justify-center">
+        <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+          Welcome to Bar Moon Contracting
+        </h1>
+        <h2 className="text-3xl lg:text-5xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+          Texas Craftsmanship Meets Lasting Integrity
+        </h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-base">
+          From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
+          <span className="hidden lg:inline">Hover over a service to learn more.</span>
+          <span className="lg:hidden">Tap a service to learn more.</span>
+        </p>
+      </Container>
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-base">
             From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}

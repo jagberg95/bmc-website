@@ -49,23 +49,10 @@ export default function AboutPage() {
           </h2>
           <p className="text-lg leading-relaxed text-gray-700 mb-6">
             We&apos;re Bar Moon Contracting&mdash;the next chapter in a Central Texas story that&apos;s been unfolding for over a century. Our family has lived, worked, built, and served right here in these hills and heartlands, passing down the values of hard work, honesty, and doing things the right way.
-=======
-        <Container className="relative z-10">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-            About Bar Moon Contracting
-          </h1>
-          <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-            A Central Texas Legacy Built to Last
-          </h2>
-        </Container>
-      </section>
-
-          <Container className="relative z-10">
-      <section className="py-20 bg-deep-blue">
-        <Container className="prose prose-lg prose-invert">
-          <p className="text-lg leading-relaxed mb-8">
-            Howdy, Bar Moon Contracting is the continuation of a Central Texas legacy five generations in the making. Rooted here for over a century, our family has built, worked, and served this community with integrity and pride.
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+          </p>
+          <p className="text-lg leading-relaxed text-gray-600">
+            That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.
+          </p>
           </p>
           <p className="text-lg leading-relaxed text-gray-600">
             That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.

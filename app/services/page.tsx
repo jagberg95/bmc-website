@@ -74,7 +74,6 @@ import Container from '../components/Container';
         <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gold-primary">Ready to Start Your Project?</h2>
         <p className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto">
           Contact us today to discuss your vision. We're here to build something exceptional with you.
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         </p>
       </section>
 

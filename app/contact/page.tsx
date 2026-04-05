@@ -150,14 +150,8 @@ function ContactForm() {
 export default function ContactPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-
-<<<<<<< HEAD
-      {/* ── Hero ──────────────────────────────────────────── */}
-      <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
-=======
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden py-16 bg-deep-blue">
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         <div className="absolute inset-0">
           <Image
             src="/images/fog.jpg"
