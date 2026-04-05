@@ -212,51 +212,25 @@ export default function HomePage() {
           <div className="space-y-10">
             {timelineSteps.map((step, i) => (
               <TimelineStep
-                key={step.step}
-                step={step.step}
-                title={step.title}
-                subtitle={step.subtitle}
-                shortDesc={step.shortDesc}
-                detail={step.detail}
-                image={step.image}
-                buttons={step.buttons}
-                active={i === active}
-                even={i % 2 === 1}
-                data-index={i}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+                        <Container className="relative z-10">
+                          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+                            Custom Homes, Renovations, Repairs
+                          </h1>
+                          <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+                            Central Texas craftsmanship, built on integrity. Your vision, our passion.
+                          </h2>
+                        </Container>
+                      </section>
 
-      {/* ═══ 5. About Us — Light Neutral with gradient ══════════ */}
-      <section id="about" className="relative py-24 px-4 md:px-8 bg-gradient-to-b from-light-neutral to-[#d9d8d4]">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-deep-blue text-xs font-semibold uppercase tracking-[0.2em] mb-3">Who We Are</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">About Bar Moon Contracting</h2>
-          <p className="text-lg leading-relaxed mb-4 text-gray-700">
-            A Central Texas legacy, five generations strong. We blend old-school Texas grit with modern precision&mdash;clear plans, quality materials, coordinated teams, and workmanship that holds up to whatever life throws at it.
-          </p>
-          <p className="text-lg leading-relaxed mb-8 text-gray-600">
-            Whether you&apos;re fixing, upgrading, or building from scratch&mdash;we&apos;re rooted here and ready to help.
-          </p>
-          <Link href="/about" className="inline-block bg-gold-secondary hover:bg-gold-primary text-dark-blue font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-300">
-            Learn More About Us
-          </Link>
-        </div>
-      </section>
-
-      {/* ═══ 6. Contact CTA — Deep Blue bridge ══════════════════ */}
-      <section id="contact" className="py-24 px-4 md:px-8 bg-deep-blue text-center">
-        <div className="max-w-3xl mx-auto">
-          <p className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get In Touch</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-gold-primary mb-4">Ready to Get Started?</h2>
-          <p className="text-lg text-gray-200 mb-8">
-            Whether you need a quick repair, a kitchen remodel, or something bigger&mdash;we&apos;re here. No pressure, just honest conversation.
-          </p>
-          <Link href="/contact" className="inline-block bg-gold-primary hover:bg-gold-secondary text-dark-blue font-bold py-4 px-10 rounded-lg shadow-lg transition-colors duration-300 text-xl">
-            Let&apos;s Talk
-          </Link>
+                      {/* Services Section */}
+                      <section className="py-20 bg-dark-blue">
+                        <Container className="max-w-6xl">
+                          <h2 className="text-3xl font-bold text-gold-primary mb-8">Our Services</h2>
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {/* Service cards here */}
+                          </div>
+                        </Container>
+                      </section>
         </div>
       </section>
     </main>
