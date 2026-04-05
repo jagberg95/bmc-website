@@ -20,36 +20,6 @@ export default function OurHeartPage() {
             priority
           />
         </div>
-<<<<<<< HEAD
-        <div className="relative z-10 max-w-3xl px-6">
-          <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
-            Bar Moon Contracting
-          </p>
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 text-white tracking-tight leading-[1.1]">
-            Our Heart &ndash;<br />Our Passion
-          </h1>
-          <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
-          <p className="text-xl text-gray-200 leading-relaxed">
-            We believe that doing honest work with care and intention still matters&mdash;and always will.
-          </p>
-        </div>
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
-      </section>
-
-      {/* ── Editorial intro: centered prose ──────────────────── */}
-      <section className="py-24 px-6 md:px-12 bg-light-neutral">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
-            Building With Purpose, Responsibility&nbsp;&amp;&nbsp;Care
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-700 mb-6">
-            Construction is more than materials and measurements. It&rsquo;s responsibility. It&rsquo;s stewardship. It&rsquo;s the understanding that what we build impacts families, livelihoods, and futures.
-=======
         <Container className="relative z-10">
           <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
             Our Heart Our Passion
@@ -65,7 +35,11 @@ export default function OurHeartPage() {
         <Container className="prose prose-lg prose-invert">
           <p className="text-lg leading-relaxed mb-8">
             Construction is more than materials and measurements. It’s responsibility. It’s stewardship. It’s the understanding that what we build impacts families, livelihoods, and futures. We believe our work is a trust — one that should be handled with care, honesty, and excellence. Every project represents more than a structure; it represents someone’s investment, safety, and peace of mind. That belief shapes how we approach every job, large or small.
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+          </p>
+          <p className="text-lg leading-relaxed text-gray-600">
+            We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
+          </p>
+        </Container>
           </p>
           <p className="text-lg leading-relaxed text-gray-600">
             We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.

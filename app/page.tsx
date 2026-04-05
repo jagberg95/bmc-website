@@ -48,12 +48,6 @@ export default function HomePage() {
           <span className="lg:hidden">Tap a service to learn more.</span>
         </p>
       </Container>
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-base">
-            From quick fixes to full renovations and custom builds, we bring Texas craftsmanship to every project.{' '}
-            <span className="hidden lg:inline">Hover over a service to learn more.</span>
-            <span className="lg:hidden">Tap a service to learn more.</span>
-          </p>
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] sm:auto-rows-[280px] gap-5">
             {/* Upgrades & Renovations — large tile */}

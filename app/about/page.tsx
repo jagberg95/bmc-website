@@ -53,10 +53,6 @@ export default function AboutPage() {
           <p className="text-lg leading-relaxed text-gray-600">
             That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.
           </p>
-          </p>
-          <p className="text-lg leading-relaxed text-gray-600">
-            That legacy isn&apos;t just history; it&apos;s the foundation under every project we take on today.
-          </p>
         </div>
       </section>
 

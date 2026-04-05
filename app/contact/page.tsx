@@ -291,20 +291,27 @@ function ContactForm() {
           <div className="relative w-36 h-36 mx-auto mb-8">
             <Image
               src="/images/Layered Circle/BMC_Layered_Circle_Dist_01.png"
-              alt="Bar Moon Contracting"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <p className="text-2xl md:text-3xl font-light text-white leading-snug italic mb-3">
-            &ldquo;Every great project starts with a simple conversation.&rdquo;
-          </p>
-          <div className="w-12 h-[2px] bg-accent mx-auto mt-6 mb-6" />
-          <p className="text-sm text-gray-400 uppercase tracking-[0.2em]">
-            Bar Moon Contracting &bull; Central Texas
-          </p>
-        </div>
-      </section>
-    </main>
-  );
-}
+                      <Container className="relative z-10">
+                        <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+                          Let's Connect
+                        </h1>
+                        <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+                          Start Your Project with Bar Moon Contracting
+                        </h2>
+                      </Container>
+                    </section>
+
+                    {/* Contact Form & Info */}
+                    <section className="py-20 bg-dark-blue">
+                      <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
+                        {/* Contact Info */}
+                        <div>
+                          <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
+                          <p className="text-lg mb-8 leading-relaxed">
+                            We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
+                          </p>
+                          <div className="space-y-6">
+                            <div>
+                              <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
+                              <p className="text-lg">Central Texas and surrounding communities.</p>
+                            </div>
