@@ -93,7 +93,7 @@ export default function AboutPage() {
               We blend old-school Texas grit with modern precision: clear plans, premium materials, coordinated teams, and workmanship that holds up to whatever the weather (or life) throws at it.
             </p>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* ── Rooted Here: 2-column image + text ───────────────── */}

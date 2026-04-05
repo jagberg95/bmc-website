@@ -62,37 +62,29 @@ function ContactForm() {
 
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-      {/* Name + Email row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <input
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          type="text"
-          placeholder="Your Name *"
-          required
-          className={inputClass}
-        />
-        <input
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          type="email"
-          placeholder="Email Address *"
-          required
-          className={inputClass}
-        />
-      </div>
-
-              <Container className="relative z-10">
-                <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-                  Let's Connect
-                </h1>
-                <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-                  Start Your Project with Bar Moon Contracting
-                </h2>
-              </Container>
-            </section>
+	  {/* Name + Email row */}
+	  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+		<input
+		  name="name"
+		  value={formData.name}
+		  onChange={handleChange}
+		  type="text"
+		  placeholder="Your Name *"
+		  required
+		  className={inputClass}
+		/>
+		<input
+		  name="email"
+		  value={formData.email}
+		  onChange={handleChange}
+		  type="email"
+		  placeholder="Email Address *"
+		  required
+		  className={inputClass}
+		/>
+	  </div>
+	  {/* Add other form fields here if needed */}
+	</form>
 
             {/* Contact Form & Info */}
             <section className="py-20 bg-dark-blue">

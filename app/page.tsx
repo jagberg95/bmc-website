@@ -205,19 +205,7 @@ export default function HomePage() {
 
           <div className="space-y-10">
             {timelineSteps.map((step, i) => (
-              <TimelineStep
-                        <Container className="relative z-10">
-                          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-                            Custom Homes, Renovations, Repairs
-                          </h1>
-                          <h2 className="text-2xl lg:text-3xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-                            Central Texas craftsmanship, built on integrity. Your vision, our passion.
-                          </h2>
-                        </Container>
-                      </section>
-
-                      {/* Services Section */}
-                      <section className="py-20 bg-dark-blue">
+              <TimelineStep key={i} {...step} active={active === i} index={i} />
                         <Container className="max-w-6xl">
                           <h2 className="text-3xl font-bold text-gold-primary mb-8">Our Services</h2>
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

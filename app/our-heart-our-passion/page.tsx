@@ -40,11 +40,6 @@ export default function OurHeartPage() {
             We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
           </p>
         </Container>
-          </p>
-          <p className="text-lg leading-relaxed text-gray-600">
-            We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
-          </p>
-        </div>
       </section>
 
       {/* ── Full-bleed image break ───────────────────────────── */}
