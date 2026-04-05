@@ -87,26 +87,26 @@ export default function Header() {
       onMouseLeave={() => { setIsHovered(false); setServicesOpen(false); }}
     >
       <div
-        className={`container mx-auto flex flex-wrap min-w-0 items-center justify-between px-4 sm:px-6 transition-all duration-300 ${
-          isHovered ? 'py-5' : 'py-3'
+        className={`container mx-auto flex flex-nowrap min-w-0 items-center justify-between px-2 sm:px-4 md:px-6 transition-all duration-300 ${
+          isHovered ? 'py-5' : 'py-2.5'
         }`}
       >
-        {/* Logo — grows on hover */}
-        <Link href="/" className="flex items-center min-w-0">
+        {/* Logo — grows on hover, shrinks on mobile */}
+        <Link href="/" className="flex items-center min-w-0 flex-shrink-0">
           <Image
             src={LOGO_PATH}
             alt="Bar Moon Contracting Logo"
-            width={isHovered ? 55 : 40}
-            height={isHovered ? 55 : 40}
+            width={isHovered ? 55 : 36}
+            height={isHovered ? 55 : 36}
             priority
             className="object-contain transition-all duration-300"
-            style={{ width: isHovered ? 55 : 40, height: isHovered ? 55 : 40 }}
+            style={{ width: isHovered ? 55 : 36, height: isHovered ? 55 : 36 }}
           />
-          <span className="ml-3 text-base sm:text-xl font-bold tracking-wider text-gold-primary hidden sm:inline truncate">BAR MOON CONTRACTING</span>
+          <span className="ml-2 text-sm xs:text-base sm:text-lg md:text-xl font-bold tracking-wider text-gold-primary hidden xs:inline truncate max-w-[120px] sm:max-w-none">BAR MOON CONTRACTING</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-4 sm:space-x-8 min-w-0 flex-shrink">
+        <nav className="hidden md:flex items-center space-x-2 sm:space-x-4 md:space-x-8 min-w-0 flex-shrink">
           {navLinks.map((link) =>
             link.name === 'Services' ? (
               /* Services with dropdown */
@@ -161,7 +161,7 @@ export default function Header() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="md:hidden text-white text-3xl cursor-pointer hover:text-[#d6ad30] transition-colors"
+          className="md:hidden flex items-center justify-center text-white text-3xl rounded-full w-12 h-12 min-w-[3rem] min-h-[3rem] cursor-pointer hover:text-[#d6ad30] focus:outline-none focus:ring-2 focus:ring-[#d6ad30] transition-colors"
           aria-label="Toggle mobile menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -171,24 +171,24 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <nav className="md:hidden bg-[#101d43] border-t border-[#d6ad30] px-6 py-6">
-          <div className="flex flex-col space-y-6">
+        <nav className="md:hidden bg-[#101d43] border-t border-[#d6ad30] px-3 xs:px-4 py-5 xs:py-6 w-full max-w-full overflow-x-hidden">
+          <div className="flex flex-col space-y-5 xs:space-y-6">
             {navLinks.map((link) =>
               link.name === 'Services' ? (
-                <div key={link.name} className="flex flex-col space-y-3">
+                <div key={link.name} className="flex flex-col space-y-2 xs:space-y-3">
                   <Link
                     href={link.href}
-                    className="text-white text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
+                    className="text-white text-lg xs:text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Services
                   </Link>
-                  <div className="pl-4 flex flex-col space-y-3">
+                  <div className="pl-2 xs:pl-4 flex flex-col space-y-2 xs:space-y-3">
                     {serviceLinks.map((s) => (
                       <Link
                         key={s.href}
                         href={s.href}
-                        className="text-gray-300 text-lg hover:text-[#d6ad30] transition-colors duration-200"
+                        className="text-gray-300 text-base xs:text-lg hover:text-[#d6ad30] transition-colors duration-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {s.name}
@@ -200,7 +200,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
+                  className="text-white text-lg xs:text-xl font-medium hover:text-[#d6ad30] transition-colors duration-200 border-b border-white/10 pb-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
