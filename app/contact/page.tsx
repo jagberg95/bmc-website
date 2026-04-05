@@ -141,7 +141,6 @@ function ContactForm() {
           </a>
         </div>
       </section>
-              </div>
 
       {/* ── Main content: form + encouragement ───────────── */}
       <section className="py-20 px-6 md:px-12 bg-light-neutral">
