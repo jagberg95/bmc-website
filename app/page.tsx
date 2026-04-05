@@ -169,9 +169,8 @@ export default function HomePage() {
                 </span>
               </div>
             </Link>
-          </div>
-        </Container>
-      </section>
+           </div>
+         </Container>
 
       {/* ═══ 3. Our Heart — Deep Blue bridge ════════════════════ */}
       <section id="our-heart-our-passion" className="relative py-24 px-6 md:px-12 bg-deep-blue">

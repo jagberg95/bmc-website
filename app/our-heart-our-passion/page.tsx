@@ -75,7 +75,6 @@ export default function OurHeartPage() {
             </p>
           </div>
         </Container>
-      </section>
 
       {/* ── Stewardship: 4 value cards ───────────────────────── */}
       <section className="py-24 px-6 md:px-12 bg-deep-blue">
