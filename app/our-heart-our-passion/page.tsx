@@ -8,7 +8,7 @@ export default function OurHeartPage() {
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
       {/* ── Hero: full-screen image with centered overlay ────── */}
-      <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-20">
         <div className="absolute inset-0">
           <Image
             src="/images/samantha-amidon-bluebonnet-unsplash.jpg"
@@ -22,7 +22,7 @@ export default function OurHeartPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Bar Moon Contracting
           </p>
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 text-white tracking-tight leading-[1.1]">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-white tracking-tight leading-[1.1]">
             Our Heart &ndash;<br />Our Passion
           </h1>
           <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />

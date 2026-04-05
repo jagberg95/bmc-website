@@ -153,7 +153,7 @@ export default function ContactPage() {
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
       {/* ── Hero ──────────────────────────────────────────── */}
-      <section className="relative h-[55vh] flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-[55vh] flex items-center justify-center text-center overflow-hidden pt-20">
         <div className="absolute inset-0">
           <Image
             src="/images/fog.jpg"
@@ -167,7 +167,7 @@ export default function ContactPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             We&apos;d Love to Hear From You
           </p>
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
             Let&apos;s Talk About Your Project
           </h1>
           <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />

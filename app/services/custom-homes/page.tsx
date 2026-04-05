@@ -9,7 +9,7 @@ export default function CustomHomesPage() {
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
       {/* ── Hero ──────────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden pt-20">
         {/* Gradient-only hero — swap for a real image when available */}
         <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-deep-blue to-primary" />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'url("/images/Layered Circle/BMC_Layered_Circle_Dist_01.png")', backgroundSize: '420px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
@@ -18,7 +18,7 @@ export default function CustomHomesPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-5">
             Custom Home Building
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
             Your Dream Home,<br />
             <span className="text-gold-primary">Built the Texas Way</span>
           </h1>

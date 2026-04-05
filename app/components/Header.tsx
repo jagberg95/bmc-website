@@ -87,26 +87,26 @@ export default function Header() {
       onMouseLeave={() => { setIsHovered(false); setServicesOpen(false); }}
     >
       <div
-        className={`container mx-auto flex flex-nowrap min-w-0 items-center justify-between px-2 sm:px-4 md:px-6 transition-all duration-300 ${
-          isHovered ? 'py-5' : 'py-2.5'
+        className={`max-w-7xl mx-auto flex items-center justify-between px-3 sm:px-4 md:px-6 transition-all duration-300 ${
+          isHovered ? 'py-4' : 'py-2'
         }`}
       >
-        {/* Logo — grows on hover, shrinks on mobile */}
-        <Link href="/" className="flex items-center min-w-0 flex-shrink-0">
+        {/* Logo + Company Name */}
+        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
           <Image
             src={LOGO_PATH}
             alt="Bar Moon Contracting Logo"
-            width={isHovered ? 55 : 36}
-            height={isHovered ? 55 : 36}
+            width={isHovered ? 48 : 32}
+            height={isHovered ? 48 : 32}
             priority
             className="object-contain transition-all duration-300"
-            style={{ width: isHovered ? 55 : 36, height: isHovered ? 55 : 36 }}
+            style={{ width: isHovered ? 48 : 32, height: isHovered ? 48 : 32 }}
           />
-          <span className="ml-2 text-sm xs:text-base sm:text-lg md:text-xl font-bold tracking-wider text-gold-primary hidden xs:inline truncate max-w-[120px] sm:max-w-none">BAR MOON CONTRACTING</span>
+          <span className="text-xs xs:text-sm sm:text-base lg:text-lg font-bold tracking-wider text-gold-primary whitespace-nowrap">BAR MOON CONTRACTING</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2 sm:space-x-4 md:space-x-8 min-w-0 flex-shrink">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 flex-shrink-0">
           {navLinks.map((link) =>
             link.name === 'Services' ? (
               /* Services with dropdown */
@@ -118,7 +118,7 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className="text-white text-base sm:text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
+                  className="text-white text-sm xl:text-base font-medium hover:text-[#d6ad30] transition-colors duration-200 whitespace-nowrap"
                 >
                   Services
                   <span className={`ml-1 inline-block text-xs transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}>
@@ -151,7 +151,7 @@ export default function Header() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-white text-base sm:text-lg font-medium hover:text-[#d6ad30] transition-colors duration-200"
+                className="text-white text-sm xl:text-base font-medium hover:text-[#d6ad30] transition-colors duration-200 whitespace-nowrap"
               >
                 {link.name}
               </Link>
@@ -161,7 +161,7 @@ export default function Header() {
 
         {/* Mobile Hamburger Button */}
         <button
-          className="md:hidden flex items-center justify-center text-white text-3xl rounded-full w-12 h-12 min-w-[3rem] min-h-[3rem] cursor-pointer hover:text-[#d6ad30] focus:outline-none focus:ring-2 focus:ring-[#d6ad30] transition-colors"
+          className="lg:hidden flex items-center justify-center text-white text-3xl rounded-full w-11 h-11 min-w-[2.75rem] min-h-[2.75rem] cursor-pointer hover:text-[#d6ad30] focus:outline-none focus:ring-2 focus:ring-[#d6ad30] transition-colors"
           aria-label="Toggle mobile menu"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -171,7 +171,7 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <nav className="md:hidden bg-[#101d43] border-t border-[#d6ad30] px-3 xs:px-4 py-5 xs:py-6 w-full max-w-full overflow-x-hidden">
+        <nav className="lg:hidden bg-[#101d43] border-t border-[#d6ad30] px-4 py-5 w-full max-w-full overflow-x-hidden">
           <div className="flex flex-col space-y-5 xs:space-y-6">
             {navLinks.map((link) =>
               link.name === 'Services' ? (

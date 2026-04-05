@@ -7,12 +7,12 @@ import Link from 'next/link';
 export default function LandscapeDesignPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-      <section className="relative h-[60vh] flex items-center justify-center text-center overflow-hidden py-12 px-8 bg-deep-blue">
+      <section className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden pt-20 pb-12 px-8 bg-deep-blue">
         <div className="absolute inset-0">
           <Image src="/images/services/outdoor-living-hero.jpg" alt="Landscape Design" layout="fill" objectFit="cover" quality={90} priority className="opacity-50"/>
         </div>
         <div className="relative z-10 max-w-4xl">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary">Landscape Design</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 text-gold-primary">Landscape Design</h1>
           <p className="text-lg font-semibold text-gold-secondary mb-4">Great Outdoor Spaces Start with a Solid Plan</p>
           <p className="text-lg lg:text-xl leading-relaxed">Clear, practical designs that account for grading, drainage, plant placement, hardscape integration, and how everything connects to your home and lifestyle. Built around your space, goals, and Central Texas conditions.</p>
         </div>

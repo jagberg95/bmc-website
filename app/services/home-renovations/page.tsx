@@ -9,7 +9,7 @@ export default function HomeRenovationsPage() {
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
 
       {/* -- Hero -------------------------------------------- */}
-      <section className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-deep-blue to-primary" />
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'url("/images/Layered Circle/BMC_Layered_Circle_Dist_01.png")', backgroundSize: '420px', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} />
 
@@ -17,7 +17,7 @@ export default function HomeRenovationsPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-5">
             Upgrades &amp; Renovations
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.1]">
             Refresh, Reimagine,<br />
             <span className="text-gold-primary">Renovate</span>
           </h1>

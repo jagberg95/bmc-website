@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
       {/* Hero Section for About Us */}
-      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
+      <section className="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden pt-20">
         <div className="absolute inset-0">
           <Image
             src="/images/tim-arterbury-sunset1--unsplash.jpg"
@@ -24,7 +24,7 @@ export default function AboutPage() {
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Est. Central Texas
           </p>
-          <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 text-white tracking-tight leading-[1.1]">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 text-white tracking-tight leading-[1.1]">
             Howdy from<br />
             <span className="text-gold-primary">Bar Moon Contracting</span>
           </h1>
