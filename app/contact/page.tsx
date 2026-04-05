@@ -61,45 +61,46 @@ function ContactForm() {
     'w-full bg-dark-blue/60 border border-gray-600 focus:border-gold-primary focus:ring-1 focus:ring-gold-primary/40 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none transition';
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-	  {/* Name + Email row */}
-	  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-		<input
-		  name="name"
-		  value={formData.name}
-		  onChange={handleChange}
-		  type="text"
-		  placeholder="Your Name *"
-		  required
-		  className={inputClass}
-		/>
-		<input
-		  name="email"
-		  value={formData.email}
-		  onChange={handleChange}
-		  type="email"
-		  placeholder="Email Address *"
-		  required
-		  className={inputClass}
-		/>
-	  </div>
-	  {/* Add other form fields here if needed */}
-	</form>
+    <>
+      <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+        {/* Name + Email row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <input
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            type="text"
+            placeholder="Your Name *"
+            required
+            className={inputClass}
+          />
+          <input
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            type="email"
+            placeholder="Email Address *"
+            required
+            className={inputClass}
+          />
+        </div>
+        {/* Add other form fields here if needed */}
+      </form>
 
-            {/* Contact Form & Info */}
-            <section className="py-20 bg-dark-blue">
-              <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
-                {/* Contact Info */}
-                <div>
-                  <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
-                  <p className="text-lg mb-8 leading-relaxed">
-                    We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
-                  </p>
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
-                      <p className="text-lg">Central Texas and surrounding communities.</p>
-                    </div>
+      {/* Contact Form & Info */}
+      <section className="py-20 bg-dark-blue">
+        <Container className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-3xl font-bold mb-6 text-gold-primary">Get In Touch</h3>
+            <p className="text-lg mb-8 leading-relaxed">
+              We're here to answer your questions and discuss your construction needs. Whether you're planning a custom home, a renovation, or need reliable repairs, reach out to us today.
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
+                <p className="text-lg">Central Texas and surrounding communities.</p>
+              </div>
 <<<<<<< HEAD
         <div className="relative z-10 max-w-3xl px-6">
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">

@@ -206,13 +206,7 @@ export default function HomePage() {
           <div className="space-y-10">
             {timelineSteps.map((step, i) => (
               <TimelineStep key={i} {...step} active={active === i} index={i} />
-                        <Container className="max-w-6xl">
-                          <h2 className="text-3xl font-bold text-gold-primary mb-8">Our Services</h2>
-                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                            {/* Service cards here */}
-                          </div>
-                        </Container>
-                      </section>
+            ))}
         </div>
       </section>
     </main>

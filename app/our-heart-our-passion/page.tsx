@@ -8,39 +8,40 @@ import Container from '../components/Container';
 
 export default function OurHeartPage() {
   return (
-    <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-      {/* Hero Section for Our Heart - Our Passion */}
-      <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/samantha-amidon-bluebonnet-unsplash.jpg"
-            alt="Texas bluebonnets"
-            fill
-            className="object-cover brightness-[0.3] scale-105"
-            priority
-          />
-        </div>
-        <Container className="relative z-10">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
-            Our Heart Our Passion
-          </h1>
-          <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
-            Building With Purpose, Responsibility, and Care
-          </h2>
-        </Container>
-      </section>
+    <>
+      <main className="bg-dark-blue text-light-neutral font-sans antialiased">
+        {/* Hero Section for Our Heart - Our Passion */}
+        <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/samantha-amidon-bluebonnet-unsplash.jpg"
+              alt="Texas bluebonnets"
+              fill
+              className="object-cover brightness-[0.3] scale-105"
+              priority
+            />
+          </div>
+          <Container className="relative z-10">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-4 text-gold-primary tracking-tight drop-shadow-lg">
+              Our Heart Our Passion
+            </h1>
+            <h2 className="text-3xl lg:text-4xl mb-8 text-gold-secondary font-medium tracking-wide drop-shadow-sm">
+              Building With Purpose, Responsibility, and Care
+            </h2>
+          </Container>
+        </section>
 
-      {/* Content Section */}
-      <section className="py-20 bg-deep-blue">
-        <Container className="prose prose-lg prose-invert">
-          <p className="text-lg leading-relaxed mb-8">
-            Construction is more than materials and measurements. It’s responsibility. It’s stewardship. It’s the understanding that what we build impacts families, livelihoods, and futures. We believe our work is a trust — one that should be handled with care, honesty, and excellence. Every project represents more than a structure; it represents someone’s investment, safety, and peace of mind. That belief shapes how we approach every job, large or small.
-          </p>
-          <p className="text-lg leading-relaxed text-gray-600">
-            We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
-          </p>
-        </Container>
-      </section>
+        {/* Content Section */}
+        <section className="py-20 bg-deep-blue">
+          <Container className="prose prose-lg prose-invert">
+            <p className="text-lg leading-relaxed mb-8">
+              Construction is more than materials and measurements. It’s responsibility. It’s stewardship. It’s the understanding that what we build impacts families, livelihoods, and futures. We believe our work is a trust — one that should be handled with care, honesty, and excellence. Every project represents more than a structure; it represents someone’s investment, safety, and peace of mind. That belief shapes how we approach every job, large or small.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-600">
+              We see every project as a trust&mdash;one that should be handled with care, honesty, and excellence. Whether it&rsquo;s a small repair or a full custom build, we treat your home like it&rsquo;s our own, focusing on lasting value, safety, and peace of mind.
+            </p>
+          </Container>
+        </section>
 
       {/* ── Full-bleed image break ───────────────────────────── */}
       <section className="relative h-[50vh] overflow-hidden">
