@@ -1,15 +1,9 @@
 // app/contact/page.tsx
+
 'use client';
 
-
-import Image from 'next/image';
-<<<<<<< HEAD
-import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
-=======
 import Container from '../components/Container';
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+// ...existing code...
 
 /* ── Contact Form (reads ?step= or ?service= from URL) ─── */
 function ContactForm() {

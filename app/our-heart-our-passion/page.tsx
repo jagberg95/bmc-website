@@ -1,14 +1,10 @@
-'use client';
 
-<<<<<<< HEAD
-import Link from 'next/link';
-import Image from 'next/image';
-=======
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '../components/Container';
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+// ...existing code...
 
 export default function OurHeartPage() {
   return (

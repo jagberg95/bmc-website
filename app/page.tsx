@@ -1,20 +1,16 @@
 
-<<<<<<< HEAD
+
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import Container from './components/Container';
 import HeroVideo from './components/HeroVideo';
 import ScrollVideo from './components/ScrollVideo';
 import React from 'react';
 import { timelineSteps } from './components/timelineSteps';
 import TimelineStep from './components/TimelineStep';
-=======
-
-import Image from 'next/image';
-import Link from 'next/link'; // Used for internal page navigation or external links
-import Container from './components/Container';
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
+// ...existing code...
 
 export default function HomePage() {
   const [active, setActive] = React.useState(0);

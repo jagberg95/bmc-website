@@ -20,21 +20,12 @@ export default function PrivacyPolicyPage() {
           <p>For any requests regarding your data, contact us through the form on the contact page.</p>
         </Container>
       </section>
-<<<<<<< HEAD
-      <section className="py-8 text-center">
-        <Container>
-          <Link href="/" className="inline-block bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg">
-            Back to Home
-          </Link>
-        </Container>
-=======
       <section className="py-8 text-center">
         <Container>
           <Link href="/" legacyBehavior>
             <a className="inline-block bg-gold-primary text-dark-blue font-bold py-3 px-6 rounded-lg">Back to Home</a>
           </Link>
         </Container>
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
       </section>
     </main>
   );
