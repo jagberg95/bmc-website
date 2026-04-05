@@ -9,14 +9,8 @@ import Container from '../components/Container';
 export default function AboutPage() {
   return (
     <main className="bg-dark-blue text-light-neutral font-sans antialiased">
-
-<<<<<<< HEAD
-      {/* ── Hero: full-screen with layered text ──────────────── */}
-      <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-=======
       {/* Hero Section for About Us */}
       <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden py-16">
->>>>>>> a6322ba (Apply responsive Container component to all main pages for consistent scaling)
         <div className="absolute inset-0">
           <Image
             src="/images/tim-arterbury-sunset1--unsplash.jpg"
@@ -26,8 +20,7 @@ export default function AboutPage() {
             priority
           />
         </div>
-<<<<<<< HEAD
-              <main className="bg-dark-blue text-light-neutral font-sans antialiased">  
+        <div className="relative z-10 w-full flex flex-col items-center justify-center">
           <p className="text-accent text-sm font-semibold uppercase tracking-[0.3em] mb-4">
             Est. Central Texas
           </p>
