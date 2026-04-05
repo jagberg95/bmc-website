@@ -101,12 +101,9 @@ function ContactForm() {
                 <h4 className="text-xl font-bold text-gold-secondary mb-2">Service Areas</h4>
                 <p className="text-lg">Central Texas and surrounding communities.</p>
               </div>
-          </h1>
-          <div className="w-16 h-[2px] bg-accent mx-auto mb-6" />
-          <p className="text-lg lg:text-xl text-gray-200 leading-relaxed max-w-xl mx-auto">
-            Quick repair, renovation, or custom build&mdash;we&apos;re here for it. Reach out and let&apos;s start a conversation about what&apos;s possible.
-          </p>
-        </div>
+            </div>
+          </div>
+        </Container>
       </section>
 
       {/* ── Direct contact strip ─────────────────────────── */}
