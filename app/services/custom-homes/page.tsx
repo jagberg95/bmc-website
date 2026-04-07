@@ -207,7 +207,7 @@ export default function CustomHomesPage() {
                 title: 'Handover & Beyond',
                 text: 'Final walkthrough, keys, and a relationship that lasts. We\u2019re here for any future projects or questions.',
               },
-            ].map((item, i) => (
+            ].map((item) => (
               <div key={item.step} className="relative flex gap-6 md:gap-8 mb-12 last:mb-0">
                 {/* Step number circle */}
                 <div className="relative z-10 w-12 h-12 md:w-16 md:h-16 rounded-full bg-light-neutral border-2 border-deep-blue flex items-center justify-center shrink-0">

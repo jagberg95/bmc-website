@@ -4,32 +4,28 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import { Suspense, useCallback, useState } from 'react';
 
 /* ── Contact Form (reads ?step= or ?service= from URL) ─── */
 function ContactForm() {
   const searchParams = useSearchParams();
+
+  const initialSubject = (() => {
+    const step = searchParams.get('step');
+    const service = searchParams.get('service');
+    if (step) return `Question about Process Step ${step}`;
+    if (service) return `Inquiry about ${service.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}`;
+    return '';
+  })();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    subject: initialSubject,
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
-
-  useEffect(() => {
-    const step = searchParams.get('step');
-    const service = searchParams.get('service');
-    if (step) {
-      setFormData((d) => ({ ...d, subject: `Question about Process Step ${step}` }));
-    } else if (service) {
-      setFormData((d) => ({
-        ...d,
-        subject: `Inquiry about ${service.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}`,
-      }));
-    }
-  }, [searchParams]);
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

@@ -78,10 +78,12 @@ const SERVICES = [
 
 /* ────────────────────────────── Hook: detect touch device ─────── */
 function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(max-width: 1023px)').matches;
+  });
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 1023px)');
-    setIsMobile(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mq.addEventListener('change', handler);
     return () => mq.removeEventListener('change', handler);
@@ -202,7 +204,6 @@ export default function HomePageServices() {
             <DetailPanel
               ref={panelRef}
               service={activeService}
-              activeIdx={activeIdx}
               onEnter={cancelClose}
               onLeave={scheduleClose}
             />
@@ -217,13 +218,12 @@ export default function HomePageServices() {
 
 type DetailPanelProps = {
   service: (typeof SERVICES)[number] | null;
-  activeIdx: number;
   onEnter: () => void;
   onLeave: () => void;
 };
 
 const DetailPanel = React.forwardRef<HTMLDivElement, DetailPanelProps>(
-  function DetailPanel({ service, activeIdx, onEnter, onLeave }, ref) {
+  function DetailPanel({ service, onEnter, onLeave }, ref) {
     const innerRef = useRef<HTMLDivElement>(null);
     const [height, setHeight] = useState(0);
 

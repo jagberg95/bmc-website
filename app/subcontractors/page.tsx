@@ -2,6 +2,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const TRADES = [
   { title: 'Electrical', desc: 'Licensed electricians for residential and light commercial rough-in, panel work, and finish wiring.' },
@@ -249,10 +250,12 @@ export default function SubcontractorsPage() {
 
       {/* ── Logo sign-off ────────────────────────────────── */}
       <section className="py-12 bg-dark-blue flex justify-center">
-        <img
+        <Image
           src="/images/Layered Circle/BMC_Layered_Circle_Dist_01.png"
           alt="Bar Moon Contracting"
-          className="w-20 h-20 object-contain opacity-30"
+          width={80}
+          height={80}
+          className="object-contain opacity-30"
         />
       </section>
     </main>

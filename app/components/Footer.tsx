@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 italic mb-6 max-w-xs">
-              "Crafting Texas Legacies with Heart & Grit"
+              &ldquo;Crafting Texas Legacies with Heart &amp; Grit&rdquo;
             </p>
             <div className="flex space-x-4">
               {SOCIAL_LINKS.map((social) => (

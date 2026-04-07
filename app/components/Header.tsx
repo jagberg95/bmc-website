@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -27,7 +27,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesTimerRef = useState<ReturnType<typeof setTimeout> | null>(null);
+  const servicesTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
@@ -69,13 +69,13 @@ export default function Header() {
 
   /* Services dropdown hover helpers */
   const openServices = useCallback(() => {
-    if (servicesTimerRef[0]) clearTimeout(servicesTimerRef[0]);
+    if (servicesTimerRef.current) clearTimeout(servicesTimerRef.current);
     setServicesOpen(true);
   }, []);
 
   const closeServices = useCallback(() => {
     const timer = setTimeout(() => setServicesOpen(false), 150);
-    servicesTimerRef[0] = timer;
+    servicesTimerRef.current = timer;
   }, []);
 
   return (
