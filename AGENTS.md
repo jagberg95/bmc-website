@@ -1,3 +1,16 @@
+# AGENTS.md
+
+> **PROJECT RULES (required reading for this website)**
+>
+> This is the **Bar Moon Contracting** website.
+> 
+> **Read `RULES.md` first — it is the authoritative rule set (AI Coder Rule Set v3.0 FINAL) for all coding, content, architecture, SEO, design, and build decisions.**
+> Follow the phased plan, page structure, content depth requirements, technical rules, red flags, and Definition of Done in RULES.md.
+>
+> The content below covers general agent workspace behavior, memory, and session practices.
+
+---
+
 # AGENTS.md - Your Workspace
 
 This folder is home. Treat it that way.
