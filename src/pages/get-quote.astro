@@ -166,9 +166,16 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
             window.turnstile.reset();
           }
         } else {
-          errorMsg.textContent = 'Oops! There was a problem submitting your form. Please try calling us instead.';
+          let msg = 'Oops! There was a problem submitting your form. Please try calling us instead.';
+          try {
+            const data = await response.json();
+            if (data.error) msg = data.error;
+            if (data.details) msg += ` (details: ${JSON.stringify(data.details)})`;
+          } catch (e) {}
+          errorMsg.textContent = msg;
           errorMsg.classList.remove('hidden');
           if (window.turnstile) window.turnstile.reset();
+          console.error('Worker error response:', response.status, msg);
         }
       } catch (error) {
         console.error('Form submission error:', error);
