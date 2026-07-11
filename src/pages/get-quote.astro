@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAA...'; // replace with real public key if env not set
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <Layout title="Contact & Get a Quote | Bar Moon Contracting">
@@ -49,22 +49,22 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAA
         <!-- Form posts to your Cloudflare Worker URL -->
         <form id="quote-form" class="space-y-6">
           <!-- Honeypot for spam (hidden from users) -->
-          <input type="text" name="honeypot" class="hidden" />
+          <input type="text" name="honeypot" autocomplete="off" class="hidden" />
 
           <!-- Cloudflare Turnstile widget (spam protection) -->
           <!-- NOTE: Force rebuild for Vercel - public key + Worker URL fix - 2026-07-11 -->
           <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto" data-size="normal"></div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input type="text" name="name" placeholder="Name *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
-            <input type="tel" name="phone" placeholder="Phone *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+            <input type="text" name="name" autocomplete="name" placeholder="Name *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+            <input type="tel" name="phone" autocomplete="tel" placeholder="Phone *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
           </div>
 
-          <input type="email" name="email" placeholder="Email Address *" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+          <input type="email" name="email" autocomplete="email" placeholder="Email Address *" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
 
-          <input type="text" name="city" placeholder="Project city or ZIP *" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+          <input type="text" name="city" autocomplete="address-level2" placeholder="Project city or ZIP *" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
 
-          <select name="projectType" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white">
+          <select name="projectType" autocomplete="off" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white" aria-label="Project type">
             <option value="">Project type *</option>
             <option value="Home renovation or remodel">Home renovation or remodel</option>
             <option value="Kitchen or bath remodel">Kitchen or bath remodel</option>
@@ -80,16 +80,16 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAA
             <option value="Other">Other</option>
           </select>
 
-          <textarea name="details" placeholder="Brief project details *" required rows="5" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400"></textarea>
+          <textarea name="details" autocomplete="off" placeholder="Brief project details *" required rows="5" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400"></textarea>
 
-          <input type="text" name="preferred" placeholder="Preferred contact method or best time to reach you" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+          <input type="text" name="preferred" autocomplete="off" placeholder="Preferred contact method or best time to reach you" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
 
           <!-- Optional hidden fields (used by some form handlers; Worker ignores or uses them) -->
           <input type="hidden" name="_subject" value="New Quote Request from Bar Moon Contracting Website" />
 
           <div class="flex items-center gap-2 text-sm">
-            <input type="checkbox" required class="accent-accent" />
-            <label>I agree to the <a href="/privacy-policy" class="underline hover:text-accent">privacy policy</a>.</label>
+            <input type="checkbox" id="privacy" required class="accent-accent" />
+            <label for="privacy">I agree to the <a href="/privacy-policy" class="underline hover:text-accent">privacy policy</a>.</label>
           </div>
 
           <button type="submit" class="w-full bg-accent hover:bg-gold text-dark-blue font-bold py-4 rounded-lg transition">Request My Free Quote</button>
