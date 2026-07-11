@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAA...'; // replace with real public key if env not set
 ---
 
 <Layout title="Contact & Get a Quote | Bar Moon Contracting">
