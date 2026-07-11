@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Services | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+      <p class="text-xl text-gray-700 max-w-3xl mb-12">
+        Professional general contracting, custom homes, renovations, painting, roofing, outdoor living, and repairs across Bell County and the surrounding areas. We focus on clear communication, detailed planning, and reliable project management—because craftsmanship is expected, but how a project is run makes all the difference.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/services/home-renovations-temple-tx" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
+          <img src="/images/christian-mackie-kitchen2-unsplash.jpg" alt="Home renovation kitchen" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <h2 class="text-2xl font-bold mb-2">Home Renovations</h2>
+          <p class="text-gray-600">Kitchens, baths, whole-home updates, painting, roofing, and layout changes built for Central Texas homes.</p>
+        </a>
+
+        <a href="/services/kitchen-bath-remodeling-temple-tx" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
+          <img src="/images/beks-mu-bathroom-unsplash.jpg" alt="Kitchen remodel" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <h2 class="text-2xl font-bold mb-2">Kitchen & Bath Remodeling</h2>
+          <p class="text-gray-600">Thoughtful remodels with durable materials, painting, and finishes that handle Texas families and climate.</p>
+        </a>
+
+        <a href="/services/outdoor-living-decks-patios-central-texas" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
+          <img src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg" alt="Patio and deck" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <h2 class="text-2xl font-bold mb-2">Outdoor Living</h2>
+          <p class="text-gray-600">Decks, patios, hardscapes, and landscape design designed for local conditions.</p>
+        </a>
+
+        <a href="/services/fencing-concrete-repairs-central-texas" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
+          <img src="/images/Projects/painting-fence.jpg" alt="Painted fence and exterior repairs project" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <h2 class="text-2xl font-bold mb-2">Fencing, Concrete & Repairs</h2>
+          <p class="text-gray-600">Reliable fencing, concrete work, painting, roofing, and repairs built to handle Bell County soil and weather.</p>
+        </a>
+
+        <a href="/services/general-contracting-temple-tx" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition md:col-span-2">
+          <img src="/images/sasun-bughdaryan-handyman-unsplash.jpg" alt="General contracting repairs" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <h2 class="text-2xl font-bold mb-2">General Contracting</h2>
+          <p class="text-gray-600">Repairs, renovations, painting, roofing, coordination, storm damage, and full project management in Bell County and surrounding areas.</p>
+        </a>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="mb-4 text-gray-600">Ready to discuss your project anywhere in Bell County or the surrounding areas?</p>
+        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-10 py-4 rounded-lg inline-block text-lg">Start Your Project</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

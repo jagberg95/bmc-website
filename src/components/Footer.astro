@@ -1,0 +1,64 @@
+---
+const SERVICE_AREAS = [
+  "Temple", "Belton", "Salado", "Killeen", "Harker Heights", 
+  "Copperas Cove", "Jarrell", "Nolanville"
+];
+---
+
+<footer class="bg-dark-blue text-white pt-16 pb-8 border-t-4 border-accent">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <!-- Brand -->
+      <div class="flex flex-col items-center md:items-start text-center md:text-left">
+        <div class="flex items-center mb-4">
+          <img 
+            src="/images/Circle/BMC_Logo_Circle_Clean_01.png" 
+            alt="BMC Logo" 
+            class="w-14 h-14 object-contain"
+          />
+        </div>
+        <p class="text-gray-300 italic mb-4 max-w-xs">
+          “Crafting Texas Legacies with Heart &amp; Grit”
+        </p>
+        <div class="text-sm text-gray-400 space-y-1">
+          <p>(254) 581-3808</p>
+          <p>Mon–Fri 8:00 AM – 6:00 PM</p>
+          <p class="text-xs mt-1">Bell County and surrounding areas only • No public address</p>
+        </div>
+      </div>
+
+      <!-- Explore -->
+      <div class="text-center md:text-left">
+        <h3 class="text-gold font-bold text-lg mb-6 uppercase tracking-widest">Explore</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li><a href="/" class="hover:text-accent transition">Home</a></li>
+          <li><a href="/services" class="hover:text-accent transition">Services</a></li>
+          <li><a href="/about" class="hover:text-accent transition">About</a></li>
+          <li><a href="/projects" class="hover:text-accent transition">Projects</a></li>
+          <li><a href="/faq" class="hover:text-accent transition">FAQ</a></li>
+          <li><a href="/get-quote" class="hover:text-accent transition">Get Quote</a></li>
+        </ul>
+      </div>
+
+      <!-- Info -->
+      <div class="text-center md:text-left">
+        <h3 class="text-gold font-bold text-lg mb-6 uppercase tracking-widest">Info</h3>
+        <ul class="space-y-3 text-gray-300">
+          <li><a href="/privacy-policy" class="hover:text-accent transition">Privacy Policy</a></li>
+          <li><a href="/terms-of-service" class="hover:text-accent transition">Terms of Service</a></li>
+          <li><a href="/subcontractors" class="hover:text-accent transition">Subcontractor Partnerships</a></li>
+        </ul>
+        <div class="mt-6">
+          <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold py-2 px-6 rounded transition">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+      <p>&copy; {new Date().getFullYear()} Bar Moon Contracting. All rights reserved.</p>
+      <p class="mt-1 text-xs">Serving Bell County and the surrounding areas in Texas</p>
+    </div>
+  </div>
+</footer>

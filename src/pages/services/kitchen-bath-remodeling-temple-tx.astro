@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Kitchen & Bath Remodeling in Temple, TX | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8">
+        <a href="/services" class="text-sm text-accent hover:underline">← Back to Services</a>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Kitchen & Bath Remodeling in Temple, TX &amp; Bell County</h1>
+      <img src="/images/lotus-design-n-print-kitchen3-unsplash.jpg" alt="Kitchen remodel example" class="w-full aspect-[16/9] object-cover rounded-xl mb-6" width="800" height="450" loading="lazy" />
+      <p class="text-xl text-gray-700 mb-10">Beautiful, functional spaces designed for how Central Texas families actually live. We specialize in kitchens and baths—including painting and finishes—that stand up to real use and our climate.</p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">What We Handle</h2>
+        <ul>
+          <li>Full kitchen remodels: cabinets, countertops, appliances, layout changes</li>
+          <li>Bath updates: walk-in showers, soaking tubs, vanities, accessibility features</li>
+          <li>Laundry rooms, mudrooms, and powder rooms</li>
+          <li>Custom cabinetry and built-ins</li>
+          <li>Tile work, flooring, painting, and lighting upgrades</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local Considerations</h2>
+        <p>High humidity, hard water, and active households demand smart choices. We focus on proper ventilation, durable finishes that resist moisture and wear, and layouts that maximize storage and flow. Good materials and craftsmanship mean less maintenance down the road.</p>
+
+        <h2 class="text-2xl md:text-3xl">Our Process</h2>
+        <ol>
+          <li>Consultation to understand your needs and lifestyle</li>
+          <li>Design options and material selections within budget</li>
+          <li>Detailed quote and realistic timeline</li>
+          <li>Demo, build, and daily updates</li>
+          <li>Final walkthrough and cleanup</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Frequently Asked Questions</h2>
+        <p><strong>How long do kitchen or bath projects take?</strong> Typically 3–6 weeks for a standard remodel, depending on scope and material lead times. We provide clear, realistic timelines upfront.</p>
+        <p><strong>Can I live in the home during the work?</strong> Yes for most projects. We contain dust and work around your schedule.</p>
+        <p><strong>Do you help with design?</strong> We guide selections and can recommend partners for full design if needed.</p>
+        <p><strong>Can I choose my own materials?</strong> Yes. We can source or install owner-provided materials with our standard workmanship warranty.</p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Planning a kitchen or bath update?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Remodel Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> • Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Structured Data for this service page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Kitchen and Bath Remodeling",
+          "name": "Kitchen & Bath Remodeling in Temple, TX & Bell County",
+          "description": "Beautiful, functional kitchen and bath remodels with durable materials, painting, and finishes designed for Central Texas families and climate.",
+          "provider": { "@type": "LocalBusiness", "name": "Bar Moon Contracting", "url": "https://barmooncontracting.com" },
+          "areaServed": ["Temple, TX", "Belton, TX", "Killeen, TX", "Bell County, TX"],
+          "url": "https://barmooncontracting.com/services/kitchen-bath-remodeling-temple-tx"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long do kitchen or bath projects take?", "acceptedAnswer": { "@type": "Answer", "text": "Typically 3–6 weeks for a standard remodel, depending on scope and material lead times. We provide clear, realistic timelines upfront." } },
+            { "@type": "Question", "name": "Can I live in the home during the work?", "acceptedAnswer": { "@type": "Answer", "text": "Yes for most projects. We contain dust and work around your schedule." } },
+            { "@type": "Question", "name": "Do you help with design?", "acceptedAnswer": { "@type": "Answer", "text": "We guide selections and can recommend partners for full design if needed." } },
+            { "@type": "Question", "name": "Can I choose my own materials?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We can source or install owner-provided materials with our standard workmanship warranty." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-4xl mx-auto px-6 py-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">About Bar Moon Contracting</h1>
+      
+      <div class="prose prose-lg text-gray-700 max-w-none">
+        <p>Bar Moon Contracting is a Central Texas general contractor with five generations of roots in Bell County. Founded on a legacy of integrity and hard work, we specialize in custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and repairs. Our team brings decades of experience to every job, ensuring that every build reflects our commitment to excellence.</p>
+        <p>We handle custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and repairs with clear communication, careful planning, and craftsmanship built to last. Homeowners expect quality work—what sets us apart is how we manage the entire project from start to finish.</p>
+        
+        <h2 class="text-3xl font-bold mt-8 mb-4 text-primary">Our Approach</h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <p>We show up. We communicate clearly. We do the work right. No hype. No surprises. Just honest estimates and quality work that respects your home and your budget.</p>
+            <p>Our approach is built on four pillars: thorough planning before we break ground, proactive communication throughout every phase, meticulous project management to keep things on schedule and on budget, and uncompromising craftsmanship in every detail. We treat your home as if it were our own, ensuring transparency and collaboration at every step.</p>
+          </div>
+          <img src="/images/Projects/painting-house.jpg" alt="Recent exterior painting project" class="rounded-xl shadow w-full h-auto object-cover" />
+        </div>
+        
+        <h2 class="text-3xl font-bold mt-8 mb-4 text-primary">Service Area</h2>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <p>We serve homeowners, businesses, churches, and facilities throughout Bell County and the surrounding areas as a service-area business:</p>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3">
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Temple</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Belton</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Salado</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Killeen</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Harker Heights</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Copperas Cove</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Jarrell</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Nolanville</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Morgan's Point Resort</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Little River-Academy</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Rogers</div>
+              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Holland</div>
+            </div>
+            <p class="text-xs text-gray-500 mt-2">We also serve many rural properties and smaller communities throughout Bell County and the surrounding areas.</p>
+          </div>
+          <img src="/images/family.jpg" alt="Bar Moon Contracting family and team" class="rounded-xl shadow w-full h-auto object-cover" />
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block">Work With Us</a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="/images/Projects/market-landscape-front-1.jpg" alt="Front yard landscaping on a recently prepared home" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
+        <img src="/images/Projects/market-interior-kitchen.jpg" alt="Staged and renovated kitchen" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
+        <img src="/images/Projects/painting-house.jpg" alt="Fresh exterior painting on a Central Texas home" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
+        <img src="/images/Projects/pond-restoration-4.jpg" alt="Completed pond restoration project" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

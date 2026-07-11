@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Home Renovations in Temple, TX | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Home Renovations in Temple, TX &amp; Bell County</h1>
+      <img src="/images/naomi-hebert-kitchen1-unsplash.jpg" alt="Kitchen renovation details" class="w-full aspect-[16/9] object-cover rounded-xl mb-6" width="800" height="450" loading="lazy" />
+      <p class="text-xl text-gray-700 mb-10">
+        Thoughtful renovations that respect your home’s character while delivering modern function. We handle kitchens, baths, flooring, painting, roofing, layout changes, and whole-home updates across Bell County and the surrounding areas.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">What Home Renovations Mean in Central Texas</h2>
+        <p>Renovating a home in Bell County comes with unique challenges: Our clay-heavy soils shift with the seasons. Summers are brutal on materials. Older homes often have surprises behind the walls. We plan for all of it.</p>
+
+        <h2 class="text-2xl md:text-3xl">What We Handle</h2>
+        <ul>
+          <li>Full kitchen remodels with durable countertops and cabinetry built for active families</li>
+          <li>Bathroom updates including walk-in showers, accessibility features, and moisture control</li>
+          <li>Whole-home renovations and room additions</li>
+          <li>Flooring, drywall, painting, roofing, trim, and finish carpentry</li>
+          <li>Layout changes that actually improve how you use your space</li>
+          <li>Storm damage restoration and insurance work</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local Considerations We Plan For</h2>
+        <p>High heat and humidity demand proper ventilation and material choices. Clay soil movement means we pay special attention to foundations and drainage during any addition or major remodel. We select high-performance finishes designed to withstand the intense sun, humidity swings, and active family use typical in Central Texas.</p>
+
+        <h2 class="text-2xl md:text-3xl">Our Renovation Process</h2>
+        <ol>
+          <li><strong>Consultation &amp; Site Visit</strong> — We walk the project together and listen to how you live in the space.</li>
+          <li><strong>Clear Scope &amp; Estimate</strong> — You receive a written scope, realistic timeline, and transparent pricing with no hidden fees.</li>
+          <li><strong>Material Selection</strong> — We help choose finishes that balance beauty, durability, and budget for Central Texas conditions.</li>
+          <li><strong>Construction</strong> — Daily updates, clean job sites, and respect for your home and schedule.</li>
+          <li><strong>Final Walkthrough</strong> — We conduct a thorough final walkthrough with you to confirm that every detail meets the scope and our high standards. A full warranty and follow-up support are included.</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Frequently Asked Questions</h2>
+        <p><strong>How long do renovations typically take?</strong> Kitchen or bath projects often take 3–7 weeks depending on scope and material lead times. Whole-home work typically takes 4–12 weeks. We provide clear, realistic timelines upfront.</p>
+        <p><strong>Do you work with older homes?</strong> Yes. Many of our projects are in homes built 30–60+ years ago. We’re experienced with the surprises that come with them.</p>
+        <p><strong>Will I need to move out?</strong> Usually not for kitchen or bath work. We work around your schedule as much as possible.</p>
+        <p><strong>What warranty do you offer?</strong> We provide a one-year workmanship warranty, plus manufacturer warranties on materials and appliances.</p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Ready to plan your renovation in Temple or nearby?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> • Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Structured Data for this service page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Home Renovations",
+          "name": "Home Renovations in Temple, TX & Bell County",
+          "description": "Thoughtful renovations including kitchens, baths, whole-home updates, painting, roofing, flooring, and layout changes for Central Texas homes.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Bar Moon Contracting",
+            "url": "https://barmooncontracting.com"
+          },
+          "areaServed": ["Temple, TX", "Belton, TX", "Salado, TX", "Killeen, TX", "Harker Heights, TX", "Copperas Cove, TX", "Jarrell, TX", "Bell County, TX"],
+          "url": "https://barmooncontracting.com/services/home-renovations-temple-tx"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long do renovations typically take?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Kitchen or bath projects often take 3–7 weeks depending on scope and material lead times. Whole-home work typically takes 4–12 weeks. We provide clear, realistic timelines upfront." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with older homes?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many of our projects are in homes built 30–60+ years ago. We’re experienced with the surprises that come with them." }
+            },
+            {
+              "@type": "Question",
+              "name": "Will I need to move out?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Usually not for kitchen or bath work. We work around your schedule as much as possible." }
+            },
+            {
+              "@type": "Question",
+              "name": "What warranty do you offer?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We provide a one-year workmanship warranty, plus manufacturer warranties on materials and appliances." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </main>
+
+  <Footer />
+</Layout>

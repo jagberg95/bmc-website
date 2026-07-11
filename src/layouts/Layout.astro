@@ -1,0 +1,66 @@
+---
+import '../styles/globals.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Bar Moon Contracting | Central Texas Custom Homes & Renovations", description = "Five generations of Central Texas craftsmanship. Custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and home repairs — built with integrity." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/images/logo/bmc-logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Central Texas contractor, custom home builder, home renovations, painting, roofing, outdoor living, home repairs, Bar Moon Contracting, Texas craftsmanship, general contractor" />
+    <link rel="canonical" href={`https://barmooncontracting.com${Astro.url.pathname}`} />
+
+    <!-- Structured Data: LocalBusiness / GeneralContractor (sitewide) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "GeneralContractor"],
+      "name": "Bar Moon Contracting",
+      "url": "https://barmooncontracting.com",
+      "telephone": "+1-254-581-3808",
+      "description": "Five generations of Central Texas craftsmanship. Custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and repairs across Bell County and the surrounding areas.",
+      "areaServed": [
+        "Temple, TX",
+        "Belton, TX",
+        "Salado, TX",
+        "Killeen, TX",
+        "Harker Heights, TX",
+        "Copperas Cove, TX",
+        "Jarrell, TX",
+        "Nolanville, TX",
+        "Bell County, TX",
+        "Central Texas"
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "logo": "https://barmooncontracting.com/images/Circle/BMC_Logo_Circle_Clean_01.png",
+      "image": "https://barmooncontracting.com/images/herve-customhome-unsplash.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-254-581-3808",
+        "contactType": "customer service",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": []
+    }
+    </script>
+  </head>
+  <body class="bg-dark-blue text-light-neutral font-sans antialiased min-h-screen">
+    <slot />
+  </body>
+</html>

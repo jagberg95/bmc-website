@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Fencing, Concrete & Repairs in Central Texas | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8">
+        <a href="/services" class="text-sm text-accent hover:underline">← Back to Services</a>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Fencing, Concrete & Repairs in Central Texas</h1>
+      <img src="/images/josh-olalde-framing-unsplash.jpg" alt="Framing and construction" class="w-full aspect-[16/9] object-cover rounded-xl mb-6" width="800" height="450" loading="lazy" />
+      <p class="text-xl text-gray-700 mb-10">Durable fencing, solid concrete work, painting, roofing, and reliable repairs built to handle Bell County conditions—heat, storms, clay soil, and all.</p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">What We Handle</h2>
+        <ul>
+          <li>Wood, vinyl, metal, and ranch-style fencing</li>
+          <li>Driveways, patios, sidewalks, slabs, and stamped concrete</li>
+          <li>Foundation repairs, drainage solutions, and grading</li>
+          <li>General exterior repairs, painting, roofing repairs, punch lists, and storm damage fixes</li>
+          <li>Small additions and site work</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local Considerations</h2>
+        <p>The extreme heat, heavy rains, freezes, and shifting clay soils common in Central Texas put unique stress on fences, patios, and concrete. We design and install with proper footings, expansion joints, drainage, and materials that last. No shortcuts that lead to callbacks.</p>
+
+        <h2 class="text-2xl md:text-3xl">Our Process</h2>
+        <ol>
+          <li>Site visit and assessment</li>
+          <li>Clear scope and quote</li>
+          <li>Permitting if required</li>
+          <li>Professional installation with cleanup</li>
+          <li>Final inspection and warranty</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Frequently Asked Questions</h2>
+        <p><strong>How long for a fence or patio?</strong> Fencing: 3–10 days. Patios/concrete: 2–5 days for most jobs. We provide clear, realistic timelines upfront.</p>
+        <p><strong>Do you do concrete repairs too?</strong> Yes—cracks, leveling, resurfacing, and full replacement.</p>
+        <p><strong>What fencing materials do you recommend?</strong> We offer wood, vinyl, metal, and ranch fencing suited to Texas conditions and aesthetics.</p>
+        <p><strong>Is there a warranty on fencing and concrete?</strong> Yes, we provide workmanship warranties in addition to manufacturer guarantees.</p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need fencing, concrete, or repairs?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> • Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Structured Data for this service page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Fencing, Concrete and Repairs",
+          "name": "Fencing, Concrete & Repairs in Central Texas",
+          "description": "Durable fencing, solid concrete work, painting, roofing repairs, and reliable repairs built for Bell County conditions.",
+          "provider": { "@type": "LocalBusiness", "name": "Bar Moon Contracting", "url": "https://barmooncontracting.com" },
+          "areaServed": ["Temple, TX", "Belton, TX", "Killeen, TX", "Bell County, TX"],
+          "url": "https://barmooncontracting.com/services/fencing-concrete-repairs-central-texas"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long for a fence or patio?", "acceptedAnswer": { "@type": "Answer", "text": "Fencing: 3–10 days. Patios/concrete: 2–5 days for most jobs. We provide clear, realistic timelines upfront." } },
+            { "@type": "Question", "name": "Do you do concrete repairs too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes—cracks, leveling, resurfacing, and full replacement." } },
+            { "@type": "Question", "name": "What fencing materials do you recommend?", "acceptedAnswer": { "@type": "Answer", "text": "We offer wood, vinyl, metal, and ranch fencing suited to Texas conditions and aesthetics." } },
+            { "@type": "Question", "name": "Is there a warranty on fencing and concrete?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide workmanship warranties in addition to manufacturer guarantees." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </main>
+
+  <Footer />
+</Layout>

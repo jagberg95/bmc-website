@@ -1,0 +1,294 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="FAQ | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <p class="text-xl text-gray-700 mb-10 max-w-3xl">Answers to common questions about our services, process, and work in Central Texas. Click a question in the sidebar to jump to it.</p>
+
+      <!-- Mobile FAQ Menu Dropdown -->
+      <div class="md:hidden mb-6">
+        <select 
+          class="w-full p-3 border border-gray-300 rounded-lg bg-white text-sm focus:border-accent focus:ring-1 focus:ring-accent"
+          onchange="if (this.value) { if (this.value.startsWith('#')) { window.location.hash = this.value; } else { window.location.href = this.value; } }"
+        >
+          <option value="">Jump to a section or question...</option>
+          <optgroup label="General Contracting">
+            <option value="#gc-1">How long does a typical project take?</option>
+            <option value="#gc-2">Do you handle insurance work?</option>
+            <option value="#gc-4">Do you pull permits?</option>
+            <option value="#gc-5">What if my project changes mid-way?</option>
+            <option value="#gc-6">How do you ensure quality across trades?</option>
+          </optgroup>
+          <optgroup label="Home Renovations">
+            <option value="#hr-1">How long do renovations typically take?</option>
+            <option value="#hr-2">Do you work with older homes?</option>
+            <option value="#hr-3">Will I need to move out?</option>
+            <option value="#hr-5">What warranty do you offer?</option>
+          </optgroup>
+          <optgroup label="Kitchen & Bath Remodeling">
+            <option value="#kb-1">How long do kitchen or bath projects take?</option>
+            <option value="#kb-2">Can I live in the home during the work?</option>
+            <option value="#kb-3">Do you help with design?</option>
+            <option value="#kb-7">Can I choose my own materials?</option>
+          </optgroup>
+          <optgroup label="Outdoor Living">
+            <option value="#ol-1">How long does an outdoor project take?</option>
+            <option value="#ol-2">What materials hold up well in Texas?</option>
+            <option value="#ol-3">Do you handle drainage issues?</option>
+            <option value="#ol-5">Is a permit needed?</option>
+          </optgroup>
+          <optgroup label="Fencing, Concrete & Repairs">
+            <option value="#fc-1">How long for a fence or patio?</option>
+            <option value="#fc-2">Do you do concrete repairs too?</option>
+            <option value="#fc-4">What fencing materials do you recommend?</option>
+            <option value="#fc-7">Is there a warranty on fencing and concrete?</option>
+          </optgroup>
+          <optgroup label="Custom Homes">
+            <option value="#ch-1">How long does a custom home take?</option>
+            <option value="#ch-2">Can you build on my lot?</option>
+            <option value="#ch-3">Do you offer design services?</option>
+            <option value="#ch-7">Do you build energy-efficient homes?</option>
+          </optgroup>
+
+          <optgroup label="Blog">
+            <option value="/blog">View all articles →</option>
+            <option value="/blog/how-to-read-a-contractors-estimate">How to Read a Contractor’s Estimate</option>
+            <option value="/blog/how-to-choose-a-general-contractor">How to Choose a General Contractor</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Sidebar: All Questions -->
+        <aside class="md:col-span-1">
+          <div class="sticky top-24">
+            <h2 class="text-lg font-semibold mb-4 text-dark-blue">All Questions</h2>
+            <ul class="space-y-2 text-sm">
+              <!-- General Contracting -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">General Contracting</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="#gc-1" class="hover:text-accent transition">How long does a typical project take?</a></li>
+                    <li><a href="#gc-2" class="hover:text-accent transition">Do you handle insurance work?</a></li>
+                    <li><a href="#gc-4" class="hover:text-accent transition">Do you pull permits?</a></li>
+                    <li><a href="#gc-5" class="hover:text-accent transition">What if my project changes mid-way?</a></li>
+                    <li><a href="#gc-6" class="hover:text-accent transition">How do you ensure quality across trades?</a></li>
+                  </ul>
+                </details>
+              </li>
+
+              <!-- Home Renovations -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">Home Renovations</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="#hr-1" class="hover:text-accent transition">How long do renovations typically take?</a></li>
+                    <li><a href="#hr-2" class="hover:text-accent transition">Do you work with older homes?</a></li>
+                    <li><a href="#hr-3" class="hover:text-accent transition">Will I need to move out?</a></li>
+                    <li><a href="#hr-5" class="hover:text-accent transition">What warranty do you offer?</a></li>
+                  </ul>
+                </details>
+              </li>
+
+              <!-- Kitchen & Bath -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">Kitchen & Bath Remodeling</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="#kb-1" class="hover:text-accent transition">How long do kitchen or bath projects take?</a></li>
+                    <li><a href="#kb-2" class="hover:text-accent transition">Can I live in the home during the work?</a></li>
+                    <li><a href="#kb-3" class="hover:text-accent transition">Do you help with design?</a></li>
+                    <li><a href="#kb-7" class="hover:text-accent transition">Can I choose my own materials?</a></li>
+                  </ul>
+                </details>
+              </li>
+
+              <!-- Outdoor Living -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">Outdoor Living</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="#ol-1" class="hover:text-accent transition">How long does an outdoor project take?</a></li>
+                    <li><a href="#ol-2" class="hover:text-accent transition">What materials hold up well in Texas?</a></li>
+                    <li><a href="#ol-3" class="hover:text-accent transition">Do you handle drainage issues?</a></li>
+                    <li><a href="#ol-5" class="hover:text-accent transition">Is a permit needed?</a></li>
+                  </ul>
+                </details>
+              </li>
+
+              <!-- Fencing & Repairs -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">Fencing, Concrete & Repairs</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="#fc-1" class="hover:text-accent transition">How long for a fence or patio?</a></li>
+                    <li><a href="#fc-2" class="hover:text-accent transition">Do you do concrete repairs too?</a></li>
+                    <li><a href="#fc-4" class="hover:text-accent transition">What fencing materials do you recommend?</a></li>
+                    <li><a href="#fc-7" class="hover:text-accent transition">Is there a warranty on fencing and concrete?</a></li>
+                  </ul>
+                </details>
+              </li>
+
+              <!-- Custom Homes -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">Custom Homes</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="#ch-1" class="hover:text-accent transition">How long does a custom home take?</a></li>
+                    <li><a href="#ch-2" class="hover:text-accent transition">Can you build on my lot?</a></li>
+                    <li><a href="#ch-3" class="hover:text-accent transition">Do you offer design services?</a></li>
+                    <li><a href="#ch-7" class="hover:text-accent transition">Do you build energy-efficient homes?</a></li>
+                  </ul>
+                </details>
+              </li>
+
+
+
+              <!-- Blog -->
+              <li>
+                <details>
+                  <summary class="font-medium text-primary mt-3 cursor-pointer hover:text-accent transition">Blog</summary>
+                  <ul class="mt-1 ml-4 space-y-1 text-sm">
+                    <li><a href="/blog" class="hover:text-accent transition">View all articles →</a></li>
+                    <li><a href="/blog/how-to-read-a-contractors-estimate" class="hover:text-accent transition">How to Read a Contractor’s Estimate</a></li>
+                    <li><a href="/blog/how-to-choose-a-general-contractor" class="hover:text-accent transition">How to Choose a General Contractor</a></li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="md:col-span-3 space-y-12">
+
+          <!-- General Contracting -->
+          <div id="general-contracting">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">General Contracting</h2>
+            
+            <div id="gc-1" class="mb-6">
+              <p><strong>How long does a typical project take?</strong> Small repairs: 1–5 days. Larger remodels or additions: 2–6 weeks. We provide clear, realistic timelines upfront.</p>
+            </div>
+            <div id="gc-2" class="mb-6">
+              <p><strong>Do you handle insurance work?</strong> Yes. We work directly with adjusters and ensure proper documentation.</p>
+            </div>
+            <div id="gc-4" class="mb-6">
+              <p><strong>Do you pull permits?</strong> Yes, we handle all permitting and inspections for compliant work.</p>
+            </div>
+            <div id="gc-5" class="mb-6">
+              <p><strong>What if my project changes mid-way?</strong> We document changes in writing and adjust the scope and timeline accordingly.</p>
+            </div>
+            <div id="gc-6" class="mb-6">
+              <p><strong>How do you ensure quality across trades?</strong> We use trusted local partners and supervise all work on site.</p>
+            </div>
+          </div>
+
+          <!-- Home Renovations -->
+          <div id="home-renovations">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Home Renovations</h2>
+            
+            <div id="hr-1" class="mb-6">
+              <p><strong>How long do renovations typically take?</strong> Kitchen or bath projects often take 3–7 weeks depending on scope and material lead times. Whole-home work typically takes 4–12 weeks. We provide clear, realistic timelines upfront.</p>
+            </div>
+            <div id="hr-2" class="mb-6">
+              <p><strong>Do you work with older homes?</strong> Yes. Many of our projects are in homes built 30–60+ years ago. We’re experienced with the surprises that come with them.</p>
+            </div>
+            <div id="hr-3" class="mb-6">
+              <p><strong>Will I need to move out?</strong> Usually not for kitchen or bath work. We work around your schedule as much as possible.</p>
+            </div>
+            <div id="hr-5" class="mb-6">
+              <p><strong>What warranty do you offer?</strong> We provide a one-year workmanship warranty, plus manufacturer warranties on materials and appliances.</p>
+            </div>
+          </div>
+
+          <!-- Kitchen & Bath -->
+          <div id="kitchen-bath">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Kitchen & Bath Remodeling</h2>
+            
+            <div id="kb-1" class="mb-6">
+              <p><strong>How long do kitchen or bath projects take?</strong> Typically 3–6 weeks for a standard remodel, depending on scope and material lead times. We provide clear, realistic timelines upfront.</p>
+            </div>
+            <div id="kb-2" class="mb-6">
+              <p><strong>Can I live in the home during the work?</strong> Yes for most projects. We contain dust and work around your schedule.</p>
+            </div>
+            <div id="kb-3" class="mb-6">
+              <p><strong>Do you help with design?</strong> We guide selections and can recommend partners for full design if needed.</p>
+            </div>
+            <div id="kb-7" class="mb-6">
+              <p><strong>Can I choose my own materials?</strong> Yes. We can source or install owner-provided materials with our standard workmanship warranty.</p>
+            </div>
+          </div>
+
+          <!-- Outdoor Living -->
+          <div id="outdoor-living">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Outdoor Living</h2>
+            
+            <div id="ol-1" class="mb-6">
+              <p><strong>How long does an outdoor project take?</strong> Most decks and patios are completed in 1–3 weeks depending on size and weather. We provide clear, realistic timelines upfront.</p>
+            </div>
+            <div id="ol-2" class="mb-6">
+              <p><strong>What materials hold up well in Texas?</strong> We recommend composite decking, treated lumber, and properly sealed concrete for longevity.</p>
+            </div>
+            <div id="ol-3" class="mb-6">
+              <p><strong>Do you handle drainage issues?</strong> Yes. We assess and improve grading and drainage as part of the project.</p>
+            </div>
+            <div id="ol-5" class="mb-6">
+              <p><strong>Is a permit needed?</strong> Often yes for larger structures. We manage the permitting process.</p>
+            </div>
+          </div>
+
+          <!-- Fencing & Repairs -->
+          <div id="fencing-repairs">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Fencing, Concrete & Repairs</h2>
+            
+            <div id="fc-1" class="mb-6">
+              <p><strong>How long for a fence or patio?</strong> Fencing: 3–10 days. Patios/concrete: 2–5 days for most jobs. We provide clear, realistic timelines upfront.</p>
+            </div>
+            <div id="fc-2" class="mb-6">
+              <p><strong>Do you do concrete repairs too?</strong> Yes—cracks, leveling, resurfacing, and full replacement.</p>
+            </div>
+            <div id="fc-4" class="mb-6">
+              <p><strong>What fencing materials do you recommend?</strong> We offer wood, vinyl, metal, and ranch fencing suited to Texas conditions and aesthetics.</p>
+            </div>
+            <div id="fc-7" class="mb-6">
+              <p><strong>Is there a warranty on fencing and concrete?</strong> Yes, we provide workmanship warranties in addition to manufacturer guarantees.</p>
+            </div>
+          </div>
+
+          <!-- Custom Homes -->
+          <div id="custom-homes">
+            <h2 class="text-2xl font-bold mb-4 border-b pb-2">Custom Homes</h2>
+            
+            <div id="ch-1" class="mb-6">
+              <p><strong>How long does a custom home take?</strong> Typically 9–18 months from start to finish, depending on size, complexity, and material availability. We provide clear, realistic timelines upfront.</p>
+            </div>
+            <div id="ch-2" class="mb-6">
+              <p><strong>Can you build on my lot?</strong> Yes. We evaluate soil, drainage, and access during planning.</p>
+            </div>
+            <div id="ch-3" class="mb-6">
+              <p><strong>Do you offer design services?</strong> We work with your architect or can recommend trusted designers.</p>
+            </div>
+            <div id="ch-7" class="mb-6">
+              <p><strong>Do you build energy-efficient homes?</strong> Yes. We incorporate insulation, windows, and systems to reduce long-term energy costs.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-12 p-6 bg-white rounded-2xl border">
+        <p class="text-gray-700">Still have questions? <a href="/get-quote" class="text-accent hover:underline font-medium">Get in touch</a> or call us at <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a>. We're happy to help.</p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

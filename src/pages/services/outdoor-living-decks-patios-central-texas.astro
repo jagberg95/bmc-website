@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Outdoor Living in Central Texas | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Outdoor Living: Decks, Patios &amp; Hardscapes in Central Texas</h1>
+      <img src="/images/thinh-nguyen-patio2-unsplash.jpg" alt="Patio and hardscape" class="w-full aspect-[16/9] object-cover rounded-xl mb-6" width="800" height="450" loading="lazy" />
+      <p class="text-xl text-gray-700 mb-10">
+        Outdoor spaces designed and built for real Central Texas living — heat, storms, clay soil, and the way families actually use their yards — including painting and finishes.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">What We Handle</h2>
+        <ul>
+          <li>Wood and composite decks</li>
+          <li>Concrete patios, stamped concrete, and paver patios</li>
+          <li>Hardscape retaining walls, walkways, and fire pits</li>
+          <li>Outdoor kitchens and living structures</li>
+          <li>Grading and drainage solutions</li>
+          <li>Finishes, staining, and painting for lasting outdoor structures</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local Considerations</h2>
+        <p>Texas heat expands materials. Heavy rains test drainage. Clay soil moves. We build with these realities in mind so your deck or patio lasts and stays safe.</p>
+
+        <h2 class="text-2xl md:text-3xl">Our Process</h2>
+        <ol>
+          <li>Site assessment and design options</li>
+          <li>Clear quote and permitting if needed</li>
+          <li>Quality build with regular updates</li>
+          <li>Cleanup and final walkthrough</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Frequently Asked Questions</h2>
+        <p><strong>How long does an outdoor project take?</strong> Most decks and patios are completed in 1–3 weeks depending on size and weather. We provide clear, realistic timelines upfront.</p>
+        <p><strong>What materials hold up well in Texas?</strong> We recommend composite decking, treated lumber, and properly sealed concrete for longevity.</p>
+        <p><strong>Do you handle drainage issues?</strong> Yes. We assess and improve grading and drainage as part of the project.</p>
+        <p><strong>Is a permit needed?</strong> Often yes for larger structures. We manage the permitting process.</p>
+      </div>
+
+      <a href="/get-quote" class="mt-8 inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote for Your Outdoor Project</a>
+      <p class="mt-2 text-sm text-gray-600">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> • Mon–Fri 8:00 AM – 6:00 PM</p>
+    </div>
+
+    <!-- Structured Data for this service page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Outdoor Living and Decks",
+          "name": "Outdoor Living: Decks, Patios & Hardscapes in Central Texas",
+          "description": "Decks, patios, hardscapes, grading and drainage solutions built for Central Texas heat, storms, and clay soil.",
+          "provider": { "@type": "LocalBusiness", "name": "Bar Moon Contracting", "url": "https://barmooncontracting.com" },
+          "areaServed": ["Temple, TX", "Belton, TX", "Killeen, TX", "Bell County, TX", "Central Texas"],
+          "url": "https://barmooncontracting.com/services/outdoor-living-decks-patios-central-texas"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long does an outdoor project take?", "acceptedAnswer": { "@type": "Answer", "text": "Most decks and patios are completed in 1–3 weeks depending on size and weather. We provide clear, realistic timelines upfront." } },
+            { "@type": "Question", "name": "What materials hold up well in Texas?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend composite decking, treated lumber, and properly sealed concrete for longevity." } },
+            { "@type": "Question", "name": "Do you handle drainage issues?", "acceptedAnswer": { "@type": "Answer", "text": "We assess and improve grading and drainage as part of the project." } },
+            { "@type": "Question", "name": "Is a permit needed?", "acceptedAnswer": { "@type": "Answer", "text": "Often yes for larger structures. We manage the permitting process." } }
+          ]
+        }
+      ]
+    }
+    </script>
+  </main>
+
+  <Footer />
+</Layout>

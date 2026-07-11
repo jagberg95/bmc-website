@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@layer base {
+  html {
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-dark-blue text-light-neutral font-sans antialiased text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-gold-primary hover:text-gold-secondary transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gold-primary;
+  }
+
+  p, li, td {
+    @apply text-base leading-relaxed;
+  }
+
+  :focus-visible {
+    outline: 3px solid #d6ad30;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .bg-light-neutral a {
+    @apply text-primary hover:text-deep-blue;
+  }
+}
+
+/* Halo hover glow */
+.halo-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+  overflow: visible;
+}
+
+.halo-hover:hover,
+.halo-hover:focus-visible,
+.halo-hover:focus-within {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 0 15px rgba(9, 40, 102, 0.35),
+    0 0 30px rgba(9, 40, 102, 0.15),
+    0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .halo-hover:active {
+    transform: translateY(-1px) scale(1.005);
+    box-shadow:
+      0 0 12px rgba(9, 40, 102, 0.3),
+      0 0 24px rgba(9, 40, 102, 0.12),
+      0 3px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.halo-hover-gold {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+}
+
+.halo-hover-gold:hover,
+.halo-hover-gold:focus-visible,
+.halo-hover-gold:focus-within {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 0 15px rgba(214, 173, 48, 0.3),
+    0 0 30px rgba(214, 173, 48, 0.12),
+    0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .halo-hover-gold:active {
+    transform: translateY(-1px) scale(1.005);
+    box-shadow:
+      0 0 10px rgba(214, 173, 48, 0.25),
+      0 0 24px rgba(214, 173, 48, 0.12),
+      0 3px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Header specific */
+header {
+  transition: all 0.3s ease;
+}
+
+/* Service cards and mosaic */
+.service-card {
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Form styles */
+input, select, textarea {
+  @apply bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400;
+}
+
+input:focus, select:focus, textarea:focus {
+  @apply outline-none ring-1 ring-accent/50;
+}

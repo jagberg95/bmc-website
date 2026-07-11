@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact & Get a Quote | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-4xl mx-auto px-6 py-16">
+      <img src="/images/daniel-mccullough-draftsman-unsplash.jpg" alt="Professional draftsman preparing architectural plans for a construction project" class="w-full aspect-[16/9] object-cover rounded-xl mb-8" width="800" height="450" loading="lazy" />
+
+      <!-- Load Cloudflare Turnstile script -->
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+      <!-- Header per RULES -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Get a Free, No-Pressure Quote in Central Texas</h1>
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">Tell us what you need. We’ll review the details and follow up with clear next steps.</p>
+        <p class="mt-3 text-gold-primary font-medium">Local. Straightforward. No surprises. Five generations of Central Texas craftsmanship.</p>
+      </div>
+
+      <!-- What happens next -->
+      <div class="bg-white rounded-2xl p-8 mb-12 shadow">
+        <h2 class="text-xl font-semibold mb-4">What happens next</h2>
+        <ol class="grid md:grid-cols-3 gap-6 text-sm">
+          <li class="flex gap-3">
+            <span class="font-mono text-accent font-bold">1</span>
+            <span>Tell us about the project.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="font-mono text-accent font-bold">2</span>
+            <span>We review the details and follow up.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="font-mono text-accent font-bold">3</span>
+            <span>You get clear next steps before moving forward.</span>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Form per RULES: max 7 fields, specific order, project types, honeypot -->
+      <div class="bg-deep-blue text-white p-8 md:p-10 rounded-2xl">
+        <h2 class="text-2xl font-bold mb-2">Request Your Quote</h2>
+        <p class="text-gray-300 mb-8">Tell us a bit about your project. We’ll get back to you promptly.</p>
+
+        <!-- Form posts to your Cloudflare Worker URL -->
+        <form id="quote-form" class="space-y-6">
+          <!-- Honeypot for spam (hidden from users) -->
+          <input type="text" name="honeypot" class="hidden" />
+
+          <!-- Cloudflare Turnstile widget -->
+          <!-- Get your Site Key from Cloudflare Dashboard → Security → Turnstile -->
+          <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="auto" data-size="normal"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <input type="text" name="name" placeholder="Name *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+            <input type="tel" name="phone" placeholder="Phone *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+          </div>
+
+          <input type="email" name="email" placeholder="Email Address *" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+
+          <input type="text" name="city" placeholder="Project city or ZIP *" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+
+          <select name="projectType" required class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white">
+            <option value="">Project type *</option>
+            <option value="Home renovation or remodel">Home renovation or remodel</option>
+            <option value="Kitchen or bath remodel">Kitchen or bath remodel</option>
+            <option value="Custom home or major build">Custom home or major build</option>
+            <option value="Outdoor living: deck, patio, hardscape">Outdoor living: deck, patio, hardscape</option>
+            <option value="Fencing">Fencing</option>
+            <option value="Concrete">Concrete</option>
+            <option value="Painting">Painting</option>
+            <option value="Roofing">Roofing</option>
+            <option value="Repairs or handyman work">Repairs or handyman work</option>
+            <option value="Mini-split HVAC or comfort upgrade">Mini-split HVAC or comfort upgrade</option>
+            <option value="Commercial, church, or facility work">Commercial, church, or facility work</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <textarea name="details" placeholder="Brief project details *" required rows="5" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400"></textarea>
+
+          <input type="text" name="preferred" placeholder="Preferred contact method or best time to reach you" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
+
+          <!-- Hidden fields for better email formatting -->
+          <input type="hidden" name="_subject" value="New Quote Request from Bar Moon Contracting Website" />
+          <input type="hidden" name="_replyto" value="email" />
+
+          <div class="flex items-center gap-2 text-sm">
+            <input type="checkbox" required class="accent-accent" />
+            <label>I agree to the <a href="/privacy-policy" class="underline hover:text-accent">privacy policy</a>.</label>
+          </div>
+
+          <button type="submit" class="w-full bg-accent hover:bg-gold text-dark-blue font-bold py-4 rounded-lg transition">Request My Free Quote</button>
+
+          <p class="text-center text-xs text-gray-400">100% free. No obligation. We only move forward if the fit is right for both of us.</p>
+        </form>
+
+        <div id="success-message" class="hidden mt-6 p-4 bg-green-800/50 text-center rounded">
+          Thank you — we received your request. We’ll reach out soon to learn more and talk through next steps. In the meantime, feel free to browse our recent projects or service details.
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <img src="/images/Icon/BMC_Icon_DkGold.png" alt="Bar Moon Contracting logo" class="w-16 h-16 mx-auto mb-4 opacity-80" />
+        <p class="text-gray-600">Or call us directly: <a href="tel:2545813808" class="text-gold-primary hover:underline font-medium">(254) 581-3808</a></p>
+      </div>
+
+      <!-- Merged Contact Info -->
+      <div class="mt-12 bg-white rounded-2xl p-8 text-left">
+        <h3 class="text-xl font-bold mb-4">Contact Bar Moon Contracting</h3>
+        <div class="space-y-3 text-gray-700">
+          <p><strong>Phone / Text:</strong> <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a></p>
+          <p><strong>Hours:</strong> Mon–Fri 8:00 AM – 6:00 PM</p>
+          <p><strong>Service Area:</strong> Bell County and the surrounding areas</p>
+        </div>
+        <p class="mt-4 text-sm"><a href="/service-areas" class="text-accent hover:underline">View our full service areas →</a></p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+
+  <script>
+    const form = document.getElementById('quote-form');
+    const success = document.getElementById('success-message');
+
+    // IMPORTANT: Replace with your actual Cloudflare Worker URL.
+    // Your Worker should verify the Turnstile token (if enabled) and forward the submission
+    // to your Cloudflare email (which routes to your Gmail).
+    // Example Worker can use Mailgun/SendGrid or Cloudflare's email features.
+    const WORKER_URL = 'https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev';
+
+    // Replace "YOUR_TURNSTILE_SITE_KEY" in the cf-turnstile div with your actual Cloudflare Turnstile Site Key (get it from your Cloudflare dashboard).
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(WORKER_URL, {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (response.ok) {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+        } else {
+          alert('Oops! There was a problem submitting your form. Please try calling us instead.');
+        }
+      } catch (error) {
+        alert('There was an error. Please try again or call (254) 581-3808.');
+      }
+    });
+  </script>
+</Layout>

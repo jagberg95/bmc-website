@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Service Areas | Bar Moon Contracting">
+  <Header />
+  
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-16">
+      <img src="/images/fog.jpg" alt="Fog over the landscape in Bell County, Texas" class="w-full aspect-[16/9] object-cover rounded-xl mb-8" width="800" height="450" loading="lazy" />
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Service Areas</h1>
+      <p class="text-xl text-gray-700 mb-8 max-w-3xl">
+        Bar Moon Contracting is proud to serve homeowners, businesses, churches, and facilities throughout Bell County and the surrounding areas in Central Texas. As a service-area business, we come to you—no public showroom or office address to visit.
+      </p>
+
+      <div class="bg-white rounded-2xl p-8 shadow mb-12">
+        <h2 class="text-2xl font-bold mb-6">Towns We Serve</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg">
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Temple</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Belton</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Salado</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Killeen</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Harker Heights</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Copperas Cove</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Jarrell</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Nolanville</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Morgan's Point Resort</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Little River-Academy</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Rogers</div>
+          <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-accent" /> Holland</div>
+        </div>
+        <p class="mt-6 text-gray-600">We also cover many rural properties and smaller communities throughout Bell County and the surrounding areas. If you're unsure if we serve your location, just give us a call.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Why Local Matters</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li>• Deep knowledge of Central Texas soil, weather, and building codes</li>
+            <li>• Fast response for repairs and projects</li>
+            <li>• Relationships with local suppliers and trades</li>
+            <li>• Five generations of community roots and trust</li>
+          </ul>
+        </div>
+
+        <div class="bg-deep-blue text-white p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-gold-primary">Ready to discuss your project?</h3>
+          <p class="mb-6">Whether in Bell County or a surrounding area, we're ready to help.</p>
+          <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Request a Free Quote</a>
+          <div class="mt-4">
+            <a href="tel:2545813808" class="text-gold-primary hover:underline">(254) 581-3808</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
