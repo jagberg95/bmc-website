@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <Layout title="Contact & Get a Quote | Bar Moon Contracting">
@@ -49,9 +51,8 @@ import Footer from '../components/Footer.astro';
           <!-- Honeypot for spam (hidden from users) -->
           <input type="text" name="honeypot" class="hidden" />
 
-          <!-- Cloudflare Turnstile widget -->
-          <!-- Get your Site Key from Cloudflare Dashboard → Security → Turnstile -->
-          <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="auto" data-size="normal"></div>
+          <!-- Cloudflare Turnstile widget (spam protection) -->
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="auto" data-size="normal"></div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input type="text" name="name" placeholder="Name *" required class="bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
@@ -82,9 +83,8 @@ import Footer from '../components/Footer.astro';
 
           <input type="text" name="preferred" placeholder="Preferred contact method or best time to reach you" class="w-full bg-white/10 border border-white/20 focus:border-accent rounded-lg px-4 py-3 text-white placeholder-gray-400" />
 
-          <!-- Hidden fields for better email formatting -->
+          <!-- Optional hidden fields (used by some form handlers; Worker ignores or uses them) -->
           <input type="hidden" name="_subject" value="New Quote Request from Bar Moon Contracting Website" />
-          <input type="hidden" name="_replyto" value="email" />
 
           <div class="flex items-center gap-2 text-sm">
             <input type="checkbox" required class="accent-accent" />
@@ -98,6 +98,10 @@ import Footer from '../components/Footer.astro';
 
         <div id="success-message" class="hidden mt-6 p-4 bg-green-800/50 text-center rounded">
           Thank you — we received your request. We’ll reach out soon to learn more and talk through next steps. In the meantime, feel free to browse our recent projects or service details.
+        </div>
+
+        <div id="error-message" class="hidden mt-6 p-4 bg-red-800/50 text-center rounded text-white">
+          There was an error submitting the form. Please try again or call (254) 581-3808.
         </div>
       </div>
 
@@ -124,19 +128,28 @@ import Footer from '../components/Footer.astro';
   <script>
     const form = document.getElementById('quote-form');
     const success = document.getElementById('success-message');
+    const errorMsg = document.getElementById('error-message');
 
-    // IMPORTANT: Replace with your actual Cloudflare Worker URL.
-    // Your Worker should verify the Turnstile token (if enabled) and forward the submission
-    // to your Cloudflare email (which routes to your Gmail).
-    // Example Worker can use Mailgun/SendGrid or Cloudflare's email features.
-    const WORKER_URL = 'https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev';
-
-    // Replace "YOUR_TURNSTILE_SITE_KEY" in the cf-turnstile div with your actual Cloudflare Turnstile Site Key (get it from your Cloudflare dashboard).
+    // Worker URL - configured for Resend + Turnstile
+    const WORKER_URL = 'https://bmc-resend.jagberg95.workers.dev';
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      // Hide previous messages
+      success.classList.add('hidden');
+      errorMsg.classList.add('hidden');
+
       const formData = new FormData(form);
+
+      // Turnstile automatically adds a hidden field named "cf-turnstile-response"
+      const turnstileToken = formData.get('cf-turnstile-response');
+
+      if (!turnstileToken) {
+        errorMsg.textContent = 'Please complete the security check (the checkbox / puzzle) before submitting.';
+        errorMsg.classList.remove('hidden');
+        return;
+      }
 
       try {
         const response = await fetch(WORKER_URL, {
@@ -147,11 +160,20 @@ import Footer from '../components/Footer.astro';
         if (response.ok) {
           form.classList.add('hidden');
           success.classList.remove('hidden');
+          // Reset Turnstile in case user wants to submit again later
+          if (window.turnstile) {
+            window.turnstile.reset();
+          }
         } else {
-          alert('Oops! There was a problem submitting your form. Please try calling us instead.');
+          errorMsg.textContent = 'Oops! There was a problem submitting your form. Please try calling us instead.';
+          errorMsg.classList.remove('hidden');
+          if (window.turnstile) window.turnstile.reset();
         }
       } catch (error) {
-        alert('There was an error. Please try again or call (254) 581-3808.');
+        console.error('Form submission error:', error);
+        errorMsg.textContent = 'Network error contacting the form handler. Check console (F12) for details. Please try again or call (254) 581-3808.';
+        errorMsg.classList.remove('hidden');
+        if (window.turnstile) window.turnstile.reset();
       }
     });
   </script>
