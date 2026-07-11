@@ -28,37 +28,36 @@ export default {
     // === Cloudflare Turnstile Verification ===
     const token = formData.get("cf-turnstile-response");
     if (!token) {
-      return new Response(JSON.stringify({ success: false, error: "Missing captcha token" }), {
-        status: 400,
-        headers: { "Access-Control-Allow-Origin": "*" },
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: "Missing Turnstile token - widget not completed" 
+      }), { 
+        status: 400, 
+        headers: { "Access-Control-Allow-Origin": "*" } 
       });
     }
 
-    const turnstileResponse = await fetch(
-      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          secret: env.TURNSTILE_SECRET_KEY,
-          response: token,
-          remoteip: request.headers.get("CF-Connecting-IP") || "",
-        }),
-      }
-    );
+    const turnstileResponse = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: env.TURNSTILE_SECRET_KEY,
+        response: token,
+        remoteip: request.headers.get("CF-Connecting-IP") || "",
+      }),
+    });
 
     const outcome = await turnstileResponse.json();
-
     if (!outcome.success) {
-      return new Response(
-        JSON.stringify({ success: false, error: "Captcha verification failed" }),
-        {
-          status: 400,
-          headers: { "Access-Control-Allow-Origin": "*" },
-        }
-      );
+      console.error("Turnstile failed:", outcome); // This will show in Worker logs
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: "Turnstile verification failed", 
+        details: outcome["error-codes"] || "unknown" 
+      }), { 
+        status: 400, 
+        headers: { "Access-Control-Allow-Origin": "*" } 
+      });
     }
 
     // === Extract form fields ===
