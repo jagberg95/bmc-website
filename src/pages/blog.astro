@@ -4,7 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Blog | Bar Moon Contracting">
+<Layout
+  title="Blog | Bar Moon Contracting"
+  description="Practical guides on hiring contractors, reading estimates, renovations, and home projects in Temple and Bell County, TX."
+>
   <Header />
   
   <main class="pt-20 bg-light-neutral text-primary">
@@ -15,7 +18,7 @@ import Footer from '../components/Footer.astro';
       <div class="space-y-8">
         <!-- Teaser 1 -->
         <article class="bg-white border border-gray-200 rounded-2xl p-8">
-          <p class="text-sm text-gray-500 mb-1">July 10, 2026</p>
+          <p class="text-sm text-gray-500 mb-1"><time datetime="2026-07-10">July 10, 2026</time></p>
           <h2 class="text-2xl font-bold mt-1 mb-3">
             <a href="/blog/how-to-read-a-contractors-estimate" class="hover:text-accent transition">How to Read a Contractor’s Estimate (and Prepare for Your Project)</a>
           </h2>
@@ -27,7 +30,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Teaser 2 -->
         <article class="bg-white border border-gray-200 rounded-2xl p-8">
-          <p class="text-sm text-gray-500 mb-1">July 7, 2026</p>
+          <p class="text-sm text-gray-500 mb-1"><time datetime="2026-07-07">July 7, 2026</time></p>
           <h2 class="text-2xl font-bold mt-1 mb-3">
             <a href="/blog/how-to-choose-a-general-contractor" class="hover:text-accent transition">How to Choose a General Contractor in Central Texas (and Avoid Costly Mistakes)</a>
           </h2>
@@ -40,7 +43,7 @@ import Footer from '../components/Footer.astro';
 
       <p class="mt-12 text-sm text-gray-500">Check back for more posts, or contact us for project-specific advice.</p>
 
-      <img src="/images/grok-planning.jpg" alt="Project planning session" class="mt-8 rounded-xl w-full max-w-lg mx-auto" />
+      <img src="/images/grok-planning.jpg" alt="Project planning and blueprint review for a Bar Moon Contracting renovation" class="mt-8 rounded-xl w-full max-w-lg mx-auto" width="600" height="400" loading="lazy" />
     </div>
   </main>
 

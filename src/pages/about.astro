@@ -2,61 +2,218 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://barmooncontracting.com/about' },
+  ],
+};
+
+const cityCopy = [
+  {
+    name: 'Temple',
+    text: 'Temple is our home base and the largest job market we serve. From mid-century neighborhoods near Scott & White to newer subdivisions on the west side, we handle renovations, remodels, painting, roofing, and repairs for homeowners who want a single contractor they can call again.',
+  },
+  {
+    name: 'Belton',
+    text: 'Belton’s mix of lake-adjacent properties, historic downtown edges, and growing subdivisions means projects often involve clay soil, drainage, and older mechanicals. We plan for those conditions up front so decks, additions, and remodels hold up through Central Texas weather.',
+  },
+  {
+    name: 'Salado',
+    text: 'Salado projects often call for careful work around established trees, creek influence, and village character. We build and remodel with materials and detailing that fit the area’s residential scale—kitchens, baths, outdoor living, and thoughtful repairs.',
+  },
+  {
+    name: 'Killeen',
+    text: 'Killeen and Fort Cavazos–area homes see high turnover and heavy everyday use. We focus on durable finishes, clear timelines for busy households, and practical renovations that improve function without overbuilding.',
+  },
+  {
+    name: 'Harker Heights',
+    text: 'Harker Heights homeowners often need kitchen and bath updates, fencing, and outdoor living that handle heat and storms. We coordinate permits, trades, and clean job sites in established and newer neighborhoods alike.',
+  },
+  {
+    name: 'Copperas Cove',
+    text: 'Copperas Cove sits on rocky and clay soils with strong sun exposure. Our outdoor structures, fencing, and exterior work account for ground movement, drainage, and finishes that last in Hill Country edge conditions.',
+  },
+  {
+    name: 'Jarrell',
+    text: 'Jarrell’s growth corridor includes new builds and properties still settling into the landscape. We help with custom homes, additions, concrete, and renovations with realistic schedules and local supplier networks.',
+  },
+  {
+    name: 'Nolanville',
+    text: 'Nolanville and the I-14 corridor communities need reliable general contracting for repairs, painting, roofing, and small remodels. We keep communication simple and schedules clear for homeowners between Temple and Killeen.',
+  },
+  {
+    name: "Morgan's Point Resort",
+    text: "Lake-adjacent homes at Morgan's Point Resort often need moisture-aware remodels, outdoor living, and exterior maintenance. We plan for humidity, drainage, and materials that perform near Belton Lake.",
+  },
+  {
+    name: 'Little River-Academy',
+    text: 'Little River-Academy and nearby rural lots frequently involve septic-aware planning, access for materials, and practical renovations for older homes. We evaluate site conditions before we bid hard numbers.',
+  },
+  {
+    name: 'Rogers',
+    text: 'Rogers-area projects range from farmstead repairs to full home updates. We bring the same process—written scope, honest pricing, and supervised trades—whether the job is a fence line or a kitchen remodel.',
+  },
+  {
+    name: 'Holland',
+    text: 'Holland and surrounding farmland communities count on clear communication and contractors who show up. We handle renovations, concrete, fencing, and repairs with timelines that respect harvest seasons and rural access.',
+  },
+];
 ---
 
-<Layout title="About | Bar Moon Contracting">
+<Layout
+  title="Our Story | Bar Moon Contracting, Temple TX"
+  description="Five generations of Central Texas roots. Learn how Bar Moon Contracting plans, communicates, and builds across Bell County."
+  schemas={[breadcrumbSchema]}
+>
   <Header />
-  
+
   <main class="pt-20 bg-light-neutral text-primary">
     <div class="max-w-4xl mx-auto px-6 py-16">
       <h1 class="text-4xl md:text-5xl font-bold mb-6">About Bar Moon Contracting</h1>
-      
+
       <div class="prose prose-lg text-gray-700 max-w-none">
-        <p>Bar Moon Contracting is a Central Texas general contractor with five generations of roots in Bell County. Founded on a legacy of integrity and hard work, we specialize in custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and repairs. Our team brings decades of experience to every job, ensuring that every build reflects our commitment to excellence.</p>
-        <p>We handle custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and repairs with clear communication, careful planning, and craftsmanship built to last. Homeowners expect quality work—what sets us apart is how we manage the entire project from start to finish.</p>
-        
+        <p>
+          Bar Moon Contracting is a family-run general contractor based in the Temple / Bell County
+          area. Our roots run five generations deep in Central Texas. We specialize in renovations,
+          kitchen and bath remodels, custom homes, outdoor living, fencing, concrete, painting,
+          roofing, and repairs—with clear communication and craftsmanship built for this climate.
+        </p>
+        <p>
+          Homeowners expect quality work. What sets us apart is how we manage the whole job: written
+          scopes, honest estimates, supervised trades, and a single point of contact from first
+          conversation through final walkthrough.
+        </p>
+
+        <h2 class="text-3xl font-bold mt-8 mb-4 text-primary">Facts at a glance</h2>
+        <ul class="not-prose grid sm:grid-cols-2 gap-3 text-gray-700 mb-6 list-none p-0">
+          <li class="bg-white border border-gray-200 rounded-xl px-4 py-3">
+            <strong class="block text-dark-blue">Service radius</strong>
+            Bell County and surrounding communities (roughly a 30–45 mile working range from Temple)
+          </li>
+          <li class="bg-white border border-gray-200 rounded-xl px-4 py-3">
+            <strong class="block text-dark-blue">Hours</strong>
+            Monday–Friday, 8:00 AM – 6:00 PM · (254) 581-3808
+          </li>
+          <li class="bg-white border border-gray-200 rounded-xl px-4 py-3">
+            <strong class="block text-dark-blue">Business type</strong>
+            Service-area contractor (no public showroom); licensed and insured for the work we bid
+          </li>
+          <li class="bg-white border border-gray-200 rounded-xl px-4 py-3">
+            <strong class="block text-dark-blue">Warranty</strong>
+            One-year workmanship warranty on completed work, plus manufacturer warranties where applicable
+          </li>
+          <li class="bg-white border border-gray-200 rounded-xl px-4 py-3 sm:col-span-2">
+            <strong class="block text-dark-blue">Typical project types</strong>
+            Small repairs (days), kitchen/bath remodels (weeks), outdoor living and fencing, whole-home
+            renovations, and custom homes (months)
+          </li>
+        </ul>
+        <p class="text-sm text-gray-500">
+          Licensing, insurance certificates, and references are available on request for active bids.
+          Review counts and scores will be published on-site once Google Business Profile / Yelp
+          reviews are fully claimed and displayed.
+        </p>
+
         <h2 class="text-3xl font-bold mt-8 mb-4 text-primary">Our Approach</h2>
         <div class="grid md:grid-cols-2 gap-6 mb-6">
           <div>
-            <p>We show up. We communicate clearly. We do the work right. No hype. No surprises. Just honest estimates and quality work that respects your home and your budget.</p>
-            <p>Our approach is built on four pillars: thorough planning before we break ground, proactive communication throughout every phase, meticulous project management to keep things on schedule and on budget, and uncompromising craftsmanship in every detail. We treat your home as if it were our own, ensuring transparency and collaboration at every step.</p>
+            <p>
+              We show up. We communicate clearly. We do the work right. No hype. No surprises. Just
+              honest estimates and quality work that respects your home and your budget.
+            </p>
+            <p>
+              Our process rests on four pillars: thorough planning before we break ground, proactive
+              communication throughout every phase, project management that keeps scope and schedule
+              visible, and craftsmanship in the details. We treat your home as if it were our own.
+            </p>
           </div>
-          <img src="/images/Projects/painting-house.jpg" alt="Recent exterior painting project" class="rounded-xl shadow w-full h-auto object-cover" />
+          <img
+            src="/images/Projects/painting-house.jpg"
+            alt="Exterior house painting completed by Bar Moon Contracting in Central Texas"
+            class="rounded-xl shadow w-full h-auto object-cover"
+            width="600"
+            height="400"
+            loading="lazy"
+          />
         </div>
-        
+
         <h2 class="text-3xl font-bold mt-8 mb-4 text-primary">Service Area</h2>
-        <div class="grid md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <p>We serve homeowners, businesses, churches, and facilities throughout Bell County and the surrounding areas as a service-area business:</p>
-            <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm mt-3">
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Temple</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Belton</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Salado</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Killeen</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Harker Heights</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Copperas Cove</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Jarrell</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Nolanville</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Morgan's Point Resort</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Little River-Academy</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Rogers</div>
-              <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-accent" /> Holland</div>
-            </div>
-            <p class="text-xs text-gray-500 mt-2">We also serve many rural properties and smaller communities throughout Bell County and the surrounding areas.</p>
-          </div>
-          <img src="/images/family.jpg" alt="Bar Moon Contracting family and team" class="rounded-xl shadow w-full h-auto object-cover" />
+        <p>
+          We serve homeowners, small businesses, churches, and facilities throughout Bell County and
+          nearby communities as a service-area business (no public street storefront). Below is how
+          we typically work in each city.
+        </p>
+
+        <div class="not-prose space-y-5 mt-6 mb-8">
+          {
+            cityCopy.map((city) => (
+              <div class="border-l-4 border-accent pl-4">
+                <h3 class="text-xl font-semibold text-dark-blue mb-1">{city.name}</h3>
+                <p class="text-gray-700">{city.text}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="text-sm text-gray-500">
+          We also serve many rural properties and smaller communities throughout Bell County and the
+          surrounding areas. Not sure if you’re in range? Call (254) 581-3808.
+        </p>
+
+        <div class="mt-8">
+          <img
+            src="/images/family.jpg"
+            alt="Bar Moon Contracting family and team representing five generations of Central Texas roots"
+            class="rounded-xl shadow w-full h-auto object-cover max-w-xl"
+            width="700"
+            height="450"
+            loading="lazy"
+          />
         </div>
       </div>
 
       <div class="mt-12">
-        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block">Work With Us</a>
+        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block"
+          >Work With Us</a
+        >
       </div>
 
       <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="/images/Projects/market-landscape-front-1.jpg" alt="Front yard landscaping on a recently prepared home" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
-        <img src="/images/Projects/market-interior-kitchen.jpg" alt="Staged and renovated kitchen" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
-        <img src="/images/Projects/painting-house.jpg" alt="Fresh exterior painting on a Central Texas home" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
-        <img src="/images/Projects/pond-restoration-4.jpg" alt="Completed pond restoration project" class="rounded-xl w-full aspect-[4/3] object-cover" width="300" height="225" loading="lazy" />
+        <img
+          src="/images/Projects/market-landscape-front-1.jpg"
+          alt="Front yard landscaping and curb appeal prep by Bar Moon Contracting in Bell County, TX"
+          class="rounded-xl w-full aspect-[4/3] object-cover"
+          width="300"
+          height="225"
+          loading="lazy"
+        />
+        <img
+          src="/images/Projects/market-interior-kitchen.jpg"
+          alt="Renovated and staged kitchen remodel in Central Texas"
+          class="rounded-xl w-full aspect-[4/3] object-cover"
+          width="300"
+          height="225"
+          loading="lazy"
+        />
+        <img
+          src="/images/Projects/painting-house.jpg"
+          alt="Fresh exterior painting on a Central Texas home by Bar Moon Contracting"
+          class="rounded-xl w-full aspect-[4/3] object-cover"
+          width="300"
+          height="225"
+          loading="lazy"
+        />
+        <img
+          src="/images/Projects/pond-restoration-4.jpg"
+          alt="Completed pond restoration project in Bell County, TX"
+          class="rounded-xl w-full aspect-[4/3] object-cover"
+          width="300"
+          height="225"
+          loading="lazy"
+        />
       </div>
     </div>
   </main>

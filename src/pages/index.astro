@@ -4,7 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Bar Moon Contracting | Central Texas Custom Homes & Renovations">
+<Layout
+  title="Bar Moon Contracting | Central Texas General Contractor & Remodeler"
+  description="Family-run general contractor serving Bell County, TX. Renovations, kitchen & bath remodels, custom homes, outdoor living, fencing, and repairs. Free quotes."
+>
   <Header />
 
   <!-- Hero Section - original house image -->
@@ -50,7 +53,7 @@ import Footer from '../components/Footer.astro';
       <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] gap-5">
         <!-- Upgrades & Renovations - large tile (preserving original mosaic feel) -->
         <a href="/services/home-renovations-temple-tx" class="halo-hover group relative rounded-xl overflow-hidden sm:col-span-2 lg:col-span-2 sm:row-span-2 lg:row-span-2">
-          <img src="/images/christian-mackie-kitchen2-unsplash.jpg" alt="Home Renovations" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
+          <img src="/images/christian-mackie-kitchen2-unsplash.jpg" alt="Home renovations and kitchen updates by Bar Moon Contracting in Central Texas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:scale-105 transition-transform" />
           <div class="absolute inset-0 flex flex-col justify-end p-6">
             <p class="text-accent text-xs font-semibold uppercase tracking-widest mb-1">Transform Your Space, Elevate Your Life</p>
@@ -68,7 +71,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Home Repairs -->
         <a href="/services/fencing-concrete-repairs-central-texas" class="halo-hover group relative rounded-xl overflow-hidden">
-          <img src="/images/sasun-bughdaryan-handyman-unsplash.jpg" alt="Home Repairs" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
+          <img src="/images/sasun-bughdaryan-handyman-unsplash.jpg" alt="Home repairs and general contracting work in Temple, TX" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:scale-105 transition-transform" />
           <div class="absolute inset-0 flex flex-col justify-end p-5">
             <h3 class="text-xl font-bold text-white mb-1">Home Repairs</h3>
@@ -78,7 +81,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Outdoor Living -->
         <a href="/services/outdoor-living-decks-patios-central-texas" class="halo-hover group relative rounded-xl overflow-hidden">
-          <img src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg" alt="Outdoor Living" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
+          <img src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg" alt="Outdoor living patio and deck built for Central Texas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:scale-105 transition-transform" />
           <div class="absolute inset-0 flex flex-col justify-end p-5">
             <h3 class="text-xl font-bold text-white mb-1">Outdoor Living</h3>
@@ -88,7 +91,7 @@ import Footer from '../components/Footer.astro';
 
         <!-- Custom Homes -->
         <a href="/services/custom-homes-central-texas" class="halo-hover group relative rounded-xl overflow-hidden col-span-1 sm:col-span-2 lg:col-span-2">
-          <img src="/images/aubrey-odom-farmhouse-unsplash.jpg" alt="Custom Homes" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
+          <img src="/images/aubrey-odom-farmhouse-unsplash.jpg" alt="Custom home construction in Bell County, TX by Bar Moon Contracting" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent group-hover:scale-105 transition-transform" />
           <div class="absolute inset-0 flex flex-col justify-end p-5">
             <h3 class="text-2xl font-bold text-white mb-1">Custom Homes</h3>
@@ -109,19 +112,19 @@ import Footer from '../components/Footer.astro';
       <h2 class="text-3xl font-bold text-center text-primary mb-10">Our Featured Work</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="halo-hover bg-white p-4 rounded-xl">
-          <img src="/images/Projects/painting-fence.jpg" alt="Painted fence project" class="rounded-xl w-full aspect-[4/3] object-cover mb-4" width="400" height="300" loading="lazy" />
+          <img src="/images/Projects/painting-fence.jpg" alt="Freshly painted fence project by Bar Moon Contracting in Bell County, TX" class="rounded-xl w-full aspect-[4/3] object-cover mb-4" width="400" height="300" loading="lazy" />
           <h3 class="font-semibold">Painting Project – Fence &amp; Exterior</h3>
           <p class="text-sm text-gray-600 mb-4">Fresh paint on fence and home exterior for a clean, updated look.</p>
           <a href="/projects" class="inline-block bg-dark-blue text-white hover:bg-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg transition">View Project</a>
         </div>
         <div class="halo-hover bg-white p-4 rounded-xl">
-          <img src="/images/Projects/pond-restoration-5.jpg" alt="Pond full after restoration" class="rounded-xl w-full aspect-[4/3] object-cover mb-4" width="400" height="300" loading="lazy" />
+          <img src="/images/Projects/pond-restoration-5.jpg" alt="Restored pond full of water after Bar Moon Contracting restoration work" class="rounded-xl w-full aspect-[4/3] object-cover mb-4" width="400" height="300" loading="lazy" />
           <h3 class="font-semibold">Pond Restoration</h3>
           <p class="text-sm text-gray-600 mb-4">Complete pond restoration including banks and water feature work.</p>
           <a href="/projects" class="inline-block bg-dark-blue text-white hover:bg-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg transition">View Project</a>
         </div>
         <div class="halo-hover bg-white p-4 rounded-xl">
-          <img src="/images/Projects/patio-covering-2.jpg" alt="Custom patio covering" class="rounded-xl w-full aspect-[4/3] object-cover mb-4" width="400" height="300" loading="lazy" />
+          <img src="/images/Projects/patio-covering-2.jpg" alt="Custom patio covering built by Bar Moon Contracting in Central Texas" class="rounded-xl w-full aspect-[4/3] object-cover mb-4" width="400" height="300" loading="lazy" />
           <h3 class="font-semibold">Patio Covering Project</h3>
           <p class="text-sm text-gray-600 mb-4">New patio covering built for shade and extended outdoor living.</p>
           <a href="/projects" class="inline-block bg-dark-blue text-white hover:bg-primary font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg transition">View Project</a>

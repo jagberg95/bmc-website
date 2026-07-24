@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-salado-tx';
+const city = 'Salado, TX';
+const title = 'General Contracting in Salado, TX | Bar Moon Contracting';
+const description =
+  'General contractor for Salado, TX—renovations, repairs, painting, roofing, and outdoor work planned for village character, creek influence, and Bell County soils.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Bell County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you work inside Salado village and on surrounding acreage?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We handle projects in the village core and on properties outside town toward Belton, Jarrell, and rural Bell County roads.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you remodel older Salado homes carefully?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We plan around established trees, uneven grades, and older systems so updates improve function without forcing a heavy-handed look.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you pull permits for Salado-area work?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We handle permitting and inspections for work that requires them and clarify jurisdiction before we bid hard numbers.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Salado, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Salado, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Salado projects reward a contractor who respects scale: historic village streets, creek-influenced lots,
+        mature trees, and homes that should feel updated—not overbuilt. Bar Moon Contracting runs repairs,
+        renovations, painting, roofing, outdoor living, and multi-trade work with clear scopes and local judgment.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Why Salado work is its own category</h2>
+        <p>
+          Salado is not a subdivision cookie-cutter market. Many properties sit near Salado Creek influence,
+          limestone and clay soils, and established landscaping that owners want protected. Access can be tighter
+          on village lots; rural parcels may need material staging and septic-aware planning. A bid that ignores
+          those details tends to create change orders after demo—not before.
+        </p>
+        <p>
+          We start with a walkthrough: what you want fixed, what you want improved, and how the house actually
+          lives day to day. Then we put scope, allowances, and a realistic timeline on paper so you can decide
+          with confidence.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Services for Salado homeowners</h2>
+        <ul>
+          <li>General repairs, painting, roofing, and exterior maintenance</li>
+          <li>Kitchen, bath, and whole-home renovations</li>
+          <li>Outdoor living, fencing, and concrete coordinated with drainage</li>
+          <li>Storm repairs and insurance-claim documentation support</li>
+          <li>Trade coordination under one general contractor lead</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local conditions we plan for</h2>
+        <p>
+          <strong>Character and scale.</strong> Updates should fit the home and neighborhood. We favor durable,
+          clean craftsmanship over trendy overbuilds that fight the property.
+        </p>
+        <p>
+          <strong>Soil, water, and trees.</strong> Creek proximity, mature root zones, and clay movement all
+          affect exterior attachments, patio edges, and addition planning. We address drainage and detailing early.
+        </p>
+        <p>
+          <strong>Heat and storms.</strong> Central Texas sun and sudden weather still rule material choices for
+          roofs, paint systems, and outdoor structures—village charm does not cancel physics.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>On-site consultation and priorities</li>
+          <li>Written plan with scope, exclusions, and timeline</li>
+          <li>Transparent proposal before work starts</li>
+          <li>Supervised execution and phase updates</li>
+          <li>Final walkthrough and punch list</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Salado FAQs</h2>
+        <p>
+          <strong>Do you work inside Salado village and on surrounding acreage?</strong> Yes. We handle projects
+          in the village core and on properties outside town toward Belton, Jarrell, and rural Bell County roads.
+        </p>
+        <p>
+          <strong>Can you remodel older Salado homes carefully?</strong> Yes. We plan around established trees,
+          uneven grades, and older systems so updates improve function without forcing a heavy-handed look.
+        </p>
+        <p>
+          <strong>Do you pull permits for Salado-area work?</strong> Yes. We handle permitting and inspections for
+          work that requires them and clarify jurisdiction before we bid hard numbers.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-belton-tx" class="text-accent hover:underline">Belton</a>
+          {' · '}
+          <a href="/services/general-contracting-jarrell-tx" class="text-accent hover:underline">Jarrell</a>
+          {' · '}
+          <a href="/services/general-contracting-temple-tx" class="text-accent hover:underline">Temple</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Salado?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

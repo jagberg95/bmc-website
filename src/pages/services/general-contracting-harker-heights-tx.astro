@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-harker-heights-tx';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: 'General Contracting in Harker Heights, TX',
+    description:
+      'General contractor for Harker Heights homes—repairs, renovations, outdoor living, fencing, roofing, and multi-trade project management in Bell County.',
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Harker Heights, TX' },
+      { '@type': 'AdministrativeArea', name: 'Bell County, TX' },
+    ],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: 'General Contracting in Harker Heights, TX', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you work throughout Harker Heights?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We serve established and newer neighborhoods across Harker Heights, plus nearby Nolanville and Killeen corridors when the project fits our service radius.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can one contractor handle a remodel and outdoor work together?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Many Harker Heights projects combine interior updates with fencing, patios, or drainage. We sequence trades so exterior and interior work do not fight each other on the calendar.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you pull permits in Harker Heights?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We handle permitting and inspections for work that requires them, and we explain what does and does not need a permit before you sign.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How quickly can you start a smaller repair job?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Smaller repairs often schedule within days to a couple of weeks depending on material and crew load. Larger remodels are scheduled after a written proposal is approved.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="General Contracting in Harker Heights, TX | Bar Moon Contracting"
+  description="Harker Heights general contractor for renovations, repairs, outdoor living, fencing, and roofing—clear planning and one point of contact for Bell County homes."
+  schemas={pageSchemas}
+>
+  <Header />
+
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Harker Heights, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Harker Heights, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Harker Heights homeowners often need more than a single trade—they need someone who can line up a kitchen
+        update, a fence that will not fail in the first storm season, and exterior work that matches the
+        neighborhood. Bar Moon Contracting runs those projects as one plan, one schedule, and one phone number.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Built for Harker Heights neighborhoods</h2>
+        <p>
+          Harker Heights grew as a residential bridge between Killeen and Nolanville, with established streets,
+          HOA-style subdivisions, and a steady pace of remodels driven by families who want better kitchens,
+          outdoor living, and curb appeal without starting over. Projects here frequently stack: replace a
+          failing fence while the patio is open, fix drainage that has been soaking a slab edge, or refresh paint
+          and roofing in the same season so the exterior ages evenly.
+        </p>
+        <p>
+          That is where general contracting earns its keep. Hiring four separate vendors means four schedules,
+          four excuses, and no one owning the handoff between trades. We own the sequence—what happens first,
+          what can overlap, and what has to wait on inspection—so you are not managing a jobsite from a group
+          text.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Services we provide in Harker Heights</h2>
+        <ul>
+          <li>Repairs, maintenance, and multi-room renovations</li>
+          <li>Kitchen and bath updates as part of a larger remodel package</li>
+          <li>Painting, roofing, and exterior finish work</li>
+          <li>Outdoor living: decks, patios, covers, and hardscape coordination</li>
+          <li>Fencing and concrete work suited to heat and soil movement</li>
+          <li>Storm repairs and insurance-claim documentation support</li>
+          <li>Trade coordination (electrical, plumbing, HVAC) under one GC lead</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Site and climate notes for this side of Bell County</h2>
+        <p>
+          <strong>Heat and UV.</strong> West Bell County sun is hard on fences, deck boards, and exterior paint.
+          We specify materials and prep that match exposure—not the cheapest board that looks fine for one
+          season.
+        </p>
+        <p>
+          <strong>Storms and wind.</strong> Sudden storms can lift shingles, drive water into weak flashings, and
+          overwhelm gutters that were never sized for the roof. Exterior scopes include how water leaves the
+          property, not just how the finish looks on day one.
+        </p>
+        <p>
+          <strong>Clay and grading.</strong> Like much of the region, expansive soils and poor grading create
+          recurring cracks and door-swing issues. When we open a patio, fence line, or addition, we look at how
+          the ground is already behaving so the new work does not fight the old.
+        </p>
+        <p>
+          <strong>Neighbor density.</strong> Many Harker Heights lots sit close to neighboring homes. We keep
+          jobsite noise and debris reasonable, protect shared edges, and communicate when deliveries or noisy
+          work will happen—small details that matter in established subdivisions.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">How we run projects here</h2>
+        <ol>
+          <li>
+            <strong>Listen first</strong> — Goals, budget range, and any HOA or neighbor constraints you already
+            know about.
+          </li>
+          <li>
+            <strong>Scope on paper</strong> — What is included, what is excluded, and which allowances you still
+            need to choose.
+          </li>
+          <li>
+            <strong>Sequence the work</strong> — Interior and exterior phases ordered so crews are not tripping
+            over each other.
+          </li>
+          <li>
+            <strong>Build and communicate</strong> — Daily or phase-based updates; written change orders if the
+            plan shifts.
+          </li>
+          <li>
+            <strong>Close clean</strong> — Walkthrough, punch list, and a site left ready for normal life again.
+          </li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Harker Heights FAQs</h2>
+        <p>
+          <strong>Do you work throughout Harker Heights?</strong> Yes. We serve established and newer
+          neighborhoods across Harker Heights, plus nearby Nolanville and Killeen corridors when the project fits
+          our service radius.
+        </p>
+        <p>
+          <strong>Can one contractor handle a remodel and outdoor work together?</strong> Yes. Many Harker Heights
+          projects combine interior updates with fencing, patios, or drainage. We sequence trades so exterior and
+          interior work do not fight each other on the calendar.
+        </p>
+        <p>
+          <strong>Do you pull permits in Harker Heights?</strong> Yes. We handle permitting and inspections for
+          work that requires them, and we explain what does and does not need a permit before you sign.
+        </p>
+        <p>
+          <strong>How quickly can you start a smaller repair job?</strong> Smaller repairs often schedule within
+          days to a couple of weeks depending on material and crew load. Larger remodels are scheduled after a
+          written proposal is approved.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby service pages:{' '}
+          <a href="/services/kitchen-bath-remodeling-killeen-tx" class="text-accent hover:underline"
+            >Kitchen &amp; bath in Killeen</a
+          >
+          {' · '}
+          <a href="/services/general-contracting-belton-tx" class="text-accent hover:underline"
+            >General contracting in Belton</a
+          >
+          {' · '}
+          <a href="/services/outdoor-living-decks-patios-central-texas" class="text-accent hover:underline"
+            >Outdoor living</a
+          >
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Harker Heights?</h3>
+        <p class="mb-4 text-white/90">One plan for interior and exterior work—clear pricing, local conditions, no chaos.</p>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg"
+          >Get a Free Quote</a
+        >
+        <p class="mt-4 text-sm">
+          Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM –
+          6:00 PM
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

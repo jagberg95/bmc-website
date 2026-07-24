@@ -2,33 +2,111 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const title = 'How to Choose a General Contractor in Central Texas | Bar Moon Contracting';
+const description =
+  'What to look for when hiring a general contractor in Temple and Bell County—red flags, insurance, local experience, and questions worth asking before you sign.';
+const datePublished = '2026-07-07';
+const dateModified = '2026-07-07';
+const url = 'https://barmooncontracting.com/blog/how-to-choose-a-general-contractor';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: 'How to Choose a General Contractor in Central Texas (and Avoid Costly Mistakes)',
+    description,
+    datePublished,
+    dateModified,
+    author: {
+      '@type': 'Organization',
+      name: 'Bar Moon Contracting',
+      url: 'https://barmooncontracting.com/',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bar Moon Contracting',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://barmooncontracting.com/images/Circle/BMC_Logo_Circle_Clean_01.png',
+      },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://barmooncontracting.com/blog' },
+      { '@type': 'ListItem', position: 3, name: 'How to Choose a General Contractor', item: url },
+    ],
+  },
+];
 ---
 
-<Layout title="How to Choose a General Contractor in Central Texas | Bar Moon Contracting">
+<Layout title={title} description={description} schemas={pageSchemas}>
   <Header />
-  
+
   <main class="pt-20 bg-light-neutral text-primary">
     <div class="max-w-3xl mx-auto px-6 py-16">
       <a href="/blog" class="text-sm text-accent hover:underline mb-4 inline-block">← Back to Blog</a>
 
-      <p class="text-sm text-gray-500 mb-1">July 7, 2026</p>
-      <h1 class="text-4xl font-bold mb-6">How to Choose a General Contractor in Central Texas (and Avoid Costly Mistakes)</h1>
+      <p class="text-sm text-gray-500 mb-1">
+        <time datetime={datePublished}>Published July 7, 2026</time>
+        <span class="mx-1">·</span>
+        <time datetime={dateModified}>Updated July 7, 2026</time>
+      </p>
+      <h1 class="text-4xl font-bold mb-6">
+        How to Choose a General Contractor in Central Texas (and Avoid Costly Mistakes)
+      </h1>
 
       <div class="prose prose-lg text-gray-700 max-w-none">
-        <p>Most problems start with timing and the wrong contractor choice. Discover what really matters when hiring, red flags to watch for, and how to make a confident decision before your project begins.</p>
+        <p>
+          Most problems start with timing and the wrong contractor choice. Discover what really
+          matters when hiring, red flags to watch for, and how to make a confident decision before
+          your project begins.
+        </p>
 
         <h2>Why Choosing Well Matters Locally</h2>
-        <p>Central Texas has its own challenges — heavy clay soils that shift, intense heat that affects concrete and paint curing, and frequent storms that can damage roofs and foundations. A contractor who knows Bell County permitting, drainage, and material suppliers will save you headaches and money.</p>
+        <p>
+          Central Texas has its own challenges — heavy clay soils that shift, intense heat that
+          affects concrete and paint curing, and frequent storms that can damage roofs and
+          foundations. A contractor who knows Bell County permitting, drainage, and material
+          suppliers will save you headaches and money.
+        </p>
 
         <h2>Key Things to Look For</h2>
         <p>When evaluating general contractors, focus on these qualities:</p>
         <ul>
-          <li><strong>Clear communication and realistic timelines</strong> — They listen first, explain the process in plain language, and give honest, realistic start and finish dates instead of promising the moon.</li>
-          <li><strong>Written estimates with detailed scope</strong> — Everything should be on paper. See the companion guide on <a href="/blog/how-to-read-a-contractors-estimate">How to Read a Contractor’s Estimate</a> for exactly what belongs in it.</li>
-          <li><strong>Local experience in Bell County conditions</strong> — Ask about past projects involving clay soil, older homes in Temple or Killeen, storm repairs, or drainage work.</li>
-          <li><strong>Proper insurance and references</strong> — They should carry liability and workers’ comp. Ask for recent local references and actually call them.</li>
-          <li><strong>Transparent process</strong> — From the first consultation through planning, execution, and final walkthrough, you should know what happens at each stage.</li>
-          <li><strong>Five-generation Central Texas roots</strong> — Contractors who have lived and worked here for decades understand the area and stand behind their work.</li>
+          <li>
+            <strong>Clear communication and realistic timelines</strong> — They listen first, explain
+            the process in plain language, and give honest, realistic start and finish dates instead
+            of promising the moon.
+          </li>
+          <li>
+            <strong>Written estimates with detailed scope</strong> — Everything should be on paper.
+            See the companion guide on
+            <a href="/blog/how-to-read-a-contractors-estimate">How to Read a Contractor’s Estimate</a>
+            for exactly what belongs in it.
+          </li>
+          <li>
+            <strong>Local experience in Bell County conditions</strong> — Ask about past projects
+            involving clay soil, older homes in Temple or Killeen, storm repairs, or drainage work.
+          </li>
+          <li>
+            <strong>Proper insurance and references</strong> — They should carry liability and
+            workers’ comp. Ask for recent local references and actually call them.
+          </li>
+          <li>
+            <strong>Transparent process</strong> — From the first consultation through planning,
+            execution, and final walkthrough, you should know what happens at each stage.
+          </li>
+          <li>
+            <strong>Five-generation Central Texas roots</strong> — Contractors who have lived and
+            worked here for decades understand the area and stand behind their work.
+          </li>
         </ul>
 
         <h2>Red Flags to Avoid</h2>
@@ -37,7 +115,10 @@ import Footer from '../../components/Footer.astro';
           <li>No written contract or estimate — just a handshake or verbal agreement.</li>
           <li>Reluctance to provide references or show recent work in your area.</li>
           <li>Unusually low bids that seem too good to be true (they often are).</li>
-          <li>Poor communication during the bidding process — if they’re hard to reach now, it won’t get better later.</li>
+          <li>
+            Poor communication during the bidding process — if they’re hard to reach now, it won’t
+            get better later.
+          </li>
           <li>They don’t pull permits or want you to handle them.</li>
         </ul>
 
@@ -52,15 +133,23 @@ import Footer from '../../components/Footer.astro';
         </ul>
 
         <h2>The Smart Way to Decide</h2>
-        <p>Get at least two or three written estimates. Visit one or two of the contractor’s recent jobs if possible. Talk to past clients. Then compare the details, not just the bottom-line price. The cheapest bid is rarely the best value once surprises appear.</p>
+        <p>
+          Get at least two or three written estimates. Visit one or two of the contractor’s recent
+          jobs if possible. Talk to past clients. Then compare the details, not just the bottom-line
+          price. The cheapest bid is rarely the best value once surprises appear.
+        </p>
 
-        <p>Once you’ve selected a contractor, the next step is understanding the estimate and preparing for the project. We break that down in our companion guide on <a href="/blog/how-to-read-a-contractors-estimate">How to Read a Contractor’s Estimate</a>.</p>
+        <p>
+          Once you’ve selected a contractor, the next step is understanding the estimate and
+          preparing for the project. We break that down in our companion guide on
+          <a href="/blog/how-to-read-a-contractors-estimate">How to Read a Contractor’s Estimate</a>.
+        </p>
       </div>
 
-
-
       <div class="mt-8">
-        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block">Get a Quote</a>
+        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block"
+          >Get a Quote</a
+        >
       </div>
     </div>
   </main>

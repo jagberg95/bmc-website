@@ -1,0 +1,156 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-holland-tx';
+const city = 'Holland, TX';
+const title = 'General Contracting in Holland, TX | Bar Moon Contracting';
+const description =
+  'Holland, TX general contractor for renovations, repairs, fencing, and roofing—clear communication and schedules that respect rural access and farm community life.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Bell County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you serve Holland and nearby rural communities?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Holland and surrounding farmland communities are part of our Bell County service area.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you schedule around agricultural seasons or limited access?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'When access or timing constraints matter, we discuss them during planning and build the schedule accordingly.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What warranty do you offer?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We provide a one-year workmanship warranty on completed work, plus manufacturer warranties on applicable materials.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Holland, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Holland, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Holland and the surrounding farm communities count on contractors who communicate clearly and finish what
+        they start. Bar Moon Contracting provides renovations, repairs, fencing, painting, roofing, and outdoor
+        work with written scopes and schedules that respect rural access and real life outside the city loop.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Straightforward work for Holland-area homes</h2>
+        <p>
+          Whether you need a kitchen update, a roof that survived one storm too many, a fence rebuilt for livestock
+          or privacy, or a package of overdue repairs, we approach Holland jobs the same way we approach Temple
+          work: listen first, document the plan, then execute with supervised trades. No hype. No disappearing mid
+          project.
+        </p>
+        <p>
+          Rural properties may need extra planning for deliveries, equipment, and weather windows. That planning
+          happens before the quote is final—not after crews are already on site.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Services in Holland</h2>
+        <ul>
+          <li>Renovations and interior updates</li>
+          <li>General repairs and maintenance</li>
+          <li>Painting and roofing</li>
+          <li>Fencing, concrete, and outdoor living</li>
+          <li>Storm repairs and multi-trade coordination</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">What we account for</h2>
+        <p>
+          <strong>Access and logistics.</strong> Gates, driveways, and staging areas affect how the job runs.
+        </p>
+        <p>
+          <strong>Weather and soil.</strong> Heat, storms, and clay still dictate exterior details and timelines.
+        </p>
+        <p>
+          <strong>Communication.</strong> You always know who to call and what phase comes next.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>Contact and project discussion</li>
+          <li>Site visit when needed</li>
+          <li>Written proposal</li>
+          <li>Scheduled build with updates</li>
+          <li>Walkthrough and warranty orientation</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Holland FAQs</h2>
+        <p>
+          <strong>Do you serve Holland and nearby rural communities?</strong> Yes. Holland and surrounding farmland
+          communities are part of our Bell County service area.
+        </p>
+        <p>
+          <strong>Can you schedule around agricultural seasons or limited access?</strong> When access or timing
+          constraints matter, we discuss them during planning and build the schedule accordingly.
+        </p>
+        <p>
+          <strong>What warranty do you offer?</strong> We provide a one-year workmanship warranty on completed work,
+          plus manufacturer warranties on applicable materials.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-rogers-tx" class="text-accent hover:underline">Rogers</a>
+          {' · '}
+          <a href="/services/general-contracting-little-river-academy-tx" class="text-accent hover:underline">Little River-Academy</a>
+          {' · '}
+          <a href="/services/general-contracting-belton-tx" class="text-accent hover:underline">Belton</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Holland?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

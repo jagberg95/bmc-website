@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/kitchen-bath-remodeling-killeen-tx';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Kitchen & Bath Remodeling',
+    name: 'Kitchen & Bath Remodeling in Killeen, TX',
+    description:
+      'Kitchen and bath remodels in Killeen and Fort Cavazos–area homes—durable finishes, smart layouts, and schedules that work for busy households.',
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Killeen, TX' },
+      { '@type': 'AdministrativeArea', name: 'Bell County, TX' },
+    ],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: 'Kitchen & Bath Remodeling in Killeen, TX', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How long does a kitchen or bath remodel take in Killeen?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most standard kitchen or bath remodels run about 3–6 weeks depending on scope, plumbing/electrical changes, and material lead times. We lock a realistic schedule before demo.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can my family stay in the home during a Killeen remodel?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes for most projects. We contain dust, protect pathways, and sequence work so you keep a functioning bathroom or temporary kitchen plan when possible.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you remodel older Killeen and Fort Cavazos–area homes?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Many area homes have dated layouts, limited storage, and plumbing or electrical that needs updating. We plan for surprises behind walls without abandoning the budget process.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What materials hold up in Killeen kitchens and baths?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We favor moisture-resistant finishes, solid ventilation, hard-wearing flooring, and cabinets/counters that handle real family use—not showroom-only materials.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Kitchen & Bath Remodeling in Killeen, TX | Bar Moon Contracting"
+  description="Kitchen and bath remodels in Killeen, TX—durable layouts and finishes for busy Fort Cavazos–area households. Free quotes from Bar Moon Contracting."
+  schemas={pageSchemas}
+>
+  <Header />
+
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>Kitchen &amp; Bath Remodeling in Killeen, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Kitchen &amp; Bath Remodeling in Killeen, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Killeen kitchens and baths take a beating—shift schedules, growing families, hard water, and heat that
+        stresses ventilation and finishes. Bar Moon Contracting designs and builds remodels that work for how
+        people actually live west of I-14, not just how a magazine kitchen photographs for a weekend.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Remodeling for Killeen’s real housing stock</h2>
+        <p>
+          Killeen’s neighborhoods range from established streets near downtown and Rancier corridors to denser
+          subdivisions that serve Fort Cavazos families and long-term residents alike. Many homes share the same
+          pattern: solid bones, tired cabinets, baths that lack storage or accessibility, and layouts that never
+          matched modern appliances or multi-cook households. A successful remodel here is less about trend
+          chasing and more about durable function—clear traffic flow, surfaces that clean easily, and mechanicals
+          that can handle Texas humidity.
+        </p>
+        <p>
+          We also see a lot of turnover and “make it work” renovations after moves. That is fine—as long as the
+          work is planned with a written scope, realistic allowances, and a schedule that does not leave a family
+          without a usable bath for weeks. Our process is built for occupied homes: dust control, daily progress
+          updates, and honest talk when demo reveals older plumbing or out-of-square walls.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">What we remodel in Killeen</h2>
+        <ul>
+          <li>Full kitchen remodels: cabinets, countertops, appliances, islands, and layout changes</li>
+          <li>Primary and guest baths: walk-in showers, tubs, vanities, tile, and accessibility updates</li>
+          <li>Laundry rooms, powder rooms, and mudroom-style entries for high-traffic households</li>
+          <li>Custom cabinetry and built-ins where storage is the real problem</li>
+          <li>Tile, flooring, painting, lighting, and finish carpentry as part of a coordinated remodel</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local factors that change the design</h2>
+        <p>
+          <strong>Hard water and humidity.</strong> Fixtures and shower glass show mineral buildup faster when
+          water and bathroom ventilation are not planned together. We push for proper exhaust, moisture-tolerant
+          assemblies, and finishes that still look good after years of real use.
+        </p>
+        <p>
+          <strong>Heat and HVAC load.</strong> Opening walls and relocating ducts or returns during a remodel can
+          affect comfort. We coordinate mechanical decisions early so a prettier kitchen does not create a hotter
+          summer room.
+        </p>
+        <p>
+          <strong>Busy schedules.</strong> Military and shift work are common in the Killeen market. We set clear
+          start/finish windows, material lead-time expectations, and decision deadlines so the project does not
+          stall mid-demo waiting on a backordered vanity.
+        </p>
+        <p>
+          <strong>Budgets that need to stretch.</strong> Not every remodel is a gut-to-studs showpiece. We help
+          prioritize: keep the layout and invest in cabinets and counters, or open the plan and phase finishes.
+          Either way, the numbers stay on paper.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">How a Killeen remodel runs with us</h2>
+        <ol>
+          <li>Consultation to map needs, must-haves, and lifestyle (storage, accessibility, resale timing)</li>
+          <li>Design direction and material ranges that fit the budget before you fall in love with out-of-scope products</li>
+          <li>Detailed quote and timeline with allowances called out clearly</li>
+          <li>Demo, rough-in, and finish work with daily communication</li>
+          <li>Final walkthrough, punch list, and cleanup</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Killeen kitchen &amp; bath FAQs</h2>
+        <p>
+          <strong>How long does a kitchen or bath remodel take in Killeen?</strong> Most standard kitchen or bath
+          remodels run about 3–6 weeks depending on scope, plumbing/electrical changes, and material lead times.
+          We lock a realistic schedule before demo.
+        </p>
+        <p>
+          <strong>Can my family stay in the home during a Killeen remodel?</strong> Yes for most projects. We
+          contain dust, protect pathways, and sequence work so you keep a functioning bathroom or temporary
+          kitchen plan when possible.
+        </p>
+        <p>
+          <strong>Do you remodel older Killeen and Fort Cavazos–area homes?</strong> Yes. Many area homes have
+          dated layouts, limited storage, and plumbing or electrical that needs updating. We plan for surprises
+          behind walls without abandoning the budget process.
+        </p>
+        <p>
+          <strong>What materials hold up in Killeen kitchens and baths?</strong> We favor moisture-resistant
+          finishes, solid ventilation, hard-wearing flooring, and cabinets/counters that handle real family
+          use—not showroom-only materials.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Related pages:{' '}
+          <a href="/services/kitchen-bath-remodeling-temple-tx" class="text-accent hover:underline"
+            >Kitchen &amp; bath in Temple</a
+          >
+          {' · '}
+          <a href="/services/home-renovations-temple-tx" class="text-accent hover:underline">Home renovations</a>
+          {' · '}
+          <a href="/services/general-contracting-harker-heights-tx" class="text-accent hover:underline"
+            >General contracting in Harker Heights</a
+          >
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Planning a kitchen or bath update in Killeen?</h3>
+        <p class="mb-4 text-white/90">Durable design, clear pricing, and a schedule that respects a busy household.</p>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg"
+          >Get a Remodel Quote</a
+        >
+        <p class="mt-4 text-sm">
+          Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM –
+          6:00 PM
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

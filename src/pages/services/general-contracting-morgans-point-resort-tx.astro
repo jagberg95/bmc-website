@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-morgans-point-resort-tx';
+const city = "Morgan's Point Resort, TX";
+const title = "General Contracting in Morgan's Point Resort, TX | Bar Moon Contracting";
+const description =
+  "General contractor for Morgan's Point Resort—repairs, renovations, outdoor living, and exterior work planned for lake-adjacent humidity, drainage, and Bell County weather.";
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Bell County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: "Do you serve Morgan's Point Resort and nearby lake properties?",
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Yes. We regularly serve Morgan's Point Resort and lake-adjacent properties toward Belton Lake, with planning for moisture and drainage.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What should lake-area remodels prioritize?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ventilation, moisture-resistant finishes, durable exteriors, and grading that keeps water moving away from the structure.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you handle outdoor living near the lake?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Decks, patios, covers, and related work are planned with weather exposure and soil conditions in mind.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Morgan&apos;s Point Resort, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Morgan&apos;s Point Resort, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Lake-adjacent living around Morgan&apos;s Point Resort is a gift—and a materials challenge. Humidity,
+        drainage, and weather exposure matter as much as floor plans. Bar Moon Contracting handles renovations,
+        repairs, outdoor living, fencing, painting, and roofing with those conditions built into the plan.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Built for Belton Lake living</h2>
+        <p>
+          Homes near the lake often need moisture-aware interiors (especially baths and laundry), exterior systems
+          that can take wind-driven rain, and outdoor spaces people actually use in Central Texas heat. We do not
+          treat a lake-area remodel like a dry inland subdivision job. Assessment includes how water moves on the
+          lot and how finishes will age in higher humidity.
+        </p>
+        <p>
+          Whether you are updating a primary suite, fixing chronic exterior issues, or adding a patio cover for
+          shade, you get a written scope and a single contractor owning the handoffs between trades.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Services we provide</h2>
+        <ul>
+          <li>Kitchen, bath, and whole-home renovations</li>
+          <li>General repairs and maintenance</li>
+          <li>Painting, roofing, and exterior detailing</li>
+          <li>Outdoor living, fencing, and concrete work</li>
+          <li>Storm repairs and multi-trade project management</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local conditions</h2>
+        <p>
+          <strong>Humidity and moisture.</strong> Ventilation and finish choices matter more near the water. We
+          prioritize assemblies that dry and clean well.
+        </p>
+        <p>
+          <strong>Drainage.</strong> Lake-area lots can hold water or send it toward the house. Exterior projects
+          include how grading and gutters support the work.
+        </p>
+        <p>
+          <strong>Weather exposure.</strong> Covers, fences, and roofing details are specified for real storms, not
+          calm weekends only.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>Site consultation</li>
+          <li>Scope, allowances, and timeline</li>
+          <li>Written proposal</li>
+          <li>Permits when required and supervised build</li>
+          <li>Walkthrough and closeout</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">FAQs</h2>
+        <p>
+          <strong>Do you serve Morgan&apos;s Point Resort and nearby lake properties?</strong> Yes. We regularly
+          serve Morgan&apos;s Point Resort and lake-adjacent properties toward Belton Lake, with planning for
+          moisture and drainage.
+        </p>
+        <p>
+          <strong>What should lake-area remodels prioritize?</strong> Ventilation, moisture-resistant finishes,
+          durable exteriors, and grading that keeps water moving away from the structure.
+        </p>
+        <p>
+          <strong>Can you handle outdoor living near the lake?</strong> Yes. Decks, patios, covers, and related
+          work are planned with weather exposure and soil conditions in mind.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-belton-tx" class="text-accent hover:underline">Belton</a>
+          {' · '}
+          <a href="/services/general-contracting-temple-tx" class="text-accent hover:underline">Temple</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a contractor at Morgan&apos;s Point Resort?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

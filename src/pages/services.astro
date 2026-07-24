@@ -4,7 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Services | Bar Moon Contracting">
+<Layout
+  title="Services | Bar Moon Contracting"
+  description="General contracting, renovations, kitchen & bath remodels, outdoor living, fencing, concrete, and custom homes across Temple and Bell County, TX."
+>
   <Header />
   
   <main class="pt-20 bg-light-neutral text-primary">
@@ -16,19 +19,19 @@ import Footer from '../components/Footer.astro';
 
       <div class="grid md:grid-cols-2 gap-8">
         <a href="/services/home-renovations-temple-tx" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
-          <img src="/images/christian-mackie-kitchen2-unsplash.jpg" alt="Home renovation kitchen" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <img src="/images/christian-mackie-kitchen2-unsplash.jpg" alt="Home renovation kitchen remodel in Temple, TX by Bar Moon Contracting" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
           <h2 class="text-2xl font-bold mb-2">Home Renovations</h2>
           <p class="text-gray-600">Kitchens, baths, whole-home updates, painting, roofing, and layout changes built for Central Texas homes.</p>
         </a>
 
         <a href="/services/kitchen-bath-remodeling-temple-tx" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
-          <img src="/images/beks-mu-bathroom-unsplash.jpg" alt="Kitchen remodel" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <img src="/images/beks-mu-bathroom-unsplash.jpg" alt="Bathroom remodel finishes by Bar Moon Contracting in Bell County, TX" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
           <h2 class="text-2xl font-bold mb-2">Kitchen & Bath Remodeling</h2>
           <p class="text-gray-600">Thoughtful remodels with durable materials, painting, and finishes that handle Texas families and climate.</p>
         </a>
 
         <a href="/services/outdoor-living-decks-patios-central-texas" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition">
-          <img src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg" alt="Patio and deck" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <img src="/images/point3d-commercial-imaging-ltd-patio-unsplash.jpg" alt="Outdoor patio and deck living space in Central Texas" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
           <h2 class="text-2xl font-bold mb-2">Outdoor Living</h2>
           <p class="text-gray-600">Decks, patios, hardscapes, and landscape design designed for local conditions.</p>
         </a>
@@ -40,10 +43,54 @@ import Footer from '../components/Footer.astro';
         </a>
 
         <a href="/services/general-contracting-temple-tx" class="block p-8 bg-white rounded-2xl hover:shadow-lg transition md:col-span-2">
-          <img src="/images/sasun-bughdaryan-handyman-unsplash.jpg" alt="General contracting repairs" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
+          <img src="/images/sasun-bughdaryan-handyman-unsplash.jpg" alt="General contracting home repairs by Bar Moon Contracting" class="w-full h-40 object-cover rounded mb-4" width="400" height="200" loading="lazy" />
           <h2 class="text-2xl font-bold mb-2">General Contracting</h2>
           <p class="text-gray-600">Repairs, renovations, painting, roofing, coordination, storm damage, and full project management in Bell County and surrounding areas.</p>
         </a>
+      </div>
+
+      <!-- City-specific service pages (local SEO) -->
+      <div class="mt-16">
+        <h2 class="text-2xl md:text-3xl font-bold mb-3">General Contracting by City</h2>
+        <p class="text-gray-600 mb-8 max-w-2xl">
+          Location-specific pages with unique local details for every community we list in our service area.
+          Photos can be added later; content and schema are live now.
+        </p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { href: '/services/general-contracting-temple-tx', city: 'Temple', blurb: 'Full GC process for Temple & Bell County' },
+            { href: '/services/general-contracting-belton-tx', city: 'Belton', blurb: 'Lake Belton weather, clay soils, storm work' },
+            { href: '/services/general-contracting-salado-tx', city: 'Salado', blurb: 'Village character, creek influence, careful remodels' },
+            { href: '/services/general-contracting-killeen-tx', city: 'Killeen', blurb: 'Durable work for busy Fort Cavazos–area homes' },
+            { href: '/services/general-contracting-harker-heights-tx', city: 'Harker Heights', blurb: 'Interior + outdoor under one plan' },
+            { href: '/services/general-contracting-copperas-cove-tx', city: 'Copperas Cove', blurb: 'Rocky/clay soils, heat, Hill Country edge' },
+            { href: '/services/general-contracting-jarrell-tx', city: 'Jarrell', blurb: 'Growth corridor and rural lot projects' },
+            { href: '/services/general-contracting-nolanville-tx', city: 'Nolanville', blurb: 'I-14 corridor between Temple & Killeen' },
+            { href: '/services/general-contracting-morgans-point-resort-tx', city: "Morgan's Point Resort", blurb: 'Lake-adjacent humidity and drainage' },
+            { href: '/services/general-contracting-little-river-academy-tx', city: 'Little River-Academy', blurb: 'Rural access and septic-aware planning' },
+            { href: '/services/general-contracting-rogers-tx', city: 'Rogers', blurb: 'Town homes and farmstead repairs' },
+            { href: '/services/general-contracting-holland-tx', city: 'Holland', blurb: 'Farm community schedules and rural sites' },
+          ].map((item) => (
+            <a
+              href={item.href}
+              class="block p-5 bg-white rounded-2xl border border-gray-200 hover:shadow-lg hover:border-accent/40 transition"
+            >
+              <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-1">{item.city}, TX</p>
+              <h3 class="text-base font-bold mb-1">General Contracting</h3>
+              <p class="text-sm text-gray-600">{item.blurb}</p>
+            </a>
+          ))}
+        </div>
+        <p class="mt-6 text-sm text-gray-600">
+          Also:{' '}
+          <a href="/services/kitchen-bath-remodeling-killeen-tx" class="text-accent hover:underline"
+            >Kitchen &amp; bath remodeling in Killeen</a
+          >
+          {' · '}
+          <a href="/services/kitchen-bath-remodeling-temple-tx" class="text-accent hover:underline"
+            >Kitchen &amp; bath in Temple</a
+          >
+        </p>
       </div>
 
       <div class="mt-12 text-center">

@@ -2,9 +2,87 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: 'General Contracting in Temple, TX & Bell County',
+    description:
+      'Trusted general contracting for repairs, renovations including painting and roofing, additions, storm damage, and full project management in Temple and Bell County, TX.',
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: 'Bell County, TX',
+    url: 'https://barmooncontracting.com/services/general-contracting-temple-tx',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'General Contracting',
+        item: 'https://barmooncontracting.com/services/general-contracting-temple-tx',
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How long does a typical project take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Small repairs: 1–5 days. Larger remodels or additions: 2–6 weeks. We provide clear, realistic timelines upfront.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you handle insurance work?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We work directly with adjusters and ensure proper documentation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you pull permits?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, we handle all permitting and inspections for compliant work.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What if my project changes mid-way?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We document changes in writing and adjust the scope and timeline accordingly.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do you ensure quality across trades?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We use trusted local partners and supervise all work on site.',
+        },
+      },
+    ],
+  },
+];
 ---
 
-<Layout title="General Contracting in Temple, TX | Bar Moon Contracting">
+<Layout
+  title="General Contracting in Temple, TX | Bar Moon Contracting"
+  description="Temple and Bell County general contractor for repairs, renovations, painting, roofing, additions, and storm damage—one point of contact from quote to walkthrough."
+  schemas={pageSchemas}
+>
   <Header />
   
   <main class="pt-20 bg-light-neutral text-primary">
@@ -36,7 +114,7 @@ import Footer from '../../components/Footer.astro';
         <div class="space-y-10">
           <!-- Step 1 -->
           <div class="grid md:grid-cols-3 gap-6 items-start">
-            <img src="/images/initial-meeting.jpg" alt="Free Consultation" class="w-full h-64 md:h-80 object-cover object-[50%_65%] rounded-xl md:col-span-1" />
+            <img src="/images/initial-meeting.jpg" alt="Free consultation meeting with Bar Moon Contracting for a Temple TX remodel" class="w-full h-64 md:h-80 object-cover object-[50%_65%] rounded-xl md:col-span-1" />
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-2">
                 <span class="bg-accent text-dark-blue font-bold w-8 h-8 flex items-center justify-center rounded-full text-sm flex-shrink-0">1</span>
@@ -52,7 +130,7 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Step 2 -->
           <div class="grid md:grid-cols-3 gap-6 items-start">
-            <img src="/images/planning-and-drafting.jpg" alt="Assessment &amp; Planning" class="w-full h-64 md:h-80 object-cover object-center rounded-xl md:col-span-1" />
+            <img src="/images/planning-and-drafting.jpg" alt="Construction planning and drafting for a Bell County home project" class="w-full h-64 md:h-80 object-cover object-center rounded-xl md:col-span-1" />
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-2">
                 <span class="bg-accent text-dark-blue font-bold w-8 h-8 flex items-center justify-center rounded-full text-sm flex-shrink-0">2</span>
@@ -68,7 +146,7 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Step 3 -->
           <div class="grid md:grid-cols-3 gap-6 items-start">
-            <img src="/images/foundation.jpg" alt="Transparent Proposal" class="w-full h-64 md:h-80 object-cover object-center rounded-xl md:col-span-1" />
+            <img src="/images/foundation.jpg" alt="Foundation work as part of a general contracting project in Central Texas" class="w-full h-64 md:h-80 object-cover object-center rounded-xl md:col-span-1" />
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-2">
                 <span class="bg-accent text-dark-blue font-bold w-8 h-8 flex items-center justify-center rounded-full text-sm flex-shrink-0">3</span>
@@ -84,7 +162,7 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Step 4 -->
           <div class="grid md:grid-cols-3 gap-6 items-start">
-            <img src="/images/framing.jpg" alt="Skilled Execution" class="w-full h-64 md:h-80 object-cover object-[50%_20%] rounded-xl md:col-span-1" />
+            <img src="/images/framing.jpg" alt="Home framing and skilled construction execution by Bar Moon Contracting" class="w-full h-64 md:h-80 object-cover object-[50%_20%] rounded-xl md:col-span-1" />
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-2">
                 <span class="bg-accent text-dark-blue font-bold w-8 h-8 flex items-center justify-center rounded-full text-sm flex-shrink-0">4</span>
@@ -100,7 +178,7 @@ import Footer from '../../components/Footer.astro';
 
           <!-- Step 5 -->
           <div class="grid md:grid-cols-3 gap-6 items-start">
-            <img src="/images/interior.jpg" alt="Quality Check &amp; Walkthrough" class="w-full h-64 md:h-80 object-cover object-center rounded-xl md:col-span-1" />
+            <img src="/images/interior.jpg" alt="Finished interior ready for quality check and client walkthrough" class="w-full h-64 md:h-80 object-cover object-center rounded-xl md:col-span-1" />
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-2">
                 <span class="bg-accent text-dark-blue font-bold w-8 h-8 flex items-center justify-center rounded-full text-sm flex-shrink-0">5</span>
@@ -123,6 +201,13 @@ import Footer from '../../components/Footer.astro';
         <p><strong>How do you ensure quality across trades?</strong> We use trusted local partners and supervise all work on site.</p>
       </div>
 
+      <p class="text-sm text-gray-600 mb-8">
+        Also serving:{' '}
+        <a href="/services/general-contracting-belton-tx" class="text-accent hover:underline">Belton</a>
+        {' · '}
+        <a href="/services/general-contracting-harker-heights-tx" class="text-accent hover:underline">Harker Heights</a>
+      </p>
+
       <div class="bg-deep-blue text-white p-8 rounded-2xl">
         <h3 class="text-2xl font-semibold mb-4">Need a general contractor you can trust?</h3>
         <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
@@ -130,33 +215,6 @@ import Footer from '../../components/Footer.astro';
       </div>
     </div>
 
-    <!-- Structured Data for this service page -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "serviceType": "General Contracting",
-          "name": "General Contracting in Temple, TX & Bell County",
-          "description": "Trusted general contracting for repairs, renovations including painting and roofing, additions, storm damage, and full project management.",
-          "provider": { "@type": "LocalBusiness", "name": "Bar Moon Contracting", "url": "https://barmooncontracting.com" },
-          "areaServed": ["Temple, TX", "Belton, TX", "Killeen, TX", "Bell County, TX"],
-          "url": "https://barmooncontracting.com/services/general-contracting-temple-tx"
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "How long does a typical project take?", "acceptedAnswer": { "@type": "Answer", "text": "Small repairs: 1–5 days. Larger remodels or additions: 2–6 weeks. We provide clear, realistic timelines upfront." } },
-            { "@type": "Question", "name": "Do you handle insurance work?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work directly with adjusters and ensure proper documentation." } },
-            { "@type": "Question", "name": "Do you pull permits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we handle all permitting and inspections for compliant work." } },
-            { "@type": "Question", "name": "What if my project changes mid-way?", "acceptedAnswer": { "@type": "Answer", "text": "We document changes in writing and adjust the scope and timeline accordingly." } },
-            { "@type": "Question", "name": "How do you ensure quality across trades?", "acceptedAnswer": { "@type": "Answer", "text": "We use trusted local partners and supervise all work on site." } }
-          ]
-        }
-      ]
-    }
-    </script>
   </main>
 
   <Footer />

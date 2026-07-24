@@ -1,0 +1,211 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-belton-tx';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: 'General Contracting in Belton, TX',
+    description:
+      'General contractor serving Belton and Lake Belton–area homes—repairs, renovations, painting, roofing, additions, and project management built for clay soils and storm seasons.',
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [
+      { '@type': 'City', name: 'Belton, TX' },
+      { '@type': 'AdministrativeArea', name: 'Bell County, TX' },
+    ],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: 'General Contracting in Belton, TX', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you serve all of Belton and Lake Belton areas?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We regularly work in Belton city limits, near Lake Belton, and on rural properties along the corridors toward Temple, Salado, and Morgan’s Point Resort.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do clay soils around Belton affect renovations?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Expansive clay can shift foundations, slabs, and exterior hardscape. We plan drainage, pier/footing details, and material choices with that movement in mind so repairs and additions last longer.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you handle storm damage and insurance work in Belton?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We document damage, work with adjusters when needed, and coordinate roofing, interior repairs, and related trades under one project plan.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does a typical Belton project take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Small repairs: 1–5 days. Larger remodels or additions: often 2–6 weeks depending on scope, permits, and material lead times. We give a written timeline before work starts.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="General Contracting in Belton, TX | Bar Moon Contracting"
+  description="Belton general contractor for repairs, renovations, painting, roofing, and additions—planned for Lake Belton weather, clay soils, and clear project management."
+  schemas={pageSchemas}
+>
+  <Header />
+
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Belton, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Belton, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Belton homeowners need a contractor who understands lake-adjacent weather, older housing stock, and the
+        clay soils that run under much of Bell County. Bar Moon Contracting is your single point of contact for
+        repairs, renovations, painting, roofing, additions, and full project coordination—without the runaround.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Why Belton projects are different</h2>
+        <p>
+          Belton sits between Temple’s medical corridor and the recreation draw of Lake Belton and Belton Lake
+          Outdoor Recreation Area. That mix shows up in the housing: mid-century ranch homes near downtown and
+          the university area, newer subdivisions pushing toward the loop, and lake-proximate properties where
+          humidity, drainage, and wind-driven rain matter as much as looks. A generic “Central Texas” bid that
+          ignores those conditions often underestimates site work, exterior detailing, and weather delays.
+        </p>
+        <p>
+          We plan Belton jobs with expansive clay, seasonal storms, and real family schedules in mind. That means
+          honest scopes, written change-order processes, and material choices that hold up when the ground moves
+          and summer heat bakes exterior finishes. Whether you are near Nolan Creek, off FM corridors, or on a
+          quieter rural lot toward Holland or Little River, we start with a walkthrough—not a one-size quote.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">What we handle for Belton homeowners</h2>
+        <ul>
+          <li>General repairs and maintenance for occupied homes and small commercial spaces</li>
+          <li>Painting, roofing, and exterior finish work suited to sun and storm exposure</li>
+          <li>Storm damage restoration and insurance-claim documentation support</li>
+          <li>Kitchen and bath remodels, additions, and multi-trade renovations</li>
+          <li>Coordination of electrical, plumbing, HVAC, and specialty trades</li>
+          <li>Church, facility, and light commercial projects when a GC is needed</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local conditions we plan for</h2>
+        <p>
+          <strong>Clay and drainage.</strong> Much of the Belton area sits on expansive soils that swell when wet
+          and shrink when dry. That movement can open cracks in slabs, affect patio attachments, and stress
+          exterior transitions. We look at grading, downspouts, and how new work ties into existing structures
+          before we break ground.
+        </p>
+        <p>
+          <strong>Heat and humidity.</strong> Lake influence and Central Texas summers punish cheap paint systems,
+          poorly ventilated baths, and outdoor structures without proper detailing. We specify finishes and
+          ventilation that match how Belton homes are actually lived in—not brochure climates.
+        </p>
+        <p>
+          <strong>Permits and inspections.</strong> City of Belton and Bell County requirements differ by scope
+          and location. We handle permitting and inspections for compliant work so you are not chasing paperwork
+          between jobsites and city counters.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process in Belton</h2>
+        <ol>
+          <li>
+            <strong>Consultation</strong> — We meet on site (or by phone first if that fits your schedule) to
+            understand the problem, budget range, and any hard deadlines.
+          </li>
+          <li>
+            <strong>Assessment &amp; plan</strong> — Measurements, photos, and a written plan that accounts for
+            soil, access, and trade sequencing.
+          </li>
+          <li>
+            <strong>Transparent proposal</strong> — Clear scope, pricing, and a realistic timeline before work
+            starts—no vague “we’ll see” line items.
+          </li>
+          <li>
+            <strong>Execution</strong> — Supervised work, clean jobsite habits, and updates as phases complete.
+          </li>
+          <li>
+            <strong>Walkthrough</strong> — We do not call it done until you walk the job with us and issues are
+            closed.
+          </li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Belton FAQs</h2>
+        <p>
+          <strong>Do you serve all of Belton and Lake Belton areas?</strong> Yes. We regularly work in Belton city
+          limits, near Lake Belton, and on rural properties along the corridors toward Temple, Salado, and
+          Morgan’s Point Resort.
+        </p>
+        <p>
+          <strong>How do clay soils around Belton affect renovations?</strong> Expansive clay can shift
+          foundations, slabs, and exterior hardscape. We plan drainage, pier/footing details, and material choices
+          with that movement in mind so repairs and additions last longer.
+        </p>
+        <p>
+          <strong>Can you handle storm damage and insurance work in Belton?</strong> Yes. We document damage, work
+          with adjusters when needed, and coordinate roofing, interior repairs, and related trades under one
+          project plan.
+        </p>
+        <p>
+          <strong>How long does a typical Belton project take?</strong> Small repairs: 1–5 days. Larger remodels
+          or additions: often 2–6 weeks depending on scope, permits, and material lead times. We give a written
+          timeline before work starts.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Also serving nearby:{' '}
+          <a href="/services/general-contracting-temple-tx" class="text-accent hover:underline">Temple general contracting</a>
+          {' · '}
+          <a href="/services/general-contracting-harker-heights-tx" class="text-accent hover:underline"
+            >Harker Heights general contracting</a
+          >
+          {' · '}
+          <a href="/service-areas" class="text-accent hover:underline">All service areas</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Belton?</h3>
+        <p class="mb-4 text-white/90">Clear scope, honest pricing, and craftsmanship built for Bell County conditions.</p>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg"
+          >Get a Free Quote</a
+        >
+        <p class="mt-4 text-sm">
+          Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM –
+          6:00 PM
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

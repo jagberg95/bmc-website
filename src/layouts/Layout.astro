@@ -4,9 +4,65 @@ import '../styles/globals.css';
 export interface Props {
   title?: string;
   description?: string;
+  /** Optional extra JSON-LD objects (will be stringified into additional script tags) */
+  schemas?: Record<string, unknown>[];
 }
 
-const { title = "Bar Moon Contracting | Central Texas Custom Homes & Renovations", description = "Five generations of Central Texas craftsmanship. Custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and home repairs — built with integrity." } = Astro.props;
+const {
+  title = 'Bar Moon Contracting | Central Texas General Contractor & Remodeler',
+  description = 'Family-run general contractor serving Bell County, TX. Renovations, kitchen & bath remodels, custom homes, outdoor living, fencing, and repairs. Free quotes.',
+  schemas = [],
+} = Astro.props;
+
+const siteUrl = 'https://barmooncontracting.com';
+const pathname = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '') || '/';
+const canonical = `${siteUrl}${pathname === '/' ? '/' : pathname}`;
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'GeneralContractor',
+  name: 'Bar Moon Contracting',
+  url: `${siteUrl}/`,
+  telephone: '+1-254-581-3808',
+  description:
+    'Family-run general contractor serving Bell County and surrounding Central Texas communities. Renovations, kitchen & bath remodels, custom homes, outdoor living, fencing, concrete, painting, roofing, and repairs.',
+  image: `${siteUrl}/images/Circle/BMC_Logo_Circle_Clean_01.png`,
+  logo: `${siteUrl}/images/Circle/BMC_Logo_Circle_Clean_01.png`,
+  priceRange: '$$',
+  areaServed: [
+    { '@type': 'City', name: 'Temple, TX' },
+    { '@type': 'City', name: 'Belton, TX' },
+    { '@type': 'City', name: 'Salado, TX' },
+    { '@type': 'City', name: 'Killeen, TX' },
+    { '@type': 'City', name: 'Harker Heights, TX' },
+    { '@type': 'City', name: 'Copperas Cove, TX' },
+    { '@type': 'City', name: 'Jarrell, TX' },
+    { '@type': 'City', name: 'Nolanville, TX' },
+    { '@type': 'City', name: "Morgan's Point Resort, TX" },
+    { '@type': 'City', name: 'Little River-Academy, TX' },
+    { '@type': 'City', name: 'Rogers, TX' },
+    { '@type': 'City', name: 'Holland, TX' },
+    { '@type': 'AdministrativeArea', name: 'Bell County, TX' },
+  ],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '08:00',
+    closes: '18:00',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-254-581-3808',
+    contactType: 'customer service',
+    availableLanguage: ['English'],
+    areaServed: 'US-TX',
+  },
+  // Add aggregateRating here only when real review counts are available on-site.
+  sameAs: [
+    'https://www.facebook.com/p/Bar-Moon-Contracting-LLC-61576216242233/',
+    'https://www.yelp.com/biz/bar-moon-contracting-temple',
+  ],
+};
 ---
 
 <!doctype html>
@@ -18,47 +74,29 @@ const { title = "Bar Moon Contracting | Central Texas Custom Homes & Renovations
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Central Texas contractor, custom home builder, home renovations, painting, roofing, outdoor living, home repairs, Bar Moon Contracting, Texas craftsmanship, general contractor" />
-    <link rel="canonical" href={`https://barmooncontracting.com${Astro.url.pathname}`} />
+    <link rel="canonical" href={canonical} />
 
-    <!-- Structured Data: LocalBusiness / GeneralContractor (sitewide) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["LocalBusiness", "GeneralContractor"],
-      "name": "Bar Moon Contracting",
-      "url": "https://barmooncontracting.com",
-      "telephone": "+1-254-581-3808",
-      "description": "Five generations of Central Texas craftsmanship. Custom homes, renovations, painting, roofing, outdoor living, fencing, concrete, and repairs across Bell County and the surrounding areas.",
-      "areaServed": [
-        "Temple, TX",
-        "Belton, TX",
-        "Salado, TX",
-        "Killeen, TX",
-        "Harker Heights, TX",
-        "Copperas Cove, TX",
-        "Jarrell, TX",
-        "Nolanville, TX",
-        "Bell County, TX",
-        "Central Texas"
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "logo": "https://barmooncontracting.com/images/Circle/BMC_Logo_Circle_Clean_01.png",
-      "image": "https://barmooncontracting.com/images/herve-customhome-unsplash.jpg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+1-254-581-3808",
-        "contactType": "customer service",
-        "availableLanguage": ["English"]
-      },
-      "sameAs": []
-    }
-    </script>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Bar Moon Contracting" />
+    <meta property="og:image" content={`${siteUrl}/images/Circle/BMC_Logo_Circle_Clean_01.png`} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/images/Circle/BMC_Logo_Circle_Clean_01.png`} />
+
+    <!-- Structured Data: GeneralContractor (sitewide) -->
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+    {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body class="bg-dark-blue text-light-neutral font-sans antialiased min-h-screen">
     <slot />

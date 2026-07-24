@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-rogers-tx';
+const city = 'Rogers, TX';
+const title = 'General Contracting in Rogers, TX | Bar Moon Contracting';
+const description =
+  'Rogers, TX general contractor for farmstead repairs, home renovations, fencing, painting, and roofing—clear scopes and reliable crews in eastern Bell County.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Bell County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you take smaller repair jobs in Rogers?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We handle smaller repairs as well as larger renovations, as long as the scope is clear and the site is within our service area.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you work on farm and acreage properties near Rogers?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We plan for access, staging, and exterior conditions common on rural properties east of Temple.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I start a project?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Call or text (254) 581-3808 or submit the free quote form. We follow up with questions and a site visit when needed.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Rogers, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Rogers, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Rogers and the eastern Bell County countryside need contractors who respect both town homes and farmstead
+        realities. Bar Moon Contracting handles renovations, repairs, fencing, painting, roofing, and outdoor work
+        with the same standard: written plans, honest pricing, and work that holds up.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">From fence lines to full renovations</h2>
+        <p>
+          Projects around Rogers range widely—a kitchen that finally needs replacing, a roof after storm season, a
+          fence that failed in the heat, or a package of repairs that has stacked up for years. We are comfortable
+          with that mix. What we will not do is hand-wave the scope. Everything important goes on paper so you know
+          what you are buying.
+        </p>
+        <p>
+          Rural access and material logistics are part of planning, not an afterthought. If a job needs special
+          staging or weather windows, we say so before you sign.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Services in Rogers</h2>
+        <ul>
+          <li>General repairs and maintenance</li>
+          <li>Home renovations and remodel packages</li>
+          <li>Painting and roofing</li>
+          <li>Fencing, concrete, and outdoor living</li>
+          <li>Multi-trade coordination and storm repairs</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Local planning factors</h2>
+        <p>
+          <strong>Rural sites.</strong> Driveways, gates, and equipment access change how work is sequenced.
+        </p>
+        <p>
+          <strong>Weather and soil.</strong> Central Texas heat, storms, and clay still drive exterior detailing.
+        </p>
+        <p>
+          <strong>Practical budgets.</strong> We help prioritize must-fix repairs versus optional upgrades so money
+          goes where it matters.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>Initial contact and scoping questions</li>
+          <li>Site visit when needed</li>
+          <li>Written proposal and timeline</li>
+          <li>Execution with updates</li>
+          <li>Walkthrough and closeout</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Rogers FAQs</h2>
+        <p>
+          <strong>Do you take smaller repair jobs in Rogers?</strong> Yes. We handle smaller repairs as well as
+          larger renovations, as long as the scope is clear and the site is within our service area.
+        </p>
+        <p>
+          <strong>Can you work on farm and acreage properties near Rogers?</strong> Yes. We plan for access, staging,
+          and exterior conditions common on rural properties east of Temple.
+        </p>
+        <p>
+          <strong>How do I start a project?</strong> Call or text (254) 581-3808 or submit the free quote form. We
+          follow up with questions and a site visit when needed.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-holland-tx" class="text-accent hover:underline">Holland</a>
+          {' · '}
+          <a href="/services/general-contracting-little-river-academy-tx" class="text-accent hover:underline">Little River-Academy</a>
+          {' · '}
+          <a href="/services/general-contracting-temple-tx" class="text-accent hover:underline">Temple</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Rogers?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

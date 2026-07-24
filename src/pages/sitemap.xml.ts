@@ -3,8 +3,20 @@ export async function GET() {
     '',
     '/services',
     '/services/general-contracting-temple-tx',
+    '/services/general-contracting-belton-tx',
+    '/services/general-contracting-salado-tx',
+    '/services/general-contracting-killeen-tx',
+    '/services/general-contracting-harker-heights-tx',
+    '/services/general-contracting-copperas-cove-tx',
+    '/services/general-contracting-jarrell-tx',
+    '/services/general-contracting-nolanville-tx',
+    '/services/general-contracting-morgans-point-resort-tx',
+    '/services/general-contracting-little-river-academy-tx',
+    '/services/general-contracting-rogers-tx',
+    '/services/general-contracting-holland-tx',
     '/services/home-renovations-temple-tx',
     '/services/kitchen-bath-remodeling-temple-tx',
+    '/services/kitchen-bath-remodeling-killeen-tx',
     '/services/outdoor-living-decks-patios-central-texas',
     '/services/fencing-concrete-repairs-central-texas',
     '/services/custom-homes-central-texas',
@@ -12,6 +24,7 @@ export async function GET() {
     '/about',
     '/faq',
     '/get-quote',
+    '/contact',
     '/blog',
     '/blog/how-to-read-a-contractors-estimate',
     '/blog/how-to-choose-a-general-contractor',
@@ -23,7 +36,7 @@ export async function GET() {
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map(page => `  <url><loc>https://barmooncontracting.com${page}</loc></url>`).join('\n')}
+${pages.map((page) => `  <url><loc>https://barmooncontracting.com${page}</loc></url>`).join('\n')}
 </urlset>`;
 
   return new Response(sitemap, {

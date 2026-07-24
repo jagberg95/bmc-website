@@ -2,33 +2,111 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+
+const title = "How to Read a Contractor’s Estimate | Bar Moon Contracting";
+const description =
+  'Learn what a solid contractor estimate should include—scope, allowances, exclusions, timelines, and red flags—so you can compare bids with confidence in Bell County, TX.';
+const datePublished = '2026-07-10';
+const dateModified = '2026-07-10';
+const url = 'https://barmooncontracting.com/blog/how-to-read-a-contractors-estimate';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: "How to Read a Contractor’s Estimate (and Prepare for Your Project)",
+    description,
+    datePublished,
+    dateModified,
+    author: {
+      '@type': 'Organization',
+      name: 'Bar Moon Contracting',
+      url: 'https://barmooncontracting.com/',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Bar Moon Contracting',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://barmooncontracting.com/images/Circle/BMC_Logo_Circle_Clean_01.png',
+      },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://barmooncontracting.com/blog' },
+      { '@type': 'ListItem', position: 3, name: "How to Read a Contractor’s Estimate", item: url },
+    ],
+  },
+];
 ---
 
-<Layout title="How to Read a Contractor’s Estimate | Bar Moon Contracting">
+<Layout title={title} description={description} schemas={pageSchemas}>
   <Header />
-  
+
   <main class="pt-20 bg-light-neutral text-primary">
     <div class="max-w-3xl mx-auto px-6 py-16">
       <a href="/blog" class="text-sm text-accent hover:underline mb-4 inline-block">← Back to Blog</a>
 
-      <p class="text-sm text-gray-500 mb-1">July 10, 2026</p>
-      <h1 class="text-4xl font-bold mb-6">How to Read a Contractor’s Estimate (and Prepare for Your Project)</h1>
+      <p class="text-sm text-gray-500 mb-1">
+        <time datetime={datePublished}>Published July 10, 2026</time>
+        <span class="mx-1">·</span>
+        <time datetime={dateModified}>Updated July 10, 2026</time>
+      </p>
+      <h1 class="text-4xl font-bold mb-6">
+        How to Read a Contractor’s Estimate (and Prepare for Your Project)
+      </h1>
 
       <div class="prose prose-lg text-gray-700 max-w-none">
-        <p>A clear estimate and a well-prepared homeowner go a long way toward keeping a project on time, on budget, and free from unnecessary stress. Learn exactly what to look for in a professional estimate and how your own preparation makes a difference.</p>
+        <p>
+          A clear estimate and a well-prepared homeowner go a long way toward keeping a project on
+          time, on budget, and free from unnecessary stress. Learn exactly what to look for in a
+          professional estimate and how your own preparation makes a difference.
+        </p>
 
         <h2>Why a Good Estimate Matters</h2>
-        <p>In Central Texas, projects can be affected by expansive clay soils, sudden summer storms, and long lead times for materials. A vague or incomplete estimate often leads to surprises, change orders, and delays. A solid one sets clear expectations from the start.</p>
+        <p>
+          In Central Texas, projects can be affected by expansive clay soils, sudden summer storms,
+          and long lead times for materials. A vague or incomplete estimate often leads to
+          surprises, change orders, and delays. A solid one sets clear expectations from the start.
+        </p>
 
         <h2>What a Good Estimate Should Include</h2>
-        <p>A professional estimate from Bar Moon Contracting breaks the project down so there are no mysteries. Here is what to look for:</p>
+        <p>
+          A professional estimate from Bar Moon Contracting breaks the project down so there are no
+          mysteries. Here is what to look for:
+        </p>
         <ul>
-          <li><strong>Clear scope of work</strong> — Exactly what will be done, room by room or area by area. Vague phrases like “repair as needed” are red flags.</li>
-          <li><strong>Materials or allowances</strong> — Specific products or a realistic dollar amount set aside for items you will choose later (cabinets, flooring, fixtures). This protects both sides.</li>
-          <li><strong>Labor breakdown</strong> — Who is doing the work and how the hours or crews are calculated. This helps you understand where the cost is going.</li>
-          <li><strong>Exclusions and contingencies</strong> — What is <em>not</em> included, plus a small buffer for unexpected issues common in older Bell County homes.</li>
-          <li><strong>Timeline and payment schedule</strong> — Clear, realistic start and completion dates, plus when payments are due. Payments should be tied to progress, not just upfront.</li>
-          <li><strong>Permits and inspections</strong> — Confirmation that the contractor will pull required permits for the work in Temple, Belton, or wherever the project is located.</li>
+          <li>
+            <strong>Clear scope of work</strong> — Exactly what will be done, room by room or area by
+            area. Vague phrases like “repair as needed” are red flags.
+          </li>
+          <li>
+            <strong>Materials or allowances</strong> — Specific products or a realistic dollar amount
+            set aside for items you will choose later (cabinets, flooring, fixtures). This protects
+            both sides.
+          </li>
+          <li>
+            <strong>Labor breakdown</strong> — Who is doing the work and how the hours or crews are
+            calculated. This helps you understand where the cost is going.
+          </li>
+          <li>
+            <strong>Exclusions and contingencies</strong> — What is <em>not</em> included, plus a
+            small buffer for unexpected issues common in older Bell County homes.
+          </li>
+          <li>
+            <strong>Timeline and payment schedule</strong> — Clear, realistic start and completion
+            dates, plus when payments are due. Payments should be tied to progress, not just upfront.
+          </li>
+          <li>
+            <strong>Permits and inspections</strong> — Confirmation that the contractor will pull
+            required permits for the work in Temple, Belton, or wherever the project is located.
+          </li>
         </ul>
 
         <h2>Red Flags in an Estimate</h2>
@@ -37,7 +115,9 @@ import Footer from '../../components/Footer.astro';
           <li>No written details — everything is “we’ll take care of it.”</li>
           <li>Unrealistically low price with no explanation.</li>
           <li>No mention of soil conditions, drainage, or weather delays common here.</li>
-          <li>Payment requests that are front-loaded or ask for most of the money before work starts.</li>
+          <li>
+            Payment requests that are front-loaded or ask for most of the money before work starts.
+          </li>
           <li>No allowances for owner selections or no process for changes.</li>
         </ul>
 
@@ -46,18 +126,25 @@ import Footer from '../../components/Footer.astro';
         <ul>
           <li>Know your must-haves vs. nice-to-haves.</li>
           <li>Have a rough budget range in mind.</li>
-          <li>Take photos of the areas involved and note any existing problems (leaks, cracks, old wiring).</li>
+          <li>
+            Take photos of the areas involved and note any existing problems (leaks, cracks, old
+            wiring).
+          </li>
           <li>Decide on a target timeline and any hard deadlines.</li>
           <li>Ask about lead times for materials you care about.</li>
         </ul>
 
-        <p>Once you’ve selected a contractor, the next step is understanding the estimate and preparing for the project. We break that down in our companion guide on <a href="/blog/how-to-choose-a-general-contractor">How to Choose a General Contractor</a>.</p>
+        <p>
+          Once you’ve selected a contractor, the next step is understanding the estimate and
+          preparing for the project. We break that down in our companion guide on
+          <a href="/blog/how-to-choose-a-general-contractor">How to Choose a General Contractor</a>.
+        </p>
       </div>
 
-
-
       <div class="mt-8">
-        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block">Get a Quote</a>
+        <a href="/get-quote" class="bg-accent text-dark-blue font-bold px-8 py-3 rounded-lg inline-block"
+          >Get a Quote</a
+        >
       </div>
     </div>
   </main>

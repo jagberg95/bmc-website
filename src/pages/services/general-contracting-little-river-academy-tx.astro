@@ -1,0 +1,157 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-little-river-academy-tx';
+const city = 'Little River-Academy, TX';
+const title = 'General Contracting in Little River-Academy, TX | Bar Moon Contracting';
+const description =
+  'General contractor for Little River-Academy and nearby rural Bell County—renovations, repairs, fencing, and site-aware project planning.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Bell County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you serve Little River-Academy and surrounding rural properties?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We serve Little River-Academy and many rural lots nearby, with site visits to confirm access and conditions before final pricing.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you work around septic systems and limited access?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We evaluate septic setbacks, driveway access, and material staging during planning so the job is practical to execute.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What kinds of projects do you take on here?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Repairs, renovations, painting, roofing, fencing, concrete, outdoor living, and multi-trade coordination for residential properties.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Little River-Academy, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Little River-Academy, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Little River-Academy and the surrounding rural edges of Bell County need contractors who plan for access,
+        septic-aware sites, older homes, and practical budgets. Bar Moon Contracting delivers written scopes and
+        reliable execution—not a city-only process forced onto country lots.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Rural-aware general contracting</h2>
+        <p>
+          Properties here may include longer drives, limited turnaround for deliveries, outbuildings, and systems
+          that differ from suburban subdivisions. Before we lock a hard price on exterior or addition work, we look
+          at how crews and materials get in, where staging lives, and what the ground is doing after rain.
+        </p>
+        <p>
+          Interiors still get the same standard: kitchens and baths that function, painting and roofing that last,
+          and repairs that solve the root issue when possible—not just a cosmetic patch.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">What we handle</h2>
+        <ul>
+          <li>Home renovations and general repairs</li>
+          <li>Painting, roofing, and exterior maintenance</li>
+          <li>Fencing, concrete, and outdoor living</li>
+          <li>Multi-trade project management</li>
+          <li>Storm repairs when weather damages the property</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Planning notes for this area</h2>
+        <p>
+          <strong>Access.</strong> Delivery and equipment access can change sequencing. We plan it up front.
+        </p>
+        <p>
+          <strong>Site systems.</strong> Septic, wells, and drainage patterns influence where and how we build.
+        </p>
+        <p>
+          <strong>Older homes.</strong> Surprises behind walls are common; we document allowances and change
+          processes so budgets stay honest.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>Quote request and site visit</li>
+          <li>Written scope and timeline</li>
+          <li>Proposal approval</li>
+          <li>Build with clear updates</li>
+          <li>Final walkthrough</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">FAQs</h2>
+        <p>
+          <strong>Do you serve Little River-Academy and surrounding rural properties?</strong> Yes. We serve Little
+          River-Academy and many rural lots nearby, with site visits to confirm access and conditions before final
+          pricing.
+        </p>
+        <p>
+          <strong>Can you work around septic systems and limited access?</strong> We evaluate septic setbacks,
+          driveway access, and material staging during planning so the job is practical to execute.
+        </p>
+        <p>
+          <strong>What kinds of projects do you take on here?</strong> Repairs, renovations, painting, roofing,
+          fencing, concrete, outdoor living, and multi-trade coordination for residential properties.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-temple-tx" class="text-accent hover:underline">Temple</a>
+          {' · '}
+          <a href="/services/general-contracting-holland-tx" class="text-accent hover:underline">Holland</a>
+          {' · '}
+          <a href="/services/general-contracting-rogers-tx" class="text-accent hover:underline">Rogers</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a contractor in Little River-Academy?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

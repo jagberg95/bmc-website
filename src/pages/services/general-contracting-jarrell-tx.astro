@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-jarrell-tx';
+const city = 'Jarrell, TX';
+const title = 'General Contracting in Jarrell, TX | Bar Moon Contracting';
+const description =
+  'Jarrell general contractor for renovations, repairs, custom builds support, fencing, and outdoor work—serving growth-corridor homes and rural properties.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Williamson County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you serve new subdivisions and rural lots around Jarrell?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We work on newer homes in the growth corridor and on acreage properties that need access planning and realistic material staging.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you help with additions or major renovations in Jarrell?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. We handle additions, multi-room renovations, and exterior packages with written scopes and coordinated trades.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How far is Jarrell from your normal service area?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Jarrell sits on the southern edge of our regular radius from Temple/Bell County. Confirm your address when you request a quote so we can confirm scheduling.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Jarrell, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Jarrell, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Jarrell’s growth corridor mixes new construction energy with rural properties that still need practical
+        contracting: fencing, concrete, renovations, roofing, and repairs done right the first time. Bar Moon
+        Contracting brings clear planning and Central Texas craftsmanship to both sides of that market.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Serving a fast-changing area</h2>
+        <p>
+          Between I-35 access and expanding residential development, Jarrell projects often involve homes still
+          settling into the landscape—drainage that was never finished well, outdoor living owners want to add
+          after move-in, and interiors that need better storage or finishes than builder-grade left behind. Rural
+          lots may bring longer driveways, material logistics, and septic-aware planning.
+        </p>
+        <p>
+          We bid what we can see and note what we must verify. That honesty keeps Jarrell projects from turning
+          into open-ended cost surprises.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">What we handle in Jarrell</h2>
+        <ul>
+          <li>Home renovations, kitchens, baths, and layout updates</li>
+          <li>General repairs, painting, and roofing</li>
+          <li>Fencing, concrete, and outdoor living</li>
+          <li>Additions and multi-trade project management</li>
+          <li>Storm repairs when weather hits hard</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Conditions that show up here</h2>
+        <p>
+          <strong>Growth-site drainage.</strong> New lots sometimes need grading and water management corrections
+          before outdoor structures make sense.
+        </p>
+        <p>
+          <strong>Heat and clay.</strong> Material choices for exteriors still follow Central Texas rules—sun,
+          storms, and soil movement.
+        </p>
+        <p>
+          <strong>Access and staging.</strong> Acreage and unfinished streets can change how materials arrive and
+          where crews stage. We plan that into the schedule.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>Consultation and site review</li>
+          <li>Scope, allowances, and timeline on paper</li>
+          <li>Transparent proposal</li>
+          <li>Permits when required and supervised build</li>
+          <li>Final walkthrough</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Jarrell FAQs</h2>
+        <p>
+          <strong>Do you serve new subdivisions and rural lots around Jarrell?</strong> Yes. We work on newer homes
+          in the growth corridor and on acreage properties that need access planning and realistic material staging.
+        </p>
+        <p>
+          <strong>Can you help with additions or major renovations in Jarrell?</strong> Yes. We handle additions,
+          multi-room renovations, and exterior packages with written scopes and coordinated trades.
+        </p>
+        <p>
+          <strong>How far is Jarrell from your normal service area?</strong> Jarrell sits on the southern edge of
+          our regular radius from Temple/Bell County. Confirm your address when you request a quote so we can
+          confirm scheduling.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-salado-tx" class="text-accent hover:underline">Salado</a>
+          {' · '}
+          <a href="/services/general-contracting-temple-tx" class="text-accent hover:underline">Temple</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Jarrell?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

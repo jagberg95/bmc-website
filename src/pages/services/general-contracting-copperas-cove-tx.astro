@@ -1,0 +1,158 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const url = 'https://barmooncontracting.com/services/general-contracting-copperas-cove-tx';
+const city = 'Copperas Cove, TX';
+const title = 'General Contracting in Copperas Cove, TX | Bar Moon Contracting';
+const description =
+  'General contractor serving Copperas Cove—repairs, renovations, roofing, painting, and outdoor work planned for rocky/clay soils, heat, and Hill Country edge conditions.';
+
+const pageSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'General Contracting',
+    name: `General Contracting in ${city}`,
+    description,
+    provider: { '@type': 'GeneralContractor', name: 'Bar Moon Contracting', url: 'https://barmooncontracting.com/' },
+    areaServed: [{ '@type': 'City', name: city }, { '@type': 'AdministrativeArea', name: 'Coryell County, TX' }],
+    url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://barmooncontracting.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://barmooncontracting.com/services' },
+      { '@type': 'ListItem', position: 3, name: `General Contracting in ${city}`, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Do you travel to Copperas Cove from the Temple area?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Copperas Cove is inside our regular service radius. We schedule site visits and crews with travel time built into the plan.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do rocky and clay soils affect outdoor projects?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Rock and expansive clay change post depth, concrete work, and drainage detailing. We assess site conditions before locking exterior scopes and pricing.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you coordinate a full remodel and exterior work together?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Interior renovations, roofing, fencing, and outdoor living can be sequenced under one project plan so trades do not collide.',
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} schemas={pageSchemas}>
+  <Header />
+  <main class="pt-20 bg-light-neutral text-primary">
+    <div class="max-w-5xl mx-auto px-6 py-20">
+      <div class="mb-8 text-sm text-gray-600">
+        <a href="/services" class="text-accent hover:underline">Services</a>
+        <span class="mx-2">/</span>
+        <span>General Contracting in Copperas Cove, TX</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">General Contracting in Copperas Cove, TX</h1>
+      <p class="text-xl text-gray-700 mb-10">
+        Copperas Cove sits on the Hill Country edge—rocky patches, clay soils, strong sun, and wind that test
+        exterior work. Bar Moon Contracting brings Bell County general contracting standards to Cove homes:
+        honest scopes, supervised trades, and finishes that are built for the site, not a mild climate.
+      </p>
+
+      <div class="prose max-w-none text-gray-700 mb-16 space-y-8">
+        <h2 class="text-2xl md:text-3xl">Projects that fit Cove living</h2>
+        <p>
+          Many Copperas Cove homeowners need practical upgrades after years of heat and use: roof and paint
+          refresh, kitchen or bath updates, fence replacement, patio work, and repairs that keep a busy household
+          moving. Ground conditions can slow exterior work if the contractor is guessing; we dig into site
+          realities during assessment so proposals stay realistic.
+        </p>
+        <p>
+          We also understand military-connected schedules common in the Cove–Killeen corridor. Clear communication
+          and written phases matter when decision-makers cannot always be on site mid-week.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">What we handle</h2>
+        <ul>
+          <li>Repairs, renovations, and multi-room updates</li>
+          <li>Painting, roofing, and exterior systems</li>
+          <li>Fencing, concrete, and outdoor living</li>
+          <li>Storm repairs and claim documentation support</li>
+          <li>Full trade coordination under one GC</li>
+        </ul>
+
+        <h2 class="text-2xl md:text-3xl">Site notes for Copperas Cove</h2>
+        <p>
+          <strong>Rock and clay.</strong> Post holes, slabs, and drainage need site-specific judgment. We do not
+          pretend every lot digs like blackland prairie.
+        </p>
+        <p>
+          <strong>UV and heat.</strong> Fence boards, decking, and paint systems are chosen for exposure, not just
+          day-one color.
+        </p>
+        <p>
+          <strong>Wind and storms.</strong> Flashing, roof details, and outdoor attachments are detailed for real
+          weather—not calm afternoons only.
+        </p>
+
+        <h2 class="text-2xl md:text-3xl">Our process</h2>
+        <ol>
+          <li>Site visit and priorities</li>
+          <li>Written scope and realistic timeline</li>
+          <li>Proposal with clear pricing</li>
+          <li>Permits when required, then build</li>
+          <li>Walkthrough and closeout</li>
+        </ol>
+
+        <h2 class="text-2xl md:text-3xl">Copperas Cove FAQs</h2>
+        <p>
+          <strong>Do you travel to Copperas Cove from the Temple area?</strong> Yes. Copperas Cove is inside our
+          regular service radius. We schedule site visits and crews with travel time built into the plan.
+        </p>
+        <p>
+          <strong>How do rocky and clay soils affect outdoor projects?</strong> Rock and expansive clay change post
+          depth, concrete work, and drainage detailing. We assess site conditions before locking exterior scopes
+          and pricing.
+        </p>
+        <p>
+          <strong>Can you coordinate a full remodel and exterior work together?</strong> Yes. Interior renovations,
+          roofing, fencing, and outdoor living can be sequenced under one project plan so trades do not collide.
+        </p>
+
+        <p class="text-sm text-gray-600">
+          Nearby:{' '}
+          <a href="/services/general-contracting-killeen-tx" class="text-accent hover:underline">Killeen</a>
+          {' · '}
+          <a href="/services/general-contracting-harker-heights-tx" class="text-accent hover:underline">Harker Heights</a>
+        </p>
+      </div>
+
+      <div class="bg-deep-blue text-white p-8 rounded-2xl">
+        <h3 class="text-2xl font-semibold mb-4">Need a general contractor in Copperas Cove?</h3>
+        <a href="/get-quote" class="inline-block bg-accent hover:bg-gold text-dark-blue font-bold px-8 py-3 rounded-lg">Get a Free Quote</a>
+        <p class="mt-4 text-sm">Call or text: <a href="tel:2545813808" class="text-gold-primary">(254) 581-3808</a> · Mon–Fri 8:00 AM – 6:00 PM</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
